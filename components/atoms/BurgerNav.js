@@ -47,7 +47,9 @@ const BurgerWrap = styled.div`
     display: none;
   }
 `;
-const BurgerContainer = styled.div``;
+const BurgerContainer = styled.div`
+  cursor: pointer;
+`;
 const SideBarContainer = styled.div`
   width: 223px;
   height: 186px;

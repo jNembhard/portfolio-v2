@@ -14,13 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header />
-        <h1>Just a test</h1>
-        <p>Just a test</p>
-      </main>
-
-      <footer></footer>
+      <h1>Homepage</h1>
     </div>
   );
 }

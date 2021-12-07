@@ -25,7 +25,6 @@ const NavHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   margin: 32px 32px 40px 32px;
 `;
 const Container = styled.div`

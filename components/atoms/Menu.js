@@ -13,7 +13,7 @@ export default function Menu() {
       <MenuLinks>
         <Container>
           {navLinks.map(({ name, url }, index) => (
-            <li key={index}>
+            <li className="second-color" key={index}>
               <Link href={url}>
                 <a>{name}</a>
               </Link>
@@ -34,7 +34,6 @@ const MenuLinks = styled.ul`
     list-style-type: none;
     text-transform: uppercase;
     justify-content: space-between;
-    border: 1px solid blue;
     margin-left: 319px;
   }
 `;
@@ -42,6 +41,7 @@ const MenuLinks = styled.ul`
 const Container = styled.div`
   display: none;
   @media ${({ theme }) => theme.breakpoints.tablet} {
+    color: ${({ theme }) => theme.colors.grayishDarkBlue};
     display: inline-flex;
     justify-content: space-between;
     font-size: 12px;
