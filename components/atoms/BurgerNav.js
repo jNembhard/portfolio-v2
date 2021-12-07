@@ -31,8 +31,8 @@ export default function BurgerNav() {
         <ul>
           {navLinks.map(({ name, url }, index) => (
             <li key={index}>
-              <Link onClick={() => toggle()} href={url}>
-                <a>{name}</a>
+              <Link href={url}>
+                <a onClick={() => toggle()}>{name}</a>
               </Link>
             </li>
           ))}
@@ -60,6 +60,7 @@ const SideBarContainer = styled.div`
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateY(-150%)"};
   transition: transform 0.2s ease-in-out;
+  z-index: 2;
 
   ul {
     font-family: "Public Sans";

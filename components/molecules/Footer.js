@@ -70,9 +70,6 @@ const Container = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  .second-color {
-    color: white;
-  }
 `;
 
 const Logo = styled(Image)`
@@ -101,6 +98,10 @@ const NavContainer = styled.ul`
     font-size: 12px;
     letter-spacing: 2px;
     margin: 0 7px 32px;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.desaturatedCyan};
+    }
   }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
