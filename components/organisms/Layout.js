@@ -4,8 +4,13 @@ import IbarraRegular from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Regu
 import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.ttf";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
+// import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -42,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Public Sans", sans-serif;
     font-weight: 400;
     line-height: 30px;
+    font-size: 15px;
   }
 
   @font-face {

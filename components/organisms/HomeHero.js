@@ -13,12 +13,14 @@ export default function HomeHero() {
         <Title>
           Hey, I&#39;m Jason Nembhard and I love building beautiful websites
         </Title>
-        <Button>
-          <Arrow>
-            <Image src={downarrow} alt="" />
-          </Arrow>
-          About Me
-        </Button>
+        <Anchor href="#about">
+          <Button>
+            <Arrow>
+              <Image src={downarrow} alt="" />
+            </Arrow>
+            About Me
+          </Button>
+        </Anchor>
       </TitleContainer>
     </>
   );
@@ -60,4 +62,8 @@ const Button = styled.button`
 const Arrow = styled.div`
   margin-left: -30px;
   margin-right: 38px;
+`;
+
+const Anchor = styled.a`
+  text-decoration: none;
 `;
