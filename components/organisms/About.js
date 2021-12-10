@@ -13,13 +13,14 @@ export default function About() {
       <ContainerTwo>
         <Title>About Me</Title>
         <Description>
-          I’m a front-end developer that focuses on writing accessible HTML,
+          I&#39;m a front-end developer that focuses on writing accessible HTML,
           using modern CSS practices and writing clean JavaScript. When writing
           JavaScript code, I mostly use React, but I can adapt to whatever tools
-          are required. I’m currently based in the US, but I’m happy working
-          remotely and have experience in remote teams. When I’m not coding,
-          you’ll find me outdoors. I love being out in nature whether that’s
-          going for a walk, run or cycling. I’d love you to check out my work.
+          are required. I&#39;m currently based in the US, but I&#39;m happy
+          working remotely and have experience in remote teams. When I&#39;m not
+          coding, you&#39;ll find me outdoors. I love being out in nature
+          whether that&#39;s going for a walk, run or cycling. I&#39;d love you
+          to check out my work.
         </Description>
         <Button>
           <Link href="/portfolio">

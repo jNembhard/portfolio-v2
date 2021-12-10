@@ -42,11 +42,11 @@ const Label = styled.label`
 `;
 
 const Form = styled.form`
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
-  width: 311px;
   border: 0;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   height: 48px;
@@ -60,7 +60,6 @@ const TextArea = styled.textarea`
   font-size: 13px;
   height: 96px;
   line-height: 30px;
-  width: 311px;
   text-indent: 16px;
   margin-bottom: 24px;
   background-color: ${({ theme }) => theme.colors.lightGrey};

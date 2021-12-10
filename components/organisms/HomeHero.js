@@ -7,7 +7,12 @@ export default function HomeHero() {
   return (
     <>
       <ImageContainer>
-        <Image src={mobilehero} layout="responsive" alt="Hero" />
+        <Image
+          src={mobilehero}
+          quality={`100`}
+          layout="responsive"
+          alt="Hero"
+        />
       </ImageContainer>
       <TitleContainer>
         <Title>

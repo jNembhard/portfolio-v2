@@ -4,7 +4,6 @@ import IbarraRegular from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Regu
 import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.ttf";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
-// import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html {

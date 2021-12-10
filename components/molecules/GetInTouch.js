@@ -15,7 +15,6 @@ export default function GetInTouch() {
   return (
     <ContactWrap>
       <Container>
-        <Line />
         <Title>Get In Touch</Title>
         <Description>
           I’d love to hear about what you’re working on and how I could help.
@@ -38,7 +37,6 @@ export default function GetInTouch() {
             />
           ))}
         </SocialContainer>
-        <Line />
       </Container>
     </ContactWrap>
   );
@@ -47,15 +45,15 @@ export default function GetInTouch() {
 const ContactWrap = styled.div`
   margin: 40px 32px;
 `;
-const Container = styled.div``;
+const Container = styled.div`
+  border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+`;
 const Title = styled.h1``;
 const Description = styled.p`
   margin-bottom: 24px;
 `;
 
-const Line = styled.hr`
-  border-color: ${({ theme }) => theme.colors.veryLightGreyBG};
-`;
 const SocialContainer = styled.div`
   display: inline-flex;
   align-items: left;
