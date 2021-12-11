@@ -1,18 +1,91 @@
+import React, { useReducer, useState } from "react";
 import styled from "styled-components";
+import {
+  initialState,
+  validateInput,
+  onInputChange,
+  onFocusOut,
+  formReducer,
+} from "../../utils/validation";
 
 export default function Email() {
-  const registerUser = (event) => {
+  const [formState, dispatch] = useReducer(formReducer, initialState);
+  const [showError, setShowError] = useState(false);
+
+  const handleSubmit = (event) => {
     event.preventDefault();
+
+    let isFormValid = true;
+
+    for (const name in formState) {
+      const item = formState[name];
+      const { value } = item;
+      const { hasError, error } = validateInput(name, value);
+
+      if (hasError) {
+        isFormValid = false;
+      }
+
+      if (name) {
+        dispatch({
+          type: UPDATE_FORM,
+          data: { name, value, hasError, error, touched: true, isFormValid },
+        });
+      }
+    }
+
+    !isFormValid
+      ? setShowError(true)
+      : dispatch({ type: RESET_FORM, data: initialState });
   };
   return (
     <EmailWrap>
       <Container>
         <Title>Contact Me</Title>
-        <Form onSubmit={registerUser}>
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" type="text" placeholder="Jane Appleseed" />
+        {showError && !formState.isFormValid && (
+          <div className="error">There was a problem with your entries.</div>
+        )}
+        <Form onSubmit={handleSubmit}>
+          <Label htmlFor="fullname">Name</Label>
+          <Input
+            id="fullname"
+            name="fullname"
+            type="text"
+            placeholder="Jane Appleseed"
+            className={formState.fullname.hasError ? "border-error" : ""}
+            onChange={(e) => {
+              onInputChange("fullname", e.target.value, dispatch, formState);
+            }}
+            required
+            onBlur={(e) => {
+              onFocusOut("fullname", e.target.value, dispatch, formState);
+            }}
+            value={formState.fullname.value}
+          />
+          {formState.fullname.touched && formState.fullname.hasError && (
+            <Error>{formState.fullname.error}</Error>
+          )}
+
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="text" placeholder="email@example.com" />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="email@example.com"
+            className={formState.email.hasError ? "border-error" : ""}
+            onChange={(e) => {
+              onInputChange("email", e.target.value, dispatch, formState);
+            }}
+            required
+            onBlur={(e) => {
+              onFocusOut("email", e.target.value, dispatch, formState);
+            }}
+            value={formState.email.value}
+          />
+          {formState.email.touched && formState.email.hasError && (
+            <Error>{formState.email.error}</Error>
+          )}
+
           <Label htmlFor="message">Message</Label>
           <TextArea
             id="message"
@@ -20,7 +93,20 @@ export default function Email() {
             rows="4"
             cols="50"
             placeholder="How can I help?"
+            className={formState.message.hasError ? "border-error" : ""}
+            onChange={(e) => {
+              onInputChange("message", e.target.value, dispatch, formState);
+            }}
+            required
+            onBlur={(e) => {
+              onFocusOut("message", e.target.value, dispatch, formState);
+            }}
+            value={formState.message.value}
           />
+          {formState.message.touched && formState.message.hasError && (
+            <Error>{formState.message.error}</Error>
+          )}
+
           <Button type="submit">send message</Button>
         </Form>
       </Container>
@@ -30,6 +116,17 @@ export default function Email() {
 
 const EmailWrap = styled.div`
   margin: 0 32px 80px;
+
+  .border-error {
+    border: 1px solid ${({ theme }) => theme.colors.brightRed};
+     &:focus{
+      border: 1px solid ${({ theme }) => theme.colors.brightRed};
+     }
+  }
+
+  &:[readonly]{
+    border 1px solid currentColor;
+  }
 `;
 const Container = styled.div``;
 const Title = styled.h1``;
@@ -53,6 +150,11 @@ const Input = styled.input`
   text-indent: 16px;
   margin-bottom: 24px;
   font-size: 13px;
+  border: none;
+  &:focus {
+    outline: 1px solid transparent;
+    border: 1px solid ${({ theme }) => theme.colors.desaturatedCyan};
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -65,6 +167,11 @@ const TextArea = styled.textarea`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border: 0;
   resize: none;
+
+  &:focus {
+    outline: 1px solid transparent;
+    border: 1px solid ${({ theme }) => theme.colors.desaturatedCyan};
+  }
 `;
 
 const Button = styled.button`
@@ -82,4 +189,13 @@ const Button = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.desaturatedCyan};
   }
+`;
+
+const Error = styled.small`
+  font-family: "Public Sans";
+  margin: -20px 0 24px;
+  color: ${({ theme }) => theme.colors.brightRed};
+  font-size: 10px;
+  font-weight: bold;
+  font-style: italic;
 `;
