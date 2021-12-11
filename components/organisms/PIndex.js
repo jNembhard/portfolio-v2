@@ -1,7 +1,6 @@
-import styled from "styled-components";
-import Image from "next/image";
 import IndexProp from "../molecules/IndexProp";
 import portfolio_data from "../../data/data";
+import ContactButton from "../atoms/ContactButton";
 
 export default function PIndex() {
   return (
@@ -15,6 +14,7 @@ export default function PIndex() {
           description={data.description}
         />
       ))}
+      <ContactButton />
     </>
   );
 }

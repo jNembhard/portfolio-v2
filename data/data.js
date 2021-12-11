@@ -11,9 +11,9 @@ const portfolio_data = [
         desktop: "/assets/portfolio/desktop/image-portfolio-manage@2x.jpg",
       },
       detailhero: {
-        mobile: "/assets/portfolio/mobile/image-manage-hero@2x.jpg",
-        tablet: "/assets/portfolio/tablet/image-manage-hero@2x.jpg",
-        desktop: "/assets/portfolio/desktop/image-manage-hero@2x.jpg",
+        mobile: "/assets/detail/mobile/image-manage-hero@2x.jpg",
+        tablet: "/assets/detail/tablet/image-manage-hero@2x.jpg",
+        desktop: "/assets/detail/desktop/image-manage-hero@2x.jpg",
       },
       preview: {
         mobileOne: "/assets/portfolio/mobile/image-manage-preview-1.jpg",
