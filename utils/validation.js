@@ -31,7 +31,7 @@ const validateInput = (name, value) => {
 
       if (value.trim() === "") {
         hasError = true;
-        error = "This field is requiered";
+        error = "This field is required";
       } else if (!emailRegEx.test(value)) {
         hasError = true;
         error = "Enter a valid email address";
@@ -112,4 +112,12 @@ const formReducer = (state, action) => {
   }
 };
 
-export { initialState, validateInput, onInputChange, onFocusOut, formReducer };
+export {
+  initialState,
+  validateInput,
+  onInputChange,
+  onFocusOut,
+  formReducer,
+  UPDATE_FORM,
+  RESET_FORM,
+};

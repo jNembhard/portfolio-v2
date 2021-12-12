@@ -6,6 +6,8 @@ import {
   onInputChange,
   onFocusOut,
   formReducer,
+  UPDATE_FORM,
+  RESET_FORM,
 } from "../../utils/validation";
 
 export default function Email() {
@@ -42,9 +44,6 @@ export default function Email() {
     <EmailWrap>
       <Container>
         <Title>Contact Me</Title>
-        {showError && !formState.isFormValid && (
-          <div className="error">There was a problem with your entries.</div>
-        )}
         <Form onSubmit={handleSubmit}>
           <Label htmlFor="fullname">Name</Label>
           <Input
@@ -56,6 +55,7 @@ export default function Email() {
             onChange={(e) => {
               onInputChange("fullname", e.target.value, dispatch, formState);
             }}
+            aria-required="true"
             required
             onBlur={(e) => {
               onFocusOut("fullname", e.target.value, dispatch, formState);
@@ -76,6 +76,7 @@ export default function Email() {
             onChange={(e) => {
               onInputChange("email", e.target.value, dispatch, formState);
             }}
+            aria-required="true"
             required
             onBlur={(e) => {
               onFocusOut("email", e.target.value, dispatch, formState);
@@ -97,6 +98,7 @@ export default function Email() {
             onChange={(e) => {
               onInputChange("message", e.target.value, dispatch, formState);
             }}
+            aria-required="true"
             required
             onBlur={(e) => {
               onFocusOut("message", e.target.value, dispatch, formState);
@@ -107,7 +109,24 @@ export default function Email() {
             <Error>{formState.message.error}</Error>
           )}
 
-          <Button type="submit">send message</Button>
+          <Button
+            className={
+              formState.fullname.hasError ||
+              formState.email.hasError ||
+              formState.message.hasError
+                ? "disabled-button"
+                : ""
+            }
+            disabled={
+              formState.fullname.hasError ||
+              formState.email.hasError ||
+              formState.message.hasError
+            }
+            formNoValidate="formnovalidate"
+            type="submit"
+          >
+            send message
+          </Button>
         </Form>
       </Container>
     </EmailWrap>
@@ -119,13 +138,18 @@ const EmailWrap = styled.div`
 
   .border-error {
     border: 1px solid ${({ theme }) => theme.colors.brightRed};
-     &:focus{
+    &:focus {
       border: 1px solid ${({ theme }) => theme.colors.brightRed};
-     }
+    }
   }
 
-  &:[readonly]{
-    border 1px solid currentColor;
+  .disabled-button {
+    opacity: 0.2;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.darkBlue};
+    }
   }
 `;
 const Container = styled.div``;
