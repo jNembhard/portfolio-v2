@@ -2,13 +2,23 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import mobiledetail from "../../public/assets/detail/mobile/image-manage-hero@2x.jpg";
-import previewone from "../../public/assets/detail/mobile/image-manage-preview-1.jpg";
-import previewtwo from "../../public/assets/detail/mobile/image-manage-preview-2.jpg";
+// import previewone from "../../public/assets/detail/mobile/image-manage-preview-1.jpg";
+// import previewtwo from "../../public/assets/detail/mobile/image-manage-preview-2.jpg";
 import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../public/assets/icons/arrow-right.svg";
 
-export default function Carousel() {
+export default function Carousel({
+  name,
+  description,
+  previewOne,
+  previewTwo,
+  previous,
+  next,
+  baseSlug,
+  previousSlug,
+  nextSlug,
+}) {
   return (
     <>
       <CarouselWrap>
@@ -22,13 +32,8 @@ export default function Carousel() {
           />
         </ImageContainer>
         <ContainerOne>
-          <Title>Manage</Title>
-          <Description>
-            This project required me to build a fully responsive landing page to
-            the designs provided. I used HTML5, along with CSS Grid and
-            JavaScript for the areas that required interactivity, such as the
-            testimonial slider.
-          </Description>
+          <Title>{name}</Title>
+          <Description>{description}</Description>
           <Skills>
             Interaction Design / Front End Development HTML/CSS/JS
           </Skills>
@@ -55,7 +60,7 @@ export default function Carousel() {
           <Subtitle>Static Previews</Subtitle>
           <ImageContainerTwo>
             <Image
-              src={previewone}
+              src={previewOne}
               width={313}
               height={197}
               style="margin-bottom: 32px"
@@ -63,21 +68,25 @@ export default function Carousel() {
               alt=""
             />
           </ImageContainerTwo>
-          <Image src={previewtwo} alt="" />
+          <Image src={previewTwo} alt="" />
         </ContainerThree>
         <ContainerFour>
-          <Previous>
-            <LeftArrow src={arrowleft} alt="" />
-            <LeftTitle>Fylo</LeftTitle>
-            <Sub>Previous Project</Sub>
-          </Previous>
-          <Next>
-            <Test>
-              <RightArrow src={arrowright} alt="" />
-            </Test>
-            <RightTitle>Bookmark</RightTitle>
-            <SubTwo>Next Project</SubTwo>
-          </Next>
+          <Link passHref={baseSlug} as={previousSlug}>
+            <Previous>
+              <LeftArrow src={arrowleft} alt="" />
+              <LeftTitle>{previous}</LeftTitle>
+              <Sub>Previous Project</Sub>
+            </Previous>
+          </Link>
+          <Link passHref={baseSlug} as={nextSlug}>
+            <Next>
+              <Test>
+                <RightArrow src={arrowright} alt="" />
+              </Test>
+              <RightTitle>{next}</RightTitle>
+              <SubTwo>Next Project</SubTwo>
+            </Next>
+          </Link>
         </ContainerFour>
       </CarouselWrap>
       <ContactButton />
@@ -152,7 +161,7 @@ const Previous = styled.div`
   padding-top: 15px;
 `;
 
-const Next = styled.div`
+const Next = styled.a`
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
   height: 146px;

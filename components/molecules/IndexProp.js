@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function IndexProp({ name, image, description }) {
+export default function IndexProp({ name, image, description, slug }) {
   return (
     <IndexWrap>
       <ImageContainer>
@@ -19,7 +19,7 @@ export default function IndexProp({ name, image, description }) {
         <Title>{name}</Title>
         <Description>{description}</Description>
         <ProjectButton>
-          <Link href="/portfolioindex">
+          <Link href="portfolioindex/[slug]" as={`portfolioindex/${slug}`}>
             <a>view project</a>
           </Link>
         </ProjectButton>

@@ -1,5 +1,5 @@
 import IndexProp from "../molecules/IndexProp";
-import portfolio_data from "../../data/data";
+import { portfolio_data } from "../../data/portfolio_data";
 import ContactButton from "../atoms/ContactButton";
 
 export default function PIndex() {
@@ -10,6 +10,7 @@ export default function PIndex() {
           key={data.id}
           id={data.id}
           name={data.name}
+          slug={data.slug}
           image={data.images.index.mobile}
           description={data.description}
         />
