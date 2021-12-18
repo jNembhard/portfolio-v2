@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
-import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
   const paths = portfoliodata.map((portfolio) => ({

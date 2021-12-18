@@ -21,7 +21,14 @@ export default function Carousel({
     <>
       <CarouselWrap>
         <ImageContainer>
-          <Image src={detail} width={311} height={140} quality={100} alt="" />
+          <Image
+            src={detail}
+            width={311}
+            height={140}
+            layout="responsive"
+            quality={100}
+            alt="detail hero"
+          />
         </ImageContainer>
         <ContainerOne>
           <Title>{name}</Title>
@@ -55,19 +62,23 @@ export default function Carousel({
               src={previewOne}
               width={313}
               height={197}
+              layout="responsive"
               style="margin-bottom: 32px"
               quality={100}
-              alt={name}
+              alt="static preview one"
             />
           </ImageContainerTwo>
-          <Image
-            src={previewTwo}
-            width={313}
-            height={197}
-            style="margin-bottom: 32px"
-            quality={100}
-            alt={name}
-          />
+          <ImageContainerTwo>
+            <Image
+              src={previewTwo}
+              width={313}
+              height={197}
+              layout="responsive"
+              style="margin-bottom: 32px"
+              quality={100}
+              alt="static preview two"
+            />
+          </ImageContainerTwo>
         </ContainerThree>
         <ContainerFour>
           <Link href={previousSlug} passHref>
@@ -158,6 +169,8 @@ const Previous = styled.a`
   height: 146px;
   border-left: 0;
   padding-top: 15px;
+  color: inherit;
+  text-decoration: none;
 `;
 
 const Next = styled.a`
@@ -166,6 +179,8 @@ const Next = styled.a`
   height: 146px;
   border-right: 0;
   padding-top: 15px;
+  color: inherit;
+  text-decoration: none;
 `;
 
 const LeftTitle = styled.h3`
@@ -174,9 +189,9 @@ const LeftTitle = styled.h3`
 `;
 
 const RightTitle = styled.h3`
+  text-align: right;
   line-height: 36px;
   margin-bottom: -15px;
-  padding-left: 15px;
 `;
 
 const Sub = styled.p`
@@ -184,16 +199,13 @@ const Sub = styled.p`
 `;
 
 const SubTwo = styled(Sub)`
-  padding-left: 60px;
+  text-align: right;
 `;
 
-const LeftArrow = styled(Image)`
-  padding-right: 20px;
-`;
-const RightArrow = styled(Image)`
-  margin-right: -20px;
-`;
+const LeftArrow = styled(Image)``;
+const RightArrow = styled(Image)``;
 
 const Test = styled.div`
-  margin-left: 140px;
+  width: 100%;
+  text-align: right;
 `;
