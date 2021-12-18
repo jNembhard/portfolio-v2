@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import portfolio_data from "../data/portfolio_data";
+import portfoliodata from "../data/portfoliodata";
 
 const initialPortfolioState = {
-  slides: portfolio_data,
+  slides: portfoliodata,
   direction: 0,
   currentSlideIndex: 0,
 };

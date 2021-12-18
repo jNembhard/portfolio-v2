@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import PIndex from "../components/organisms/PIndex";
+import PIndex from "../../components/organisms/PIndex";
 
 export default function Portfolio() {
   return (

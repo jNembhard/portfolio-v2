@@ -19,7 +19,7 @@ export default function IndexProp({ name, image, description, slug }) {
         <Title>{name}</Title>
         <Description>{description}</Description>
         <ProjectButton>
-          <Link href="portfolioindex/[slug]" as={`portfolioindex/${slug}`}>
+          <Link href={`/portfolio/${slug}`} passHref>
             <a>view project</a>
           </Link>
         </ProjectButton>

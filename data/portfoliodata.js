@@ -1,6 +1,5 @@
-export const portfolio_data = [
+export const portfoliodata = [
   {
-    id: 0,
     name: "Manage",
     slug: "manage",
     description:
@@ -29,7 +28,6 @@ export const portfolio_data = [
     next: "Bookmark",
   },
   {
-    id: 1,
     name: "Bookmark",
     slug: "bookmark",
     description:
@@ -58,7 +56,6 @@ export const portfolio_data = [
     next: "Insure",
   },
   {
-    id: 2,
     name: "Insure",
     slug: "insure",
     description:
@@ -87,7 +84,6 @@ export const portfolio_data = [
     next: "Fylo",
   },
   {
-    id: 3,
     name: "Fylo",
     slug: "fylo",
     description:

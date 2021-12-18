@@ -23,7 +23,7 @@ export default function About() {
           to check out my work.
         </Description>
         <Button>
-          <Link href="/portfolioindex/portfolio">
+          <Link href="/portfolio">
             <a>go to portfolio</a>
           </Link>
         </Button>

@@ -78,7 +78,7 @@ export default function Carousel({
               <Sub>Previous Project</Sub>
             </Previous>
           </Link>
-          <Link passHref={baseSlug} as={nextSlug}>
+          <Link href={baseSlug} as={nextSlug} passHref>
             <Next>
               <Test>
                 <RightArrow src={arrowright} alt="" />
@@ -153,7 +153,7 @@ const ContainerFour = styled.div`
   margin-bottom: 64px;
 `;
 
-const Previous = styled.div`
+const Previous = styled.a`
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
   height: 146px;
