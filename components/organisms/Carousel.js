@@ -1,21 +1,19 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import mobiledetail from "../../public/assets/detail/mobile/image-manage-hero@2x.jpg";
-// import previewone from "../../public/assets/detail/mobile/image-manage-preview-1.jpg";
-// import previewtwo from "../../public/assets/detail/mobile/image-manage-preview-2.jpg";
+// import mobiledetail from "../../public/assets/detail/mobile/image-manage-hero@2x.jpg";
 import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../public/assets/icons/arrow-right.svg";
 
 export default function Carousel({
   name,
+  detail,
   description,
   previewOne,
   previewTwo,
   previous,
   next,
-  baseSlug,
   previousSlug,
   nextSlug,
 }) {
@@ -23,13 +21,7 @@ export default function Carousel({
     <>
       <CarouselWrap>
         <ImageContainer>
-          <Image
-            src={mobiledetail}
-            width={311}
-            height={140}
-            quality={100}
-            alt=""
-          />
+          <Image src={detail} width={311} height={140} quality={100} alt="" />
         </ImageContainer>
         <ContainerOne>
           <Title>{name}</Title>
@@ -65,20 +57,27 @@ export default function Carousel({
               height={197}
               style="margin-bottom: 32px"
               quality={100}
-              alt=""
+              alt={name}
             />
           </ImageContainerTwo>
-          <Image src={previewTwo} alt="" />
+          <Image
+            src={previewTwo}
+            width={313}
+            height={197}
+            style="margin-bottom: 32px"
+            quality={100}
+            alt={name}
+          />
         </ContainerThree>
         <ContainerFour>
-          <Link passHref={baseSlug} as={previousSlug}>
+          <Link href={previousSlug} passHref>
             <Previous>
               <LeftArrow src={arrowleft} alt="" />
               <LeftTitle>{previous}</LeftTitle>
               <Sub>Previous Project</Sub>
             </Previous>
           </Link>
-          <Link href={baseSlug} as={nextSlug} passHref>
+          <Link href={nextSlug} passHref>
             <Next>
               <Test>
                 <RightArrow src={arrowright} alt="" />

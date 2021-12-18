@@ -22,20 +22,20 @@ export default function About() {
           whether that&#39;s going for a walk, run or cycling. I&#39;d love you
           to check out my work.
         </Description>
-        <Button>
-          <Link href="/portfolio">
+        <Link href="/portfolio" passHref>
+          <Button>
             <a>go to portfolio</a>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </ContainerTwo>
       <Line />
       <ContainerThree>
         <Outro>Interested in doing a project together?</Outro>
-        <ButtonTwo>
-          <Link href="/contact">
+        <Link href="/contact" passHref>
+          <ButtonTwo>
             <a>contact me</a>
-          </Link>
-        </ButtonTwo>
+          </ButtonTwo>
+        </Link>
       </ContainerThree>
     </AboutWrap>
   );

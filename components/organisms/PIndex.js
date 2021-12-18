@@ -5,9 +5,9 @@ import ContactButton from "../atoms/ContactButton";
 export default function PIndex() {
   return (
     <>
-      {portfoliodata.map((data) => (
+      {portfoliodata.map((data, index) => (
         <IndexProp
-          key={data.id}
+          key={index}
           id={data.id}
           name={data.name}
           slug={data.slug}

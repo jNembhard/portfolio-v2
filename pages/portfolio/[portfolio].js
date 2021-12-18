@@ -1,19 +1,19 @@
 import Head from "next/head";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
   const paths = portfoliodata.map((portfolio) => ({
-    params: { portfolio: portfolio.name },
+    params: { portfolio: portfolio.slug },
   }));
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const portfolio = portfolio.find(
-    (portfolio) => portfolio.name === params.portfolio
+  const portfolio = portfoliodata.find(
+    (portfolio) => portfolio.slug === params.portfolio
   );
-
   return { props: { portfolio } };
 }
 
@@ -28,13 +28,13 @@ export default function PortfolioIndex({ portfolio }) {
       <Carousel
         name={portfolio.name}
         description={portfolio.description}
+        detail={portfolio.images.detailhero.mobile}
         previewOne={portfolio.images.preview.mobileOne}
         previewTwo={portfolio.images.preview.mobileTwo}
         previous={portfolio.previous}
         next={portfolio.next}
-        baseSlug={`portfolio/[portfolio]`}
-        previousSlug={`/${portfolio.previous.toLowerCase()}`}
-        nextSlug={`/${portfolio.next.toLowerCase()}`}
+        previousSlug={portfolio.previous.toLowerCase()}
+        nextSlug={portfolio.next.toLowerCase()}
       />
     </div>
   );

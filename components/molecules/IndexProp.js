@@ -18,11 +18,11 @@ export default function IndexProp({ name, image, description, slug }) {
       <Container>
         <Title>{name}</Title>
         <Description>{description}</Description>
-        <ProjectButton>
-          <Link href={`/portfolio/${slug}`} passHref>
+        <Link href={`/portfolio/${slug}`} passHref>
+          <ProjectButton>
             <a>view project</a>
-          </Link>
-        </ProjectButton>
+          </ProjectButton>
+        </Link>
       </Container>
     </IndexWrap>
   );
