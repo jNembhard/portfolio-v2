@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ContactButton from "../components/atoms/ContactButton";
 import About from "../components/organisms/About";
 import HomeHero from "../components/organisms/HomeHero";
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <HomeHero />
       <About />
+      <ContactButton />
     </div>
   );
 }

@@ -1,15 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import headshot from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
+// import headshot from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
+import headshot from "../../public/assets/homepage/tablet/image-homepage-profile@2x.jpg";
 
 export default function About() {
   return (
     <AboutWrap>
       <ImageContainer>
-        <Image id="about" src={headshot} alt="headshot" />
+        <Image
+          id="about"
+          width={281}
+          height={600}
+          src={headshot}
+          alt="headshot"
+        />
       </ImageContainer>
-      <Line />
       <ContainerTwo>
         <Title>About Me</Title>
         <Description>
@@ -28,34 +34,38 @@ export default function About() {
           </Button>
         </Link>
       </ContainerTwo>
-      <Line />
-      <ContainerThree>
-        <Outro>Interested in doing a project together?</Outro>
-        <Link href="/contact" passHref>
-          <ButtonTwo>
-            <a>contact me</a>
-          </ButtonTwo>
-        </Link>
-      </ContainerThree>
     </AboutWrap>
   );
 }
 
 const AboutWrap = styled.div`
   margin: 0 32px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    margin: 0 40px;
+  }
 `;
 const ImageContainer = styled.div`
   margin-bottom: 32px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 95px 0 96px 0;
+  }
 `;
 
 const ContainerTwo = styled.div`
   margin: 32px 0 51px;
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
-`;
+  border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
-const Line = styled.hr`
-  margin-bottom: 32px;
-  border-color: ${({ theme }) => theme.colors.lightGrey};
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 96px 40px 96px 46px;
+    max-width: 339px;
+    max-height: 100%;
+    /* padding-top: 96px; */
+    /* padding-bottom: 96px; */
+  }
 `;
 
 const Title = styled.h1`
@@ -65,6 +75,10 @@ const Title = styled.h1`
 const Description = styled.p`
   font-size: 16px;
   margin-bottom: 51px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin-bottom: 40px;
+  }
 `;
 
 const Button = styled.button`
@@ -76,6 +90,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.veryLightGreyBG};
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
   cursor: pointer;
+  margin-bottom: 39px;
 
   &:hover {
     color: ${({ theme }) => theme.colors.veryLightGreyBG};
@@ -87,18 +102,4 @@ const Button = styled.button`
     text-decoration: none;
     text-transform: uppercase;
   }
-`;
-
-const ContainerThree = styled.div`
-  margin: 115px 0 80px;
-  text-align: center;
-`;
-
-const Outro = styled.h1`
-  margin-bottom: 40px;
-`;
-
-const ButtonTwo = styled(Button)`
-  width: 162px;
-  text-transform: uppercase;
 `;

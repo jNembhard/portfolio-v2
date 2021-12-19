@@ -5,14 +5,9 @@ import downarrow from "../../public/assets/icons/down-arrows.svg";
 
 export default function HomeHero() {
   return (
-    <>
+    <HeroWrap>
       <ImageContainer>
-        <Image
-          src={mobilehero}
-          quality={`100`}
-          layout="responsive"
-          alt="Hero"
-        />
+        <Image src={mobilehero} quality={100} layout="responsive" alt="Hero" />
       </ImageContainer>
       <TitleContainer>
         <Title>
@@ -27,21 +22,45 @@ export default function HomeHero() {
           </Button>
         </Anchor>
       </TitleContainer>
-    </>
+    </HeroWrap>
   );
 }
 
+const HeroWrap = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    position: relative;
+  }
+`;
 const ImageContainer = styled.div`
   margin: 0 32px 24px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 41px 24px;
+  }
 `;
 
 const TitleContainer = styled.div`
   margin: 0 32px 96px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    position: absolute;
+    top: 322px;
+    right: 215px;
+    bottom: -96px;
+    left: 39px;
+    background-color: white;
+    margin: unset;
+  }
 `;
 
 const Title = styled.h1`
   line-height: 42px;
   letter-spacing: -0.36px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 56px 56px 20px 0;
+    /* width: 100%; */
+  }
 `;
 
 const Button = styled.button`

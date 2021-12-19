@@ -63,6 +63,10 @@ const FooterWrap = styled.footer`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 80px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      /* width: unset; */
+    }
   }
 `;
 
@@ -70,6 +74,11 @@ const Container = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
 const Logo = styled(Image)`
@@ -80,6 +89,14 @@ const Logo = styled(Image)`
 const LogoContainer = styled.div`
   margin: 10px 34px 30px;
   width: 61px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 48px 0 20px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 0 48px 0 165px;
+    }
+  }
 `;
 
 const NavContainer = styled.ul`
@@ -91,6 +108,13 @@ const NavContainer = styled.ul`
   color: ${({ theme }) => theme.colors.veryLightGreyBG};
   padding: 0 7px;
 
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    flex-direction: row;
+    padding: unset;
+    margin: 33px 0;
+    width: 309px;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -99,13 +123,13 @@ const NavContainer = styled.ul`
     letter-spacing: 2px;
     margin: 0 7px 32px;
 
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      margin: 0 21px 0 0;
+    }
+
     &:hover {
       color: ${({ theme }) => theme.colors.desaturatedCyan};
     }
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: none;
   }
 `;
 
@@ -116,6 +140,16 @@ const SocialContainer = styled.div`
   width: 120px;
   height: 24px;
   margin: 0 105px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    flex-direction: row;
+    margin: 28px 40px 28px 167px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      flex-direction: row;
+      margin: 28px 40px 28px 588px;
+    }
+  }
 `;
 
 const Socials = styled(Image)`
