@@ -1,18 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-// import headshot from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
-import headshot from "../../public/assets/homepage/tablet/image-homepage-profile@2x.jpg";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import headshotmobile from "../../public/assets/homepage/mobile/image-homepage-profile.jpg";
+import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
+import headshottablet from "../../public/assets/homepage/tablet/image-homepage-profile.jpg";
+import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-profile@2x.jpg";
+import headshotdesktop from "../../public/assets/homepage/desktop/image-homepage-profile.jpg";
+import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-profile@2x.jpg";
 
 export default function About() {
+  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <AboutWrap>
       <ImageContainer>
         <Image
           id="about"
-          width={281}
-          height={600}
-          src={headshot}
+          src={
+            breakPoint1280
+              ? headshotdesktop2
+              : breakPoint767
+              ? headshottablet2
+              : headshotmobile
+          }
+          quality={100}
           alt="headshot"
         />
       </ImageContainer>

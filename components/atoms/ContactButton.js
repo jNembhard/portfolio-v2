@@ -6,11 +6,12 @@ export default function ContactButton() {
     <Container>
       <Title>Interested in doing a project together?</Title>
       <Line />
-      <Button>
-        <Link href="/contact">
+
+      <Link href="/contact" passHref>
+        <Button>
           <a>contact me</a>
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </Container>
   );
 }
@@ -53,9 +54,10 @@ const Button = styled.button`
   letter-spacing: 2px;
   box-shadow: none;
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
-  background-color: ${({ theme }) => theme.colors.veryLightGreyBG};
+  background-color: transparent;
   color: ${({ theme }) => theme.colors.darkBlue};
   text-transform: uppercase;
+  cursor: pointer;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     width: 200px;
