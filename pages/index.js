@@ -10,7 +10,7 @@ export default function Home() {
         <title>Home - Jason Nembhard</title>
         <meta
           name="Jason Nembhard"
-          content="A project portfolio created and maintained by Jason Nembhard"
+          content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

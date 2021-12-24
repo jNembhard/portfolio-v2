@@ -7,7 +7,10 @@ export default function Portfolio() {
     <div>
       <Head>
         <title>Portfolio - Jason Nembhard</title>
-        <meta name="Jason Nembhard" content="Jason Nembhard's projects" />
+        <meta
+          name="Jason Nembhard - Portfolio"
+          content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PIndex />
