@@ -34,7 +34,7 @@ const MenuLinks = styled.ul`
     list-style-type: none;
     text-transform: uppercase;
     justify-content: space-between;
-    margin-left: 319px;
+    margin-left: 260px;
   }
 `;
 

@@ -1,13 +1,30 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero@2x.jpg";
+import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero@2x.jpg";
+import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
 import downarrow from "../../public/assets/icons/down-arrows.svg";
 
 export default function HomeHero() {
+  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <HeroWrap>
       <ImageContainer>
-        <Image src={mobilehero} quality={100} layout="responsive" alt="Hero" />
+        <Image
+          src={
+            breakPoint1280
+              ? desktophero
+              : breakPoint767
+              ? tablethero
+              : mobilehero
+          }
+          quality={100}
+          layout="responsive"
+          alt="Hero"
+        />
       </ImageContainer>
       <TitleContainer>
         <Title>
@@ -36,6 +53,10 @@ const ImageContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 41px 24px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 75px 165px 150px;
+    }
   }
 `;
 
@@ -50,6 +71,17 @@ const TitleContainer = styled.div`
     left: 39px;
     background-color: white;
     margin: unset;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      position: absolute;
+      top: 243px;
+      right: 665px;
+      bottom: 0;
+      left: 165px;
+      max-width: 445px;
+      background-color: white;
+      margin: unset;
+    }
   }
 `;
 
@@ -59,7 +91,10 @@ const Title = styled.h1`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 56px 56px 20px 0;
-    /* width: 100%; */
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 56px 56px 53px 0;
+    }
   }
 `;
 

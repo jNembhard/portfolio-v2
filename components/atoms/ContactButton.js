@@ -24,6 +24,12 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     text-align: left;
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      margin: 0 165px 150px;
+    }
   }
 `;
 const Title = styled.h1`
@@ -41,6 +47,10 @@ const Line = styled.hr`
     height: 1px;
     background-color: ${({ theme }) => theme.colors.lightGrey};
     border: 0;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      width: 534px;
+    }
   }
 `;
 

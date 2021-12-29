@@ -13,9 +13,14 @@ const navLinks = [
 ];
 
 const socials = [
-  { id: 1, name: "github", media: github },
-  { id: 2, name: "linkedin", media: linkedin },
-  { id: 3, name: "twitter", media: twitter },
+  { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
+  {
+    id: 2,
+    name: "linkedin",
+    media: linkedin,
+    url: "https://www.linkedin.com/in/jasonnembhard1/",
+  },
+  { id: 3, name: "twitter", media: twitter, url: "/" },
 ];
 
 export default function Footer() {
@@ -38,13 +43,22 @@ export default function Footer() {
         </NavContainer>
         <SocialContainer>
           {socials.map((social) => (
-            <Socials
-              key={social.id}
-              src={social.media}
-              width="24px"
-              height="24px"
-              alt={social.name}
-            />
+            <>
+              <a
+                key={social.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={social.url}
+              >
+                <Socials
+                  key={social.id}
+                  src={social.media}
+                  width="24px"
+                  height="24px"
+                  alt={social.name}
+                />
+              </a>
+            </>
           ))}
         </SocialContainer>
       </Container>

@@ -2,11 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-import headshotmobile from "../../public/assets/homepage/mobile/image-homepage-profile.jpg";
 import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
-import headshottablet from "../../public/assets/homepage/tablet/image-homepage-profile.jpg";
 import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-profile@2x.jpg";
-import headshotdesktop from "../../public/assets/homepage/desktop/image-homepage-profile.jpg";
 import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-profile@2x.jpg";
 
 export default function About() {
@@ -23,7 +20,7 @@ export default function About() {
               ? headshotdesktop2
               : breakPoint767
               ? headshottablet2
-              : headshotmobile
+              : headshotmobile2
           }
           quality={100}
           alt="headshot"
@@ -57,12 +54,21 @@ const AboutWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
     margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: flex;
+      margin: 0 260px 150px 165px;
+    }
   }
 `;
 const ImageContainer = styled.div`
   margin-bottom: 32px;
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 95px 0 96px 0;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 95px 125px 96px 0;
+    }
   }
 `;
 
@@ -76,13 +82,22 @@ const ContainerTwo = styled.div`
     margin: 96px 40px 96px 46px;
     max-width: 339px;
     max-height: 100%;
-    /* padding-top: 96px; */
-    /* padding-bottom: 96px; */
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 350px;
+      height: 600px;
+      margin: 100px 0 0 0;
+      padding: 50px 0 -10px;
+    }
   }
 `;
 
 const Title = styled.h1`
   letter-spacing: -0.36px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    padding-top: 30px;
+  }
 `;
 
 const Description = styled.p`
@@ -100,10 +115,14 @@ const Button = styled.button`
   font-size: 12px;
   letter-spacing: 2px;
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
-  background-color: ${({ theme }) => theme.colors.veryLightGreyBG};
+  background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
   cursor: pointer;
   margin-bottom: 39px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-bottom: 0;
+  }
 
   &:hover {
     color: ${({ theme }) => theme.colors.veryLightGreyBG};
