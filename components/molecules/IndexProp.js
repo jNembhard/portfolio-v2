@@ -30,6 +30,7 @@ export default function IndexProp({ id, name, image, description, slug }) {
           height={breakPoint1280 ? 500 : breakPoint767 ? 314 : 288}
           quality={100}
           width={breakPoint1280 ? 540 : breakPoint767 ? 339 : 311}
+          layout={breakPoint767 ? "" : "responsive"}
         />
       </ImageContainer>
       <Container>

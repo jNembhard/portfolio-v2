@@ -34,8 +34,10 @@ export default function PIndex() {
 }
 
 const PIndexWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
