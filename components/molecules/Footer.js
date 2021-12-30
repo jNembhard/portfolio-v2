@@ -77,10 +77,6 @@ const FooterWrap = styled.footer`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 80px;
-
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      /* width: unset; */
-    }
   }
 `;
 
@@ -108,7 +104,7 @@ const LogoContainer = styled.div`
     margin: 0 48px 0 20px;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 0 48px 0 165px;
+      margin: 0 48px 0 0;
     }
   }
 `;

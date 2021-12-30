@@ -16,6 +16,7 @@ export const portfoliodata = [
         tablet: "/assets/detail/tablet/image-manage-hero@2x.jpg",
         desktop: "/assets/detail/desktop/image-manage-hero@2x.jpg",
       },
+
       preview: {
         mobileOne: "/assets/detail/mobile/image-manage-preview-1.jpg",
         mobileTwo: "/assets/detail/mobile/image-manage-preview-2.jpg",

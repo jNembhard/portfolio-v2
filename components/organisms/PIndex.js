@@ -1,21 +1,41 @@
 import IndexProp from "../molecules/IndexProp";
 import { portfoliodata } from "../../data/portfoliodata";
 import ContactButton from "../atoms/ContactButton";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import styled from "styled-components";
 
 export default function PIndex() {
+  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <>
-      {portfoliodata.map((data, index) => (
-        <IndexProp
-          key={index}
-          id={data.id}
-          name={data.name}
-          slug={data.slug}
-          image={data.images.index.mobile}
-          description={data.description}
-        />
-      ))}
+      <PIndexWrap>
+        {portfoliodata.map((data, index) => (
+          <IndexProp
+            key={index}
+            id={data.id}
+            name={data.name}
+            slug={data.slug}
+            image={
+              breakPoint1280
+                ? data.images.index.desktop
+                : breakPoint767
+                ? data.images.index.tablet
+                : data.images.index.mobile
+            }
+            description={data.description}
+          />
+        ))}
+      </PIndexWrap>
       <ContactButton />
     </>
   );
 }
+
+const PIndexWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
