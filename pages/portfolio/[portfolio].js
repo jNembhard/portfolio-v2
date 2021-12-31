@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export async function getStaticPaths() {
   const paths = portfoliodata.map((portfolio) => ({
@@ -17,6 +18,9 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PortfolioIndex({ portfolio }) {
+  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <div>
       <Head>
@@ -27,9 +31,27 @@ export default function PortfolioIndex({ portfolio }) {
       <Carousel
         name={portfolio.name}
         description={portfolio.description}
-        detail={portfolio.images.detailhero.mobile}
-        previewOne={portfolio.images.preview.mobileOne}
-        previewTwo={portfolio.images.preview.mobileTwo}
+        detail={
+          breakPoint1280
+            ? portfolio.images.detailhero.desktop
+            : breakPoint767
+            ? portfolio.images.detailhero.tablet
+            : portfolio.images.detailhero.mobile
+        }
+        previewOne={
+          breakPoint1280
+            ? portfolio.images.preview.desktopOne
+            : breakPoint767
+            ? portfolio.images.preview.tabletOne
+            : portfolio.images.preview.mobileOne
+        }
+        previewTwo={
+          breakPoint1280
+            ? portfolio.images.preview.desktopTwo
+            : breakPoint767
+            ? portfolio.images.preview.tabletTwo
+            : portfolio.images.preview.mobileTwo
+        }
         previous={portfolio.previous}
         next={portfolio.next}
         previousSlug={portfolio.previous.toLowerCase()}

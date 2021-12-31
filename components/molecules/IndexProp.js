@@ -11,26 +11,30 @@ export default function IndexProp({ id, name, image, description, slug }) {
     <IndexWrap
       style={
         breakPoint767 && id % 2 == 0
-          ? { flexDirection: "unset" }
-          : { flexDirection: "row-reverse" }
+          ? { flexDirection: "row-reverse" }
+          : { flexDirection: "unset" }
       }
     >
       <ImageContainer
         style={
-          breakPoint767 && id % 2 == 0
-            ? { paddingRight: "50px" }
-            : breakPoint767 && id % 2 > 0
-            ? { paddingLeft: "50px" }
-            : { paddingRight: "unset", paddingLeft: "unset" }
+          breakPoint1280 && id % 2 == 0
+            ? { paddingLeft: "125px" }
+            : breakPoint1280 && id % 2 != 0
+            ? { paddingRight: "125px" }
+            : breakPoint767 && id % 2 == 0
+            ? { paddingLeft: "70px" }
+            : breakPoint767 && id % 2 != 0
+            ? { paddingRight: "70px" }
+            : { paddingRight: "unset" }
         }
       >
         <Image
           src={image}
-          alt={name}
+          width={breakPoint1280 ? 540 : breakPoint767 ? 339 : 311}
           height={breakPoint1280 ? 500 : breakPoint767 ? 314 : 288}
           quality={100}
-          width={breakPoint1280 ? 540 : breakPoint767 ? 339 : 311}
           layout={breakPoint767 ? "" : "responsive"}
+          alt={name}
         />
       </ImageContainer>
       <Container>
@@ -51,11 +55,14 @@ const IndexWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 80px 40px;
-    margin: unset;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 800px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 1015px;
+    }
   }
 `;
 
@@ -80,6 +87,10 @@ const Container = styled.div`
     justify-content: center;
     margin-bottom: unset;
     max-width: 281px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 350px;
+    }
   }
 `;
 

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-// import mobiledetail from "../../public/assets/detail/mobile/image-manage-hero@2x.jpg";
 import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../public/assets/icons/arrow-right.svg";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export default function Carousel({
   name,
@@ -17,51 +17,62 @@ export default function Carousel({
   previousSlug,
   nextSlug,
 }) {
+  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
   return (
     <>
       <CarouselWrap>
         <ImageContainer>
           <Image
             src={detail}
-            width={311}
-            height={140}
+            width={breakPoint1280 ? 1110 : breakPoint767 ? 689 : 311}
+            height={breakPoint1280 ? 500 : breakPoint767 ? 310 : 140}
             layout="responsive"
             quality={100}
             alt="detail hero"
           />
         </ImageContainer>
-        <ContainerOne>
-          <Title>{name}</Title>
-          <Description>{description}</Description>
-          <Skills>
-            Interaction Design / Front End Development HTML/CSS/JS
-          </Skills>
-          <WebButton>
-            <Link href="/">
-              <a>visit website</a>
-            </Link>
-          </WebButton>
-        </ContainerOne>
-        <Background>
-          <Subtitle>Project Background</Subtitle>
-          <Description>
-            This project was a front-end challenge from Frontend Mentor.
-            It&#39;s a platform that enables you to practice building websites
-            to a design and project brief. Each challenge includes mobile and
-            desktop designs to show how the website should look at different
-            screen sizes. Creating these projects has helped me refine my
-            workflow and solve real-world coding problems. I&#39;ve learned
-            something new with each project, helping me to improve and adapt my
-            style.
-          </Description>
-        </Background>
+        <Summary>
+          <ContainerOne>
+            <TitleSum>
+              <Title>{name}</Title>
+              <DesContainer>
+                <Description>{description}</Description>
+              </DesContainer>
+            </TitleSum>
+            <Skills>
+              Interaction Design / Front End Development HTML/CSS/JS
+            </Skills>
+            <WebButton>
+              <Link href="/">
+                <a>visit website</a>
+              </Link>
+            </WebButton>
+          </ContainerOne>
+          <Background>
+            <Subtitle>Project Background</Subtitle>
+            <DesContainerTwo>
+              <Description>
+                This project was a front-end challenge from Frontend Mentor.
+                It&#39;s a platform that enables you to practice building
+                websites to a design and project brief. Each challenge includes
+                mobile and desktop designs to show how the website should look
+                at different screen sizes. Creating these projects has helped me
+                refine my workflow and solve real-world coding problems.
+                I&#39;ve learned something new with each project, helping me to
+                improve and adapt my style.
+              </Description>
+            </DesContainerTwo>
+          </Background>
+        </Summary>
         <ContainerThree>
           <Subtitle>Static Previews</Subtitle>
           <ImageContainerTwo>
             <Image
               src={previewOne}
-              width={313}
-              height={197}
+              width={breakPoint1280 ? 635 : breakPoint767 ? 689 : 311}
+              height={breakPoint1280 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
               style="margin-bottom: 32px"
               quality={100}
@@ -71,8 +82,8 @@ export default function Carousel({
           <ImageContainerTwo>
             <Image
               src={previewTwo}
-              width={313}
-              height={197}
+              width={breakPoint1280 ? 635 : breakPoint767 ? 689 : 311}
+              height={breakPoint1280 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
               style="margin-bottom: 32px"
               quality={100}
@@ -106,26 +117,89 @@ export default function Carousel({
 
 const CarouselWrap = styled.div`
   margin: 0 32px 48px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 94px 40px 80px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 94px 165px 115px;
+    }
+  }
 `;
 
 const ContainerOne = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  margin-top: 40px;
 `;
-const ImageContainer = styled.div``;
+const ImageContainer = styled.div`
+  max-width: 1100px;
+`;
 
 const ImageContainerTwo = styled(ImageContainer)`
   margin-bottom: 32px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    max-width: 689px;
+  }
+`;
+
+const Summary = styled.div`
+  margin-top: 40px;
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    display: flex;
+    margin-top: 115px;
+  }
+`;
+
+const TitleSum = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    justify-content: space-between;
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      display: unset;
+    }
+  }
 `;
 
 const Title = styled.h1``;
+
+const DesContainer = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: 339px;
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 350px;
+    }
+  }
+`;
+
+const DesContainerTwo = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: 688px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 635px;
+    }
+  }
+`;
+
 const Description = styled.p``;
+
 const Skills = styled.p`
   color: ${({ theme }) => theme.colors.desaturatedCyan};
   font-weight: bold;
   font-size: 13px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin-top: -100px;
+    padding-right: 391px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin-top: unset;
+      padding-right: 125px;
+    }
+  }
 `;
+
 const WebButton = styled.button`
   width: 178px;
   height: 48px;
@@ -154,6 +228,11 @@ const Subtitle = styled.h3``;
 
 const ContainerThree = styled.div`
   margin-bottom: 64px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-left: 480px;
+    max-width: 689px;
+  }
 `;
 
 const ContainerFour = styled.div`
@@ -161,6 +240,10 @@ const ContainerFour = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 64px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    max-width: 1110px;
+  }
 `;
 
 const Previous = styled.a`

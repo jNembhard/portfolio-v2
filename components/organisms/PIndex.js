@@ -39,5 +39,9 @@ const PIndexWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      justify-content: space-between;
+    }
   }
 `;
