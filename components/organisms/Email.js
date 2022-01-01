@@ -135,6 +135,16 @@ export default function Email() {
 
 const EmailWrap = styled.div`
   margin: 0 32px 80px;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: 689px;
+    width: 689px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      margin: 0 165px 109px;
+      width: 1110px;
+      max-width: 1110px;
+    }
+  }
 
   .border-error {
     border: 1px solid ${({ theme }) => theme.colors.brightRed};
@@ -152,8 +162,20 @@ const EmailWrap = styled.div`
     }
   }
 `;
-const Container = styled.div``;
-const Title = styled.h1``;
+
+const Container = styled.div`
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    display: flex;
+    flex-direction: row;
+    width: 1110px;
+  }
+`;
+const Title = styled.h1`
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    width: 360px;
+    margin-left: 60px;
+  }
+`;
 
 const Label = styled.label`
   font-family: "Public Sans";
@@ -165,6 +187,12 @@ const Label = styled.label`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    padding-left: 145px;
+    width: 1110px;
+    max-width: 1110px;
+  }
 `;
 
 const Input = styled.input`
@@ -175,6 +203,7 @@ const Input = styled.input`
   margin-bottom: 24px;
   font-size: 13px;
   border: none;
+
   &:focus {
     outline: 1px solid transparent;
     border: 1px solid ${({ theme }) => theme.colors.desaturatedCyan};

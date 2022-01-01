@@ -44,11 +44,11 @@ export default function Carousel({
             <Skills>
               Interaction Design / Front End Development HTML/CSS/JS
             </Skills>
-            <WebButton>
-              <Link href="/">
+            <Link href="/" passHref>
+              <WebButton>
                 <a>visit website</a>
-              </Link>
-            </WebButton>
+              </WebButton>
+            </Link>
           </ContainerOne>
           <Background>
             <Subtitle>Project Background</Subtitle>
@@ -130,6 +130,29 @@ const CarouselWrap = styled.div`
 const ContainerOne = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    border-top: unset;
+    border-bottom: unset;
+
+    &:before {
+      content: "";
+      display: block;
+      position: -webkit-sticky;
+      position: sticky;
+      border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+      width: 350px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: -webkit-sticky;
+      position: sticky;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+      width: 350px;
+    }
+  }
 `;
 const ImageContainer = styled.div`
   max-width: 1100px;
@@ -195,6 +218,7 @@ const Skills = styled.p`
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
       margin-top: unset;
+      margin-top: 23px;
       padding-right: 125px;
     }
   }
@@ -209,8 +233,9 @@ const WebButton = styled.button`
   margin: 24px 0;
   box-shadow: none;
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
-  background-color: ${({ theme }) => theme.colors.veryLightGreyBG};
+  background-color: transparent;
   color: ${({ theme }) => theme.colors.darkBlue};
+  cursor: pointer;
 
   a {
     color: inherit;
@@ -222,7 +247,12 @@ const WebButton = styled.button`
     color: ${({ theme }) => theme.colors.lightGrey};
   }
 `;
-const Background = styled.div``;
+const Background = styled.div`
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-top: -30px;
+    margin-bottom: 180px;
+  }
+`;
 
 const Subtitle = styled.h3``;
 
@@ -230,8 +260,9 @@ const ContainerThree = styled.div`
   margin-bottom: 64px;
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
-    margin-left: 480px;
+    margin-left: 465px;
     max-width: 689px;
+    margin-top: -200px;
   }
 `;
 

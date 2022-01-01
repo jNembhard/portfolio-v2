@@ -2,6 +2,7 @@ import Head from "next/head";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import styled from "styled-components";
 
 export async function getStaticPaths() {
   const paths = portfoliodata.map((portfolio) => ({
@@ -28,35 +29,46 @@ export default function PortfolioIndex({ portfolio }) {
         <meta name="Jason Nembhard" content="Jason Nembhard's projects" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Carousel
-        name={portfolio.name}
-        description={portfolio.description}
-        detail={
-          breakPoint1280
-            ? portfolio.images.detailhero.desktop
-            : breakPoint767
-            ? portfolio.images.detailhero.tablet
-            : portfolio.images.detailhero.mobile
-        }
-        previewOne={
-          breakPoint1280
-            ? portfolio.images.preview.desktopOne
-            : breakPoint767
-            ? portfolio.images.preview.tabletOne
-            : portfolio.images.preview.mobileOne
-        }
-        previewTwo={
-          breakPoint1280
-            ? portfolio.images.preview.desktopTwo
-            : breakPoint767
-            ? portfolio.images.preview.tabletTwo
-            : portfolio.images.preview.mobileTwo
-        }
-        previous={portfolio.previous}
-        next={portfolio.next}
-        previousSlug={portfolio.previous.toLowerCase()}
-        nextSlug={portfolio.next.toLowerCase()}
-      />
+      <Wrapper>
+        <Carousel
+          name={portfolio.name}
+          description={portfolio.description}
+          detail={
+            breakPoint1280
+              ? portfolio.images.detailhero.desktop
+              : breakPoint767
+              ? portfolio.images.detailhero.tablet
+              : portfolio.images.detailhero.mobile
+          }
+          previewOne={
+            breakPoint1280
+              ? portfolio.images.preview.desktopOne
+              : breakPoint767
+              ? portfolio.images.preview.tabletOne
+              : portfolio.images.preview.mobileOne
+          }
+          previewTwo={
+            breakPoint1280
+              ? portfolio.images.preview.desktopTwo
+              : breakPoint767
+              ? portfolio.images.preview.tabletTwo
+              : portfolio.images.preview.mobileTwo
+          }
+          previous={portfolio.previous}
+          next={portfolio.next}
+          previousSlug={portfolio.previous.toLowerCase()}
+          nextSlug={portfolio.next.toLowerCase()}
+        />
+      </Wrapper>
     </div>
   );
 }
+
+const Wrapper = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;

@@ -15,28 +15,31 @@ export default function GetInTouch() {
   return (
     <ContactWrap>
       <Container>
-        <Title>Get In Touch</Title>
-        <Description>
-          I&#39;d love to hear about what you&#39;re working on and how I could
-          help. I&#39;m currently looking for a new role and am open to a wide
-          range of opportunities. My preference would be to find a position in a
-          company in the US. But I&#39;m also happy to hear about opportunites
-          that don&#39;t fit that description. I&#39;m a hard-working and
-          positive person who will always approach each task with a sense of
-          purpose and attention to detail. Please do feel free to check out my
-          online profiles below and get in touch using the form.
-        </Description>
-        <SocialContainer>
-          {socials.map((social) => (
-            <Socials
-              key={social.id}
-              src={social.media}
-              width="24px"
-              height="24px"
-              alt={social.name}
-            />
-          ))}
-        </SocialContainer>
+        <Title>Get In Touch</Title>{" "}
+        <SummaryContainer>
+          <Description>
+            I&#39;d love to hear about what you&#39;re working on and how I
+            could help. I&#39;m currently looking for a new role and am open to
+            a wide range of opportunities. My preference would be to find a
+            position in a company in the US. But I&#39;m also happy to hear
+            about opportunites that don&#39;t fit that description. I&#39;m a
+            hard-working and positive person who will always approach each task
+            with a sense of purpose and attention to detail. Please do feel free
+            to check out my online profiles below and get in touch using the
+            form.
+          </Description>
+          <SocialContainer>
+            {socials.map((social) => (
+              <Socials
+                key={social.id}
+                src={social.media}
+                width="24px"
+                height="24px"
+                alt={social.name}
+              />
+            ))}
+          </SocialContainer>
+        </SummaryContainer>
       </Container>
     </ContactWrap>
   );
@@ -44,11 +47,34 @@ export default function GetInTouch() {
 
 const ContactWrap = styled.div`
   margin: 40px 32px;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin: 47px 165px;
+    widht: 1110px;
+    max-width: 1110px;
+  }
 `;
+
 const Container = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    display: flex;
+    padding: 48px 0;
+  }
 `;
+
+const SummaryContainer = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-width: 689px;
+  }
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    max-width: 635px;
+    margin-left: 145px;
+  }
+`;
+
 const Title = styled.h1``;
 const Description = styled.p`
   margin-bottom: 24px;
