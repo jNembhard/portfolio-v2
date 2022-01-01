@@ -88,6 +88,12 @@ const Container = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      /* justify-content: space-between; */
+      max-width: 1440px;
+    }
   }
 `;
 

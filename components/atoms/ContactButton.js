@@ -29,6 +29,7 @@ const Container = styled.div`
       align-items: center;
       text-align: left;
       margin: 0 165px 150px;
+      max-width: 1440px;
     }
   }
 `;

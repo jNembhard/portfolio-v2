@@ -22,6 +22,8 @@ export default function About() {
               ? headshottablet2
               : headshotmobile2
           }
+          width={breakPoint1280 ? 540 : breakPoint767 ? 281 : 311}
+          height={breakPoint767 ? 600 : 346}
           quality={100}
           alt="headshot"
         />
@@ -56,15 +58,16 @@ const AboutWrap = styled.div`
     margin: 0 40px;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      display: flex;
       margin: 0 260px 150px 165px;
     }
   }
 `;
 const ImageContainer = styled.div`
+  display: block;
   margin-bottom: 32px;
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 95px 0 96px 0;
+    max-width: 540px;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
       margin: 95px 125px 96px 0;

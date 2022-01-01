@@ -40,7 +40,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1800px;
+  max-width: 1440px;
 `;
 
 const ATag = styled.a`

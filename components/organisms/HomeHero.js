@@ -21,6 +21,8 @@ export default function HomeHero() {
               ? tablethero
               : mobilehero
           }
+          width={breakPoint1280 ? 1110 : breakPoint767 ? 688 : 311}
+          height={breakPoint767 ? 600 : 271}
           quality={100}
           layout="responsive"
           alt="Hero"
@@ -46,9 +48,12 @@ export default function HomeHero() {
 const HeroWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     position: relative;
+    width: 100%;
   }
 `;
+
 const ImageContainer = styled.div`
+  display: block;
   margin: 0 32px 24px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -56,6 +61,7 @@ const ImageContainer = styled.div`
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
       margin: 75px 165px 150px;
+      max-width: 1110px;
     }
   }
 `;
@@ -65,21 +71,20 @@ const TitleContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     position: absolute;
-    top: 322px;
-    right: 215px;
-    bottom: -96px;
+    bottom: 0;
     left: 39px;
     background-color: white;
     margin: unset;
+    max-width: 514px;
+    max-height: 278px;
+    margin-bottom: auto;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      position: absolute;
       top: 243px;
-      right: 665px;
-      bottom: 0;
-      left: 165px;
+      left: 163px;
+      bottom: -1px;
       max-width: 445px;
-      background-color: white;
+      max-height: 357px;
       margin: unset;
     }
   }

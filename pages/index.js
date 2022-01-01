@@ -2,6 +2,7 @@ import Head from "next/head";
 import ContactButton from "../components/atoms/ContactButton";
 import About from "../components/organisms/About";
 import HomeHero from "../components/organisms/HomeHero";
+import styled from "styled-components";
 
 export default function Home() {
   return (
@@ -14,9 +15,16 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <HomeHero />
       <About />
-      <ContactButton />
+      <Wrapper style={{ maxWidth: "1440px" }}>
+        <ContactButton />
+      </Wrapper>
     </div>
   );
 }
+
+const Wrapper = styled.div`
+  max-width: 1440px;
+`;

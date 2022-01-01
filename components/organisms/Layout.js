@@ -4,6 +4,7 @@ import IbarraRegular from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Regu
 import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.ttf";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
+import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -87,13 +88,22 @@ const theme = {
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Header />
-        <main>{children}</main>
+        <Main>{children}</Main>
         <Footer />
       </ThemeProvider>
-    </>
+    </div>
   );
 }
+
+const Main = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+`;

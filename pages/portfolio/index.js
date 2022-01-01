@@ -1,6 +1,5 @@
 import Head from "next/head";
 import PIndex from "../../components/organisms/PIndex";
-import styled from "styled-components";
 
 export default function Portfolio() {
   return (
@@ -13,18 +12,8 @@ export default function Portfolio() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Wrapper>
-        <PIndex />
-      </Wrapper>
+
+      <PIndex />
     </div>
   );
 }
-
-const Wrapper = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-`;
