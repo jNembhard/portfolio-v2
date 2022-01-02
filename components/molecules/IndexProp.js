@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export default function IndexProp({ id, name, image, description, slug }) {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -17,9 +17,9 @@ export default function IndexProp({ id, name, image, description, slug }) {
     >
       <ImageContainer
         style={
-          breakPoint1280 && id % 2 == 0
+          breakPoint1200 && id % 2 == 0
             ? { paddingLeft: "125px" }
-            : breakPoint1280 && id % 2 != 0
+            : breakPoint1200 && id % 2 != 0
             ? { paddingRight: "125px" }
             : breakPoint767 && id % 2 == 0
             ? { paddingLeft: "70px" }
@@ -30,8 +30,8 @@ export default function IndexProp({ id, name, image, description, slug }) {
       >
         <Image
           src={image}
-          width={breakPoint1280 ? 540 : breakPoint767 ? 339 : 311}
-          height={breakPoint1280 ? 500 : breakPoint767 ? 314 : 288}
+          width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
+          height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
           quality={100}
           layout={breakPoint767 ? "" : "responsive"}
           alt={name}
@@ -60,8 +60,12 @@ const IndexWrap = styled.div`
     justify-content: center;
     max-width: 800px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      max-width: 1015px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      max-width: 930px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        max-width: 1015px;
+      }
     }
   }
 `;
@@ -88,7 +92,7 @@ const Container = styled.div`
     margin-bottom: unset;
     max-width: 281px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 350px;
     }
   }

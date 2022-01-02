@@ -17,7 +17,7 @@ export default function Carousel({
   previousSlug,
   nextSlug,
 }) {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -26,8 +26,8 @@ export default function Carousel({
         <ImageContainer>
           <Image
             src={detail}
-            width={breakPoint1280 ? 1110 : breakPoint767 ? 689 : 311}
-            height={breakPoint1280 ? 500 : breakPoint767 ? 310 : 140}
+            width={breakPoint1200 ? 1110 : breakPoint767 ? 689 : 311}
+            height={breakPoint1200 ? 500 : breakPoint767 ? 310 : 140}
             layout="responsive"
             quality={100}
             alt="detail hero"
@@ -71,10 +71,9 @@ export default function Carousel({
           <ImageContainerTwo>
             <Image
               src={previewOne}
-              width={breakPoint1280 ? 635 : breakPoint767 ? 689 : 311}
-              height={breakPoint1280 ? 400 : breakPoint767 ? 434 : 196}
+              width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
+              height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
-              style="margin-bottom: 32px"
               quality={100}
               alt="static preview one"
             />
@@ -82,10 +81,9 @@ export default function Carousel({
           <ImageContainerTwo>
             <Image
               src={previewTwo}
-              width={breakPoint1280 ? 635 : breakPoint767 ? 689 : 311}
-              height={breakPoint1280 ? 400 : breakPoint767 ? 434 : 196}
+              width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
+              height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
-              style="margin-bottom: 32px"
               quality={100}
               alt="static preview two"
             />
@@ -121,8 +119,12 @@ const CarouselWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 94px 40px 80px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 94px 165px 115px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 94px 80px 115px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 94px 165px 115px;
+      }
     }
   }
 `;
@@ -131,7 +133,7 @@ const ContainerOne = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     border-top: unset;
     border-bottom: unset;
 
@@ -154,6 +156,7 @@ const ContainerOne = styled.div`
     }
   }
 `;
+
 const ImageContainer = styled.div`
   max-width: 1100px;
 `;
@@ -161,14 +164,14 @@ const ImageContainer = styled.div`
 const ImageContainerTwo = styled(ImageContainer)`
   margin-bottom: 32px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: 689px;
   }
 `;
 
 const Summary = styled.div`
   margin-top: 40px;
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
     margin-top: 115px;
   }
@@ -178,7 +181,7 @@ const TitleSum = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
     justify-content: space-between;
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       display: unset;
     }
   }
@@ -189,7 +192,7 @@ const Title = styled.h1``;
 const DesContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 339px;
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 350px;
     }
   }
@@ -199,7 +202,7 @@ const DesContainerTwo = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 688px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 635px;
     }
   }
@@ -216,7 +219,7 @@ const Skills = styled.p`
     margin-top: -100px;
     padding-right: 391px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin-top: unset;
       margin-top: 23px;
       padding-right: 125px;
@@ -248,7 +251,7 @@ const WebButton = styled.button`
   }
 `;
 const Background = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-top: -30px;
     margin-bottom: 180px;
   }
@@ -259,7 +262,7 @@ const Subtitle = styled.h3``;
 const ContainerThree = styled.div`
   margin-bottom: 64px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-left: 465px;
     max-width: 689px;
     margin-top: -200px;
@@ -272,7 +275,7 @@ const ContainerFour = styled.div`
   justify-content: space-between;
   margin-bottom: 64px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: 1110px;
   }
 `;

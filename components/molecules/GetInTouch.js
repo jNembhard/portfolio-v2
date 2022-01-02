@@ -15,7 +15,7 @@ export default function GetInTouch() {
   return (
     <ContactWrap>
       <Container>
-        <Title>Get In Touch</Title>{" "}
+        <Title>Get In Touch</Title>
         <SummaryContainer>
           <Description>
             I&#39;d love to hear about what you&#39;re working on and how I
@@ -48,10 +48,21 @@ export default function GetInTouch() {
 const ContactWrap = styled.div`
   margin: 40px 32px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    margin: 47px 165px;
-    widht: 1110px;
-    max-width: 1110px;
+  @media ${({ theme }) => theme.breakpoints.laptop} {
+    margin: 47px 100px;
+    width: 900px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 47px 165px;
+      width: 1110px;
+      max-width: 1110px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 47px 165px;
+        width: 1110px;
+        max-width: 1110px;
+      }
+    }
   }
 `;
 
@@ -59,7 +70,7 @@ const Container = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
     padding: 48px 0;
   }
@@ -68,14 +79,17 @@ const Container = styled.div`
 const SummaryContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 689px;
-  }
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    max-width: 635px;
-    margin-left: 145px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      max-width: 635px;
+      margin-left: 145px;
+      margin-top: 10px;
+    }
   }
 `;
 
 const Title = styled.h1``;
+
 const Description = styled.p`
   margin-bottom: 24px;
 `;
@@ -88,4 +102,5 @@ const SocialContainer = styled.div`
   height: 24px;
   margin-bottom: 24px;
 `;
+
 const Socials = styled(Image)``;

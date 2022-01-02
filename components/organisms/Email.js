@@ -135,14 +135,19 @@ export default function Email() {
 
 const EmailWrap = styled.div`
   margin: 0 32px 80px;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 689px;
     width: 689px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 0 165px 109px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 0 0 109px;
       width: 1110px;
       max-width: 1110px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 0 165px 109px;
+      }
     }
   }
 
@@ -164,16 +169,15 @@ const EmailWrap = styled.div`
 `;
 
 const Container = styled.div`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
     flex-direction: row;
     width: 1110px;
   }
 `;
 const Title = styled.h1`
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 360px;
-    margin-left: 60px;
   }
 `;
 
@@ -188,10 +192,16 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    padding-left: 145px;
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 1110px;
     max-width: 1110px;
+    padding-left: 145px;
+    margin-top: 20px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      width: 1110px;
+      max-width: 1110px;
+    }
   }
 `;
 

@@ -24,12 +24,18 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     text-align: left;
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       display: flex;
       align-items: center;
       text-align: left;
-      margin: 0 165px 150px;
-      max-width: 1440px;
+      margin: 0 80px 110px;
+      max-width: 1170px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 0 165px 150px;
+        max-width: 1440px;
+      }
     }
   }
 `;
@@ -49,8 +55,12 @@ const Line = styled.hr`
     background-color: ${({ theme }) => theme.colors.lightGrey};
     border: 0;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      width: 534px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      width: 480px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        width: 534px;
+      }
     }
   }
 `;

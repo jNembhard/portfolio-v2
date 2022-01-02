@@ -5,7 +5,7 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import styled from "styled-components";
 
 export default function PIndex() {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -18,7 +18,7 @@ export default function PIndex() {
             name={data.name}
             slug={data.slug}
             image={
-              breakPoint1280
+              breakPoint1200
                 ? data.images.index.desktop
                 : breakPoint767
                 ? data.images.index.tablet
@@ -40,7 +40,7 @@ const PIndexWrap = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       justify-content: space-between;
     }
   }

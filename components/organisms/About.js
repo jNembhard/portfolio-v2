@@ -7,7 +7,7 @@ import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-
 import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-profile@2x.jpg";
 
 export default function About() {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -16,15 +16,16 @@ export default function About() {
         <Image
           id="about"
           src={
-            breakPoint1280
+            breakPoint1200
               ? headshotdesktop2
               : breakPoint767
               ? headshottablet2
               : headshotmobile2
           }
-          width={breakPoint1280 ? 540 : breakPoint767 ? 281 : 311}
+          width={breakPoint1200 ? 540 : breakPoint767 ? 281 : 311}
           height={breakPoint767 ? 600 : 346}
           quality={100}
+          layout={breakPoint767 ? "" : "responsive"}
           alt="headshot"
         />
       </ImageContainer>
@@ -57,20 +58,29 @@ const AboutWrap = styled.div`
     display: flex;
     margin: 0 40px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 0 260px 150px 165px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 0 100px 150px 80px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 0 260px 150px 165px;
+      }
     }
   }
 `;
 const ImageContainer = styled.div`
   display: block;
   margin-bottom: 32px;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 95px 0 96px 0;
     max-width: 540px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 95px 125px 96px 0;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 100px 80px 70px 0;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 95px 125px 96px 0;
+      }
     }
   }
 `;
@@ -86,7 +96,7 @@ const ContainerTwo = styled.div`
     max-width: 339px;
     max-height: 100%;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 350px;
       height: 600px;
       margin: 100px 0 0 0;
@@ -98,7 +108,7 @@ const ContainerTwo = styled.div`
 const Title = styled.h1`
   letter-spacing: -0.36px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     padding-top: 30px;
   }
 `;
@@ -123,7 +133,7 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 39px;
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-bottom: 0;
   }
 

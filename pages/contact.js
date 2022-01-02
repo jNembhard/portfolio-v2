@@ -29,5 +29,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      max-width: 1170px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        max-width: 1440px;
+      }
+    }
   }
 `;

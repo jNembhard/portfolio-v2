@@ -70,7 +70,6 @@ const SideBarContainer = styled.div`
     color: ${({ theme }) => theme.colors.lightGrey};
     text-transform: uppercase;
     margin: 0 26px;
-
     margin-top: 20px;
     display: inline-flex;
     flex-direction: column;

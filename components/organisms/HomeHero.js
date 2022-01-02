@@ -7,7 +7,7 @@ import desktophero from "../../public/assets/homepage/desktop/image-homepage-her
 import downarrow from "../../public/assets/icons/down-arrows.svg";
 
 export default function HomeHero() {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -15,13 +15,13 @@ export default function HomeHero() {
       <ImageContainer>
         <Image
           src={
-            breakPoint1280
+            breakPoint1200
               ? desktophero
               : breakPoint767
               ? tablethero
               : mobilehero
           }
-          width={breakPoint1280 ? 1110 : breakPoint767 ? 688 : 311}
+          width={breakPoint1200 ? 1110 : breakPoint767 ? 688 : 311}
           height={breakPoint767 ? 600 : 271}
           quality={100}
           layout="responsive"
@@ -59,9 +59,13 @@ const ImageContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 41px 24px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 75px 165px 150px;
-      max-width: 1110px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 20px 80px 80px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 75px 165px 150px;
+        max-width: 1110px;
+      }
     }
   }
 `;
@@ -79,13 +83,23 @@ const TitleContainer = styled.div`
     max-height: 278px;
     margin-bottom: auto;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       top: 243px;
-      left: 163px;
+      left: 80px;
       bottom: -1px;
       max-width: 445px;
       max-height: 357px;
       margin: unset;
+      margin-left: auto;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        top: 243px;
+        left: 163px;
+        bottom: -1px;
+        max-width: 445px;
+        max-height: 357px;
+        margin: unset;
+      }
     }
   }
 `;
@@ -97,7 +111,7 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 56px 56px 20px 0;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 56px 56px 53px 0;
     }
   }

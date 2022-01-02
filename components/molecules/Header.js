@@ -30,8 +30,12 @@ const NavHeader = styled.header`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 64px 40px 47px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      margin: 64px 165px 54px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      margin: 64px 80px 54px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 64px 165px 54px;
+      }
     }
   }
 `;
@@ -40,7 +44,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
+
+  @media ${({ theme }) => theme.breakpoints.laptop} {
+    max-width: 1280px;
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      max-width: 1440px;
+    }
+  }
 `;
 
 const ATag = styled.a`

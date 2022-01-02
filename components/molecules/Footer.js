@@ -90,9 +90,12 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      /* justify-content: space-between; */
-      max-width: 1440px;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      max-width: 1170px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        max-width: 1440px;
+      }
     }
   }
 `;
@@ -109,7 +112,7 @@ const LogoContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 0 48px 0 20px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 0 48px 0 0;
     }
   }
@@ -161,9 +164,12 @@ const SocialContainer = styled.div`
     flex-direction: row;
     margin: 28px 40px 28px 167px;
 
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      flex-direction: row;
+    @media ${({ theme }) => theme.breakpoints.laptop} {
       margin: 28px 40px 28px 588px;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        margin: 28px 40px 28px 588px;
+      }
     }
   }
 `;

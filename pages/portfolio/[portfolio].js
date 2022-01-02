@@ -19,7 +19,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PortfolioIndex({ portfolio }) {
-  const breakPoint1280 = useMediaQuery(`(min-width: 1280px)`);
+  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   return (
@@ -34,21 +34,21 @@ export default function PortfolioIndex({ portfolio }) {
           name={portfolio.name}
           description={portfolio.description}
           detail={
-            breakPoint1280
+            breakPoint1200
               ? portfolio.images.detailhero.desktop
               : breakPoint767
               ? portfolio.images.detailhero.tablet
               : portfolio.images.detailhero.mobile
           }
           previewOne={
-            breakPoint1280
+            breakPoint1200
               ? portfolio.images.preview.desktopOne
               : breakPoint767
               ? portfolio.images.preview.tabletOne
               : portfolio.images.preview.mobileOne
           }
           previewTwo={
-            breakPoint1280
+            breakPoint1200
               ? portfolio.images.preview.desktopTwo
               : breakPoint767
               ? portfolio.images.preview.tabletTwo
