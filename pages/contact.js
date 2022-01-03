@@ -23,7 +23,7 @@ export default function Contact() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
     flex-direction: column;

@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, router }) {
 
 export default MyApp;
 
-const Main = styled(motion.main)`
+const Main = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
     align-items: center;

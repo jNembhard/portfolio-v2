@@ -12,8 +12,9 @@ export default function Portfolio() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <PIndex />
+      <main>
+        <PIndex />
+      </main>
     </div>
   );
 }

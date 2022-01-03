@@ -8,9 +8,7 @@ export default function ContactButton() {
       <Line />
 
       <Link href="/contact" passHref>
-        <Button>
-          <a>contact me</a>
-        </Button>
+        <Button>contact me</Button>
       </Link>
     </Container>
   );
@@ -65,7 +63,7 @@ const Line = styled.hr`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -84,10 +82,8 @@ const Button = styled.button`
     width: 200px;
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  text-decoration: none;
+  color: inherit;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};

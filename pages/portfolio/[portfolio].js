@@ -30,11 +30,11 @@ export default function PortfolioIndex({ portfolio }) {
         <meta name="Jason Nembhard" content="Jason Nembhard's projects" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Wrapper>
-        <AnimatePresence
-          exitBeforeEnter
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Wrapper>
           <Carousel
             name={portfolio.name}
             description={portfolio.description}
@@ -64,13 +64,13 @@ export default function PortfolioIndex({ portfolio }) {
             previousSlug={portfolio.previous.toLowerCase()}
             nextSlug={portfolio.next.toLowerCase()}
           />
-        </AnimatePresence>
-      </Wrapper>
+        </Wrapper>
+      </AnimatePresence>
     </div>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
     flex-direction: column;
