@@ -42,9 +42,9 @@ export default function About() {
           to check out my work.
         </Description>
         <Link href="/portfolio" passHref>
-          <Button>
-            <a>go to portfolio</a>
-          </Button>
+          <a>
+            <Button>go to portfolio</Button>
+          </a>
         </Link>
       </ContainerTwo>
     </AboutWrap>
@@ -123,6 +123,7 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
+  font-family: "Public Sans";
   width: 202px;
   height: 48px;
   font-size: 12px;
@@ -132,6 +133,7 @@ const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
   cursor: pointer;
   margin-bottom: 39px;
+  text-transform: uppercase;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-bottom: 0;
@@ -141,10 +143,9 @@ const Button = styled.button`
     color: ${({ theme }) => theme.colors.veryLightGreyBG};
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
   }
+`;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+const ButtonWrap = styled.a`
+  color: inherit;
+  text-decoration: none;
 `;

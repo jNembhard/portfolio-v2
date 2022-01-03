@@ -64,6 +64,7 @@ const Line = styled.hr`
 `;
 
 const Button = styled.a`
+  font-family: "Public Sans";
   display: inline-flex;
   align-items: center;
   justify-content: center;

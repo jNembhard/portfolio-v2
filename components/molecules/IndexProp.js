@@ -41,9 +41,9 @@ export default function IndexProp({ id, name, image, description, slug }) {
         <Title>{name}</Title>
         <Description>{description}</Description>
         <Link href={`/portfolio/${slug}`} passHref>
-          <ProjectButton>
-            <a>view project</a>
-          </ProjectButton>
+          <ButtonWrapper>
+            <ProjectButton>view project</ProjectButton>
+          </ButtonWrapper>
         </Link>
       </Container>
     </IndexWrap>
@@ -125,13 +125,13 @@ const ProjectButton = styled.button`
     margin-bottom: 50px;
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
   &:hover {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
   }
+`;
+
+const ButtonWrapper = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;
