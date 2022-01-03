@@ -33,7 +33,7 @@ const Main = styled(motion.div)`
 const variants = {
   initial: {
     opacity: 0,
-    x: 300,
+    x: -300,
   },
   enter: {
     opacity: 1,

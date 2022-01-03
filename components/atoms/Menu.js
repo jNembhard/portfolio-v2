@@ -10,8 +10,8 @@ const navLinks = [
 export default function Menu() {
   return (
     <>
-      <MenuLinks>
-        <Container>
+      <MenuWrapper>
+        <MenuLinks>
           {navLinks.map(({ name, url }, index) => (
             <li className="second-color" key={index}>
               <Link href={url}>
@@ -19,26 +19,25 @@ export default function Menu() {
               </Link>
             </li>
           ))}
-        </Container>
-      </MenuLinks>
+        </MenuLinks>
+      </MenuWrapper>
     </>
   );
 }
 
-const MenuLinks = styled.ul`
+const MenuWrapper = styled.div`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     font-family: "Public Sans";
     display: flex;
-    list-style-type: none;
     text-transform: uppercase;
     justify-content: space-between;
     margin-left: 260px;
   }
 `;
 
-const Container = styled.div`
+const MenuLinks = styled.ul`
   display: none;
   @media ${({ theme }) => theme.breakpoints.tablet} {
     color: ${({ theme }) => theme.colors.grayishDarkBlue};
@@ -47,6 +46,7 @@ const Container = styled.div`
     font-size: 12px;
     letter-spacing: 2px;
     width: 300px;
+    list-style-type: none;
 
     a {
       text-decoration: none;

@@ -4,6 +4,10 @@ const withFonts = require("next-fonts");
 
 module.exports = {
   reactStrictMode: true,
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = withFonts();
