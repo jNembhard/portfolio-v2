@@ -18,13 +18,13 @@ export default function Home() {
 
       <HomeHero />
       <About />
-      <Wrapper style={{ maxWidth: "1440px" }}>
+      <ContactWrapper style={{ maxWidth: "1440px" }}>
         <ContactButton />
-      </Wrapper>
+      </ContactWrapper>
     </div>
   );
 }
 
-const Wrapper = styled.div`
+const ContactWrapper = styled.div`
   max-width: 1440px;
 `;

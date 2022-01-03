@@ -5,6 +5,7 @@ import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
 import styled from "styled-components";
+import { AnimatePresence } from "framer-motion";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -92,18 +93,15 @@ export default function Layout({ children }) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Header />
-        <Main>{children}</Main>
+        <AnimatePresence
+          initial={false}
+          exitBeforeEnter
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          {children}
+        </AnimatePresence>
         <Footer />
       </ThemeProvider>
     </div>
   );
 }
-
-const Main = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-`;

@@ -288,6 +288,12 @@ const Previous = styled.a`
   padding-top: 15px;
   color: inherit;
   text-decoration: none;
+
+  @media ${({ theme }) => theme.breakpoints.laptop} {
+    &:hover {
+      color: ${({ theme }) => theme.colors.desaturatedCyan};
+    }
+  }
 `;
 
 const Next = styled.a`
@@ -298,6 +304,12 @@ const Next = styled.a`
   padding-top: 15px;
   color: inherit;
   text-decoration: none;
+
+  @media ${({ theme }) => theme.breakpoints.laptop} {
+    &:hover {
+      color: ${({ theme }) => theme.colors.desaturatedCyan};
+    }
+  }
 `;
 
 const LeftTitle = styled.h3`

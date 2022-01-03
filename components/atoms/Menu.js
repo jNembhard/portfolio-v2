@@ -52,6 +52,7 @@ const Container = styled.div`
       text-decoration: none;
       color: inherit;
 
+      &.active,
       &:hover {
         color: ${({ theme }) => theme.colors.desaturatedCyan};
       }
