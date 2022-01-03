@@ -25,6 +25,7 @@ export default function Carousel({
       <CarouselWrap>
         <ImageContainer>
           <Image
+            priority
             src={detail}
             width={breakPoint1200 ? 1110 : breakPoint767 ? 689 : 311}
             height={breakPoint1200 ? 500 : breakPoint767 ? 310 : 140}
@@ -45,9 +46,9 @@ export default function Carousel({
               Interaction Design / Front End Development HTML/CSS/JS
             </Skills>
             <Link href="/" passHref>
-              <WebButton>
-                <a>visit website</a>
-              </WebButton>
+              <ButtonWrap>
+                <WebButton>visit website</WebButton>
+              </ButtonWrap>
             </Link>
           </ContainerOne>
           <Background>
@@ -240,11 +241,6 @@ const WebButton = styled.button`
   color: ${({ theme }) => theme.colors.darkBlue};
   cursor: pointer;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
   &:hover {
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
     color: ${({ theme }) => theme.colors.lightGrey};
@@ -255,6 +251,11 @@ const Background = styled.div`
     margin-top: -30px;
     margin-bottom: 180px;
   }
+`;
+
+const ButtonWrap = styled.a`
+  color: inherit;
+  text-decoration: none;
 `;
 
 const Subtitle = styled.h3``;

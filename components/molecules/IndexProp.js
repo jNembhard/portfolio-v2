@@ -29,6 +29,7 @@ export default function IndexProp({ id, name, image, description, slug }) {
         }
       >
         <Image
+          priority
           src={image}
           width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
           height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}

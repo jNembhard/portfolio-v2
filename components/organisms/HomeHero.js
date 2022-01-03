@@ -14,6 +14,7 @@ export default function HomeHero() {
     <HeroWrap>
       <ImageContainer>
         <Image
+          priority
           src={
             breakPoint1200
               ? desktophero
