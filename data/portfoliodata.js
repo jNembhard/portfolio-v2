@@ -2,7 +2,7 @@ export const portfoliodata = [
   {
     id: 1,
     name: "Coffeeroasters",
-    slug: "coffeeroasters",
+    slug: "coffee",
     description:
       "This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, such as the testimonial slider.",
     images: {
@@ -64,13 +64,13 @@ export const portfoliodata = [
         desktopTwo: "/assets/detail/desktop/image-galleria-preview-2@2x.jpg",
       },
     },
-    previous: "Coffeeroasters",
-    next: "Planetfacts",
+    previous: "Coffee",
+    next: "Planets",
   },
   {
     id: 3,
     name: "Planet Facts",
-    slug: "planetfacts",
+    slug: "planets",
     description:
       "This was a small project which mostly consisted of HTML and CSS. I built a fully-responsive landing page. The only JavaScript this project required was to enable the toggling of the mobile navigation.",
     images: {
@@ -104,9 +104,9 @@ export const portfoliodata = [
       "This project was built in pure HTML and CSS. I had mobile and desktop designs to work to and build it so that it was fully responsive. I took a mobile-first approach and used modern CSS like Flexbox and Grid for layout purposes.",
     images: {
       index: {
-        mobile: "/assets/portfolio/mobile/image-portfolio-fylo@2x.jpg",
-        tablet: "/assets/portfolio/tablet/image-portfolio-fylo@2x.jpg",
-        desktop: "/assets/portfolio/desktop/image-portfolio-fylo@2x.jpg",
+        mobile: "/assets/portfolio/desktop/image-portfolio-netflix@2x.jpg",
+        tablet: "/assets/portfolio/desktop/image-portfolio-netflix@2x.jpg",
+        desktop: "/assets/portfolio/desktop/image-portfolio-netflix@2x.jpg",
       },
       detailhero: {
         mobile: "/assets/detail/desktop/image-netflix-hero@2x.jpg",
@@ -122,7 +122,7 @@ export const portfoliodata = [
         desktopTwo: "/assets/detail/desktop/image-netflix-preview-2@2x.jpg",
       },
     },
-    previous: "Planetfacts",
-    next: "Coffeeroasters",
+    previous: "Planets",
+    next: "Coffee",
   },
 ];
