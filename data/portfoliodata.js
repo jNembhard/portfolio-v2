@@ -112,9 +112,9 @@ export const portfoliodata = [
         desktop: "/assets/portfolio/desktop/image-portfolio-netflix@2x.webp",
       },
       detailhero: {
-        mobile: "/assets/detail/desktop/image-netflix-hero@2x.webp",
-        tablet: "/assets/detail/desktop/image-netflix-hero@2x.webp",
-        desktop: "/assets/detail/desktop/image-netflix-hero@2x.webp",
+        mobile: "/assets/detail/desktop/image-netflix-hero.webp",
+        tablet: "/assets/detail/desktop/image-netflix-hero.webp",
+        desktop: "/assets/detail/desktop/image-netflix-hero.webp",
       },
       preview: {
         mobileOne: "/assets/detail/desktop/image-netflix-preview-1@2x.webp",
