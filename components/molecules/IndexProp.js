@@ -35,6 +35,8 @@ export default function IndexProp({ id, name, image, description, slug }) {
           height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
           quality={100}
           layout={breakPoint767 ? "" : "responsive"}
+          placeholder="blur"
+          blurDataURL={image}
           alt={name}
         />
       </ImageContainer>
