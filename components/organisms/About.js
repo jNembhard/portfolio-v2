@@ -25,6 +25,7 @@ export default function About() {
           width={breakPoint1200 ? 540 : breakPoint767 ? 281 : 311}
           height={breakPoint767 ? 600 : 346}
           quality={100}
+          placeholder="blur"
           layout={breakPoint767 ? "" : "responsive"}
           alt="headshot"
         />

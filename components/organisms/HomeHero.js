@@ -26,6 +26,7 @@ export default function HomeHero() {
           height={breakPoint767 ? 600 : 271}
           quality={100}
           layout="responsive"
+          placeholder="blur"
           alt="Hero"
         />
       </ImageContainer>
