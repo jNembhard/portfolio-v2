@@ -44,7 +44,7 @@ export default function Email() {
     <EmailWrap>
       <Container>
         <Title>Contact Me</Title>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} autocomplete="off">
           <Label htmlFor="fullname">Name</Label>
           <Input
             id="fullname"

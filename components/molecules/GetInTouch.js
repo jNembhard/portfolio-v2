@@ -6,9 +6,14 @@ import linkedin from "../../public/assets/icons/linkedin.svg";
 import twitter from "../../public/assets/icons/twitter.svg";
 
 const socials = [
-  { id: 1, name: "github", media: github },
-  { id: 2, name: "twitter", media: twitter },
-  { id: 3, name: "linkedin", media: linkedin },
+  { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
+  { id: 2, name: "twitter", media: twitter, url: "/" },
+  {
+    id: 3,
+    name: "linkedin",
+    media: linkedin,
+    url: "https://www.linkedin.com/jasonnembhard1/",
+  },
 ];
 
 export default function GetInTouch() {
@@ -30,13 +35,20 @@ export default function GetInTouch() {
           </Description>
           <SocialContainer>
             {socials.map((social) => (
-              <Socials
+              <a
                 key={social.id}
-                src={social.media}
-                width="24px"
-                height="24px"
-                alt={social.name}
-              />
+                target="_blank"
+                rel="noopener noreferrer"
+                href={social.url}
+              >
+                <Socials
+                  key={social.id}
+                  src={social.media}
+                  width="24px"
+                  height="24px"
+                  alt={social.name}
+                />
+              </a>
             ))}
           </SocialContainer>
         </SummaryContainer>
