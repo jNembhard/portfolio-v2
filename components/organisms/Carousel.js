@@ -78,8 +78,6 @@ export default function Carousel({
               height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
               quality={100}
-              placeholder="blur"
-              blurDataURL={previewOne}
               alt="static preview one"
             />
           </ImageContainerTwo>
@@ -90,8 +88,6 @@ export default function Carousel({
               height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
               layout="responsive"
               quality={100}
-              placeholder="blur"
-              blurDataURL={previewTwo}
               alt="static preview two"
             />
           </ImageContainerTwo>
