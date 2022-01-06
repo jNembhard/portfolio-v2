@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
 export default function IndexProp({ id, name, image, description, slug }) {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
@@ -18,28 +19,38 @@ export default function IndexProp({ id, name, image, description, slug }) {
       <ImageContainer
         style={
           breakPoint1200 && id % 2 == 0
-            ? { paddingLeft: "125px" }
+            ? { marginLeft: "125px" }
             : breakPoint1200 && id % 2 != 0
-            ? { paddingRight: "125px" }
+            ? { marginRight: "125px" }
             : breakPoint767 && id % 2 == 0
-            ? { paddingLeft: "70px" }
+            ? { marginLeft: "70px" }
             : breakPoint767 && id % 2 != 0
-            ? { paddingRight: "70px" }
-            : { paddingRight: "unset" }
+            ? { marginRight: "70px" }
+            : { marginRight: "unset" }
         }
       >
-        <Image
-          priority
-          src={image}
-          width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
-          height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
-          quality={100}
-          layout={breakPoint767 ? "" : "responsive"}
-          placeholder="blur"
-          blurDataURL={image}
-          alt={name}
-        />
+        <Link href={`/portfolio/${slug}`} passHref>
+          <ButtonWrapper>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                priority
+                src={image}
+                width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
+                height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
+                quality={100}
+                layout={breakPoint767 ? "" : "responsive"}
+                placeholder="blur"
+                blurDataURL={image}
+                alt={name}
+              />
+            </motion.div>
+          </ButtonWrapper>
+        </Link>
       </ImageContainer>
+
       <Container>
         <Title>{name}</Title>
         <Description>{description}</Description>
@@ -76,6 +87,7 @@ const IndexWrap = styled.div`
 const ImageContainer = styled.div`
   margin-bottom: 32px;
   position: relative;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 0;

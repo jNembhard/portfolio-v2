@@ -21,6 +21,10 @@ export const portfoliodata = [
           "/assets/detail/desktop/image-coffeeroasters-preview-2@2x.webp",
       },
     },
+    sources: {
+      github: "https://github.com/jNembhard/coffee-roasters",
+      website: "https://coffeeroasters.gatsbyjs.io/",
+    },
     previous: "Netflix",
     next: "Galleria",
   },
@@ -41,6 +45,10 @@ export const portfoliodata = [
         desktopOne: "/assets/detail/desktop/image-galleria-preview-1@2x.webp",
         desktopTwo: "/assets/detail/desktop/image-galleria-preview-2@2x.webp",
       },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/galleria",
+      website: "https://galleria-art.vercel.app",
     },
     previous: "Coffee",
     next: "Planets",
@@ -66,6 +74,10 @@ export const portfoliodata = [
           "/assets/detail/desktop/image-planetfacts-preview-2@2x.webp",
       },
     },
+    sources: {
+      github: "https://github.com/jNembhard/solar-system",
+      website: "https://planetfacts.vercel.app",
+    },
     previous: "Galleria",
     next: "Netflix",
   },
@@ -86,6 +98,10 @@ export const portfoliodata = [
         desktopOne: "/assets/detail/desktop/image-netflix-preview-1@2x.webp",
         desktopTwo: "/assets/detail/desktop/image-netflix-preview-2@2x.webp",
       },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/jflix",
+      website: "https://jason-flix.web.app/",
     },
     previous: "Planets",
     next: "Coffee",

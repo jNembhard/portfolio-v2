@@ -39,6 +39,8 @@ export default function PortfolioIndex({ portfolio }) {
             previewTwo={portfolio.images.preview.desktopTwo}
             previous={portfolio.previous}
             next={portfolio.next}
+            sourceOne={portfolio.sources.website}
+            sourceTwo={portfolio.sources.github}
             previousSlug={portfolio.previous.toLowerCase()}
             nextSlug={portfolio.next.toLowerCase()}
           />

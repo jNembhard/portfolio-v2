@@ -16,6 +16,8 @@ export default function Carousel({
   next,
   previousSlug,
   nextSlug,
+  sourceOne,
+  sourceTwo,
 }) {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
@@ -47,11 +49,18 @@ export default function Carousel({
             <Skills>
               Interaction Design / Front End Development HTML/CSS/JS
             </Skills>
-            <Link href="/" passHref>
-              <ButtonWrap>
-                <WebButton>visit website</WebButton>
-              </ButtonWrap>
-            </Link>
+            <WebWrapper>
+              <Link href={sourceOne} passHref>
+                <ButtonWrap target="_blank" rel="noopener noreferrer">
+                  <WebButton>visit website</WebButton>
+                </ButtonWrap>
+              </Link>
+              <Link href={sourceTwo} passHref>
+                <ButtonWrap target="_blank" rel="noopener noreferrer">
+                  <WebButton2>view github</WebButton2>
+                </ButtonWrap>
+              </Link>
+            </WebWrapper>
           </ContainerOne>
           <Background>
             <Subtitle>Project Background</Subtitle>
@@ -234,18 +243,36 @@ const Skills = styled.p`
   }
 `;
 
+const WebWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 310px;
+
+  @media (min-width: 375px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
 const WebButton = styled.button`
-  width: 178px;
+  width: 260px;
   height: 48px;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
-  margin: 24px 0;
+  margin: 12px 0;
   box-shadow: none;
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: transparent;
   color: ${({ theme }) => theme.colors.darkBlue};
   cursor: pointer;
+
+  @media (min-width: 375px) {
+    width: 150px;
+    margin: 24px 0;
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
@@ -256,6 +283,16 @@ const Background = styled.div`
   @media ${({ theme }) => theme.breakpoints.laptop} {
     margin-top: -30px;
     margin-bottom: 180px;
+  }
+`;
+
+const WebButton2 = styled(WebButton)`
+  background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
+  color: ${({ theme }) => theme.colors.lightGrey};
+
+  &:hover {
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.darkBlue};
   }
 `;
 
