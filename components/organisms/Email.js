@@ -1,5 +1,6 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 import {
   initialState,
   validateInput,
@@ -13,9 +14,54 @@ import {
 export default function Email() {
   const [formState, dispatch] = useReducer(formReducer, initialState);
   const [showError, setShowError] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   let isFormValid = true;
+
+  //   for (const name in formState) {
+  //     const item = formState[name];
+  //     const { value } = item;
+  //     const { hasError, error } = validateInput(name, value);
+
+  //     if (hasError) {
+  //       isFormValid = false;
+  //     }
+
+  //     if (name) {
+  //       dispatch({
+  //         type: UPDATE_FORM,
+  //         data: { name, value, hasError, error, touched: true, isFormValid },
+  //       });
+  //     }
+  //   }
+
+  //   !isFormValid
+  //     ? setShowError(true)
+  //     : dispatch({ type: RESET_FORM, data: initialState });
+  // };
+
+  const sendEmail = (event) => {
     event.preventDefault();
+
+    emailjs
+      .sendForm(
+        `${process.env.YOUR_SERVICE_ID}`,
+        `${process.env.YOUR_TEMPLATE_ID}`,
+        form.current,
+        `${process.env.YOUR_USER_ID}`
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    // event.target.reset();
 
     let isFormValid = true;
 
@@ -40,15 +86,16 @@ export default function Email() {
       ? setShowError(true)
       : dispatch({ type: RESET_FORM, data: initialState });
   };
+
   return (
     <EmailWrap>
       <Container>
         <Title>Contact Me</Title>
-        <Form onSubmit={handleSubmit} autocomplete="off">
+        <Form ref={form} onSubmit={sendEmail} autocomplete="off">
           <Label htmlFor="fullname">Name</Label>
           <Input
             id="fullname"
-            name="fullname"
+            name="name"
             type="text"
             placeholder="Jane Appleseed"
             className={formState.fullname.hasError ? "border-error" : ""}
@@ -122,8 +169,9 @@ export default function Email() {
               formState.email.hasError ||
               formState.message.hasError
             }
-            formNoValidate="formnovalidate"
+            // formNoValidate="formnovalidate"
             type="submit"
+            value="Send"
           >
             send message
           </Button>

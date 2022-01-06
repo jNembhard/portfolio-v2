@@ -43,22 +43,20 @@ export default function Footer() {
         </NavContainer>
         <SocialContainer>
           {socials.map((social) => (
-            <>
-              <a
+            <a
+              key={social.id}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={social.url}
+            >
+              <Socials
                 key={social.id}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={social.url}
-              >
-                <Socials
-                  key={social.id}
-                  src={social.media}
-                  width="24px"
-                  height="24px"
-                  alt={social.name}
-                />
-              </a>
-            </>
+                src={social.media}
+                width="24px"
+                height="24px"
+                alt={social.name}
+              />
+            </a>
           ))}
         </SocialContainer>
       </Container>
