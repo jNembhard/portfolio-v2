@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-profile@2x.jpg";
-import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-profile@2x.jpg";
-import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-profile@2x.jpg";
+import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
+import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
+import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
 
 export default function About() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
@@ -35,12 +35,11 @@ export default function About() {
         <Description>
           I&#39;m a front-end developer that focuses on writing accessible HTML,
           using modern CSS practices and writing clean JavaScript. When writing
-          JavaScript code, I mostly use React, but I can adapt to whatever tools
-          are required. I&#39;m currently based in the US, but I&#39;m happy
-          working remotely and have experience in remote teams. When I&#39;m not
-          coding, you&#39;ll find me outdoors. I love being out in nature
-          whether that&#39;s going for a walk, run or cycling. I&#39;d love you
-          to check out my work.
+          JavaScript code, I mostly use React frameworks, but I can adapt to
+          whatever tools are required. I&#39;m currently based in the US, but
+          I&#39;m happy working remotely and have experience in remote teams.
+          When I&#39;m not coding, you&#39;ll find me at the gym or catching up
+          on some anime. I&#39;d love for you to check out my work.
         </Description>
         <Link href="/portfolio" passHref>
           <a>

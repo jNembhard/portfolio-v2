@@ -4,7 +4,7 @@ export const portfoliodata = [
     name: "Coffeeroasters",
     slug: "coffee",
     description:
-      "This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, such as the testimonial slider.",
+      "Most introductions start casually over a cup of coffee don’t they? For this project I created a three-page coffee roasters subscription site. I used Gatsby.js along with a  mobile-first workflow, framer motion, and GraphQL. State changes are handled with a use-between hook.",
     images: {
       index: {
         desktop:
@@ -33,7 +33,7 @@ export const portfoliodata = [
     name: "Galleria",
     slug: "galleria",
     description:
-      "This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, such as the features section.",
+      "We often don’t see a chance to blend art and technology in a significant way. This project was built with NextJS, framer-motion, and React Redux. Redux is used to handle state changes across and tracks the position of slide transitions in the gallery and updates the slide progress bar.",
     images: {
       index: {
         desktop: "/assets/portfolio/desktop/image-portfolio-galleria@2x.webp",
@@ -58,7 +58,7 @@ export const portfoliodata = [
     name: "Planet Facts",
     slug: "planets",
     description:
-      "This was a small project which mostly consisted of HTML and CSS. I built a fully-responsive landing page. The only JavaScript this project required was to enable the toggling of the mobile navigation.",
+      "Planet Facts is a project based in React. It uses framer-motion for animations and react-router to transition between pages, and also uses Styled-Components. This project features tab implementations to handle data changes. Head home to planet Earth or venture out just a bit further.",
     images: {
       index: {
         desktop:
@@ -86,7 +86,7 @@ export const portfoliodata = [
     name: "Netflix Clone",
     slug: "netflix",
     description:
-      "This project was built in pure HTML and CSS. I had mobile and desktop designs to work to and build it so that it was fully responsive. I took a mobile-first approach and used modern CSS like Flexbox and Grid for layout purposes.",
+      "There isn’t a front-end developer alive who hasn’t at least attempted to build a Netflix clone. True story. This project was built in React and also connects to the TDMB API which grants access to a vast movie poster and backdrop library. Available trailers are pulled from YouTube.",
     images: {
       index: {
         desktop: "/assets/portfolio/desktop/image-portfolio-netflix@2x.webp",
