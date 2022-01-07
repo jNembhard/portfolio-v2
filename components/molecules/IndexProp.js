@@ -132,6 +132,7 @@ const ProjectButton = styled.button`
   letter-spacing: 2px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
+  color: ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: white;
   text-transform: uppercase;
   cursor: pointer;
@@ -148,5 +149,5 @@ const ProjectButton = styled.button`
 
 const ButtonWrapper = styled.a`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.grayishDarkBlue};
+  color: inherit;
 `;
