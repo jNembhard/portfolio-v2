@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import openIcon from "../../public/assets/icons/hamburger.svg";
 import closeIcon from "../../public/assets/icons/close.svg";
 import Link from "next/link";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 const navLinks = [
   { name: "home", url: "/" },
@@ -13,6 +14,11 @@ const navLinks = [
 
 export default function BurgerNav() {
   const [modalOpen, setModalOpen] = useState(false);
+  const ref = useRef();
+
+  useOutsideClick(ref, () => {
+    if (modalOpen) setModalOpen(false);
+  });
 
   const toggle = () => setModalOpen(!modalOpen);
   const getImageName = () => (modalOpen ? closeIcon : openIcon);
@@ -27,7 +33,7 @@ export default function BurgerNav() {
       <BurgerContainer>
         <Image onClick={() => toggle()} src={getImageName()} alt="" />
       </BurgerContainer>
-      <SideBarContainer modalOpen={modalOpen}>
+      <SideBarContainer ref={ref} modalOpen={modalOpen}>
         <ul>
           {navLinks.map(({ name, url }, index) => (
             <li key={index}>

@@ -48,10 +48,10 @@ export default function Email() {
 
     emailjs
       .sendForm(
-        `${process.env.YOUR_SERVICE_ID}`,
-        `${process.env.YOUR_TEMPLATE_ID}`,
+        `${process.env.NEXT_PUBLIC_YOUR_SERVICE_ID}`,
+        `${process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID}`,
         form.current,
-        `${process.env.YOUR_USER_ID}`
+        `${process.env.NEXT_PUBLIC_YOUR_USER_ID}`
       )
       .then(
         (result) => {
