@@ -42,9 +42,9 @@ export default function About() {
           on some anime. I&#39;d love for you to check out my work.
         </Description>
         <Link href="/portfolio" passHref>
-          <a>
+          <ButtonWrap>
             <Button>go to portfolio</Button>
-          </a>
+          </ButtonWrap>
         </Link>
       </ContainerTwo>
     </AboutWrap>
@@ -146,6 +146,6 @@ const Button = styled.button`
 `;
 
 const ButtonWrap = styled.a`
-  color: inherit;
+  color: ${({ theme }) => theme.colors.grayishDarkBlue};
   text-decoration: none;
 `;
