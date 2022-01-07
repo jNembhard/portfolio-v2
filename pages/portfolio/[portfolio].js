@@ -41,7 +41,7 @@ export default function PortfolioIndex({ portfolio }) {
             next={portfolio.next}
             sourceOne={portfolio.sources.website}
             sourceTwo={portfolio.sources.github}
-            projBackground={portfolio.sources.projBackground}
+            projBackground={portfolio.projBackground}
             previousSlug={portfolio.previous.toLowerCase()}
             nextSlug={portfolio.next.toLowerCase()}
           />
