@@ -148,5 +148,5 @@ const ProjectButton = styled.button`
 
 const ButtonWrapper = styled.a`
   text-decoration: none;
-  color: inherit;
+  color: ${({ theme }) => theme.colors.grayishDarkBlue};
 `;
