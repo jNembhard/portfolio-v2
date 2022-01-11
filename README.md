@@ -30,7 +30,9 @@
 - Styled Components
 - Next JS
 - Mobile-first workflow
-- [Next.js](https://https://nextjs.org/) - React Framework -[Styled Components](https://styled-components.com/) -[Framer Motion](https://www.framer.com/docs/animation/)
+- [Next.js](https://https://nextjs.org/) - React Framework
+- [Styled Components](https://styled-components.com/)
+- [Framer Motion](https://www.framer.com/docs/animation/)
 
 ### Background
 
