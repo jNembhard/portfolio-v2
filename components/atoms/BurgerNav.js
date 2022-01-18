@@ -60,13 +60,13 @@ const SideBarContainer = styled.div`
   width: 223px;
   height: 186px;
   background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
-  position: fixed;
+  position: absolute;
   top: 88px;
   right: 32px;
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateY(-150%)"};
   transition: transform 0.2s ease-in-out;
-  z-index: 2;
+  z-index: 1;
 
   ul {
     font-family: "Public Sans";

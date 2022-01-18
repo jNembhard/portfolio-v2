@@ -95,7 +95,7 @@ export default function Email() {
           <Label htmlFor="fullname">Name</Label>
           <Input
             id="fullname"
-            name="name"
+            name="fullname"
             type="text"
             placeholder="Jane Appleseed"
             className={formState.fullname.hasError ? "border-error" : ""}
@@ -169,7 +169,7 @@ export default function Email() {
               formState.email.hasError ||
               formState.message.hasError
             }
-            // formNoValidate="formnovalidate"
+            formNoValidate="formnovalidate"
             type="submit"
             value="Send"
           >
