@@ -27,6 +27,8 @@ export const portfoliodata = [
       github: "https://github.com/jNembhard/coffee-roasters",
       website: "https://coffeeroasters.gatsbyjs.io/",
     },
+    subGreen:
+      "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
     previous: "Netflix",
     next: "Galleria",
   },
@@ -54,6 +56,8 @@ export const portfoliodata = [
       github: "https://github.com/jNembhard/galleria",
       website: "https://galleria-art.vercel.app",
     },
+    subGreen:
+      "Next JS, Redux, Mobile-First Workflow, Framer Motion, Styled Components",
     previous: "Coffee",
     next: "Planets",
   },
@@ -84,6 +88,7 @@ export const portfoliodata = [
       github: "https://github.com/jNembhard/solar-system",
       website: "https://planetfacts.vercel.app",
     },
+    subGreen: "React, Atomic Design, Mobile-first, Styled Components",
     previous: "Galleria",
     next: "Netflix",
   },
@@ -111,6 +116,7 @@ export const portfoliodata = [
       github: "https://github.com/jNembhard/jflix",
       website: "https://jason-flix.web.app/",
     },
+    subGreen: "React, Firebase, Interaction Design, TDMB API",
     previous: "Planets",
     next: "Coffee",
   },

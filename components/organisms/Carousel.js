@@ -17,6 +17,7 @@ export default function Carousel({
   previousSlug,
   projBackground,
   nextSlug,
+  subGreen,
   sourceOne,
   sourceTwo,
 }) {
@@ -47,9 +48,7 @@ export default function Carousel({
                 <Description>{description}</Description>
               </DesContainer>
             </TitleSum>
-            <Skills>
-              Interaction Design / Front End Development HTML/CSS/JS
-            </Skills>
+            <Skills>{subGreen}</Skills>
             <WebWrapper>
               <Link href={sourceOne} passHref>
                 <ButtonWrap target="_blank" rel="noopener noreferrer">
