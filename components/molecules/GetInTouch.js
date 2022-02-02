@@ -24,14 +24,14 @@ export default function GetInTouch() {
         <SummaryContainer>
           <Description>
             I&#39;d love to hear about what you&#39;re working on and how I
-            could help. I&#39;m currently looking for a new role and am open to
-            a wide range of opportunities. My preference would be to find a
-            position in a company in the US. But I&#39;m also happy to hear
-            about opportunites that don&#39;t fit that description. I&#39;m a
-            hard-working and positive person who will always approach each task
-            with a sense of purpose and attention to detail. Please do feel free
-            to check out my online profiles below and get in touch using the
-            form.
+            could help. I&#39;m open to a wide range of opportunities including
+            freelance projects and new full-time roles. My preference would be
+            to find a position in a company in the US. But I&#39;m also happy to
+            hear about opportunites that don&#39;t fit that description. I&#39;m
+            a hard-working and positive person who will always approach each
+            task with a sense of purpose and attention to detail. Please do feel
+            free to check out my online profiles below and get in touch using
+            the form.
           </Description>
           <SocialContainer>
             {socials.map((social) => (
