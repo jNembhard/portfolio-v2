@@ -10,7 +10,7 @@ const socials = [
     id: 2,
     name: "linkedin",
     media: linkedin,
-    url: "https://www.linkedin.com/jasonnembhard1/",
+    url: "https://www.linkedin.com/in/jasonnembhard1/",
   },
 ];
 
