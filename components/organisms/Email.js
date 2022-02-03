@@ -95,7 +95,7 @@ export default function Email() {
           <Label htmlFor="fullname">Name</Label>
           <Input
             id="fullname"
-            name="fullname"
+            name="fullnam"
             type="text"
             placeholder="Jane Appleseed"
             className={formState.fullname.hasError ? "border-error" : ""}
