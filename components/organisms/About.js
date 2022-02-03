@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
-import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
-import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
+import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.webp";
+import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.webp";
+import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.webp";
 
 export default function About() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);

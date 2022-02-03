@@ -4,7 +4,6 @@ import logo from "../../public/assets/logo.svg";
 import styled from "styled-components";
 import github from "../../public/assets/icons/github.svg";
 import linkedin from "../../public/assets/icons/linkedin.svg";
-import twitter from "../../public/assets/icons/twitter.svg";
 
 const navLinks = [
   { name: "home", url: "/" },
@@ -20,7 +19,6 @@ const socials = [
     media: linkedin,
     url: "https://www.linkedin.com/in/jasonnembhard1/",
   },
-  { id: 3, name: "twitter", media: twitter, url: "/" },
 ];
 
 export default function Footer() {
@@ -154,20 +152,16 @@ const SocialContainer = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
+  width: 65px;
   height: 24px;
   margin: 0 105px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     flex-direction: row;
-    margin: 28px 40px 28px 167px;
+    margin: 28px 40px 28px 222px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 28px 40px 28px 588px;
-
-      @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 28px 40px 28px 588px;
-      }
+      margin: 28px 40px 28px 643px;
     }
   }
 `;

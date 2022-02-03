@@ -55,11 +55,13 @@ export default function Carousel({
                   <WebButton>visit website</WebButton>
                 </ButtonWrap>
               </Link>
-              <Link href={sourceTwo} passHref>
-                <ButtonWrap target="_blank" rel="noopener noreferrer">
-                  <WebButton2>view github</WebButton2>
-                </ButtonWrap>
-              </Link>
+              {sourceTwo && (
+                <Link href={sourceTwo} passHref>
+                  <ButtonWrap target="_blank" rel="noopener noreferrer">
+                    <WebButton2>view github</WebButton2>
+                  </ButtonWrap>
+                </Link>
+              )}
             </WebWrapper>
           </ContainerOne>
           <Background>
@@ -230,6 +232,7 @@ const Skills = styled.p`
       margin-top: unset;
       margin-top: 23px;
       padding-right: 125px;
+      width: 340px;
     }
   }
 `;

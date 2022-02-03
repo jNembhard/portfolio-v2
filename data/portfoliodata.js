@@ -30,10 +30,38 @@ export const portfoliodata = [
     subGreen:
       "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
     previous: "Netflix",
-    next: "Galleria",
+    next: "Hyperfast",
   },
   {
     id: 2,
+    name: "Hyperfast",
+    slug: "hyperfast",
+    description:
+      "Take a look at something I’ve created with a more professional feel. The  events Hyperfast Investor and Growth Summit website was built in Webflow. Some features available in this project include dynamic content management systems, Webflow animations, and a place for clients to handle content editing after initial setup of the website.",
+    projBackground:
+      "This website was created for the three-day summit event by Hyperfast hosted in Boca Raton, FL. Hyperfast is a business hosted under the Optime Realty umbrella, which also includes Keri Shull Team. The goal was to create a website for coaching clients to navigate to after scanning a QR code to read speaker bios and see the daily schedule. This product was especially useful after the initial build on Webflow allowing clients to make quick changes to pictures, copy, and links on the fly, without a need to use a service like GitHub.",
+    images: {
+      index: {
+        desktop: "/assets/portfolio/desktop/image-portfolio-hyperfast.webp",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-hyperfast-hero.webp",
+      },
+      preview: {
+        desktopOne: "/assets/detail/desktop/image-hyperfast-preview-1.webp",
+        desktopTwo: "/assets/detail/desktop/image-hyperfast-preview-2.webp",
+      },
+    },
+    sources: {
+      // github: "https://github.com/jNembhard/galleria",
+      website: "https://www.hyperfastleads.com",
+    },
+    subGreen: "Webflow, Dynamic CMS, Client Content Editor",
+    previous: "Coffee",
+    next: "Galleria",
+  },
+  {
+    id: 3,
     name: "Galleria",
     slug: "galleria",
     description:
@@ -58,11 +86,11 @@ export const portfoliodata = [
     },
     subGreen:
       "Next JS, Redux, Mobile-First Workflow, Framer Motion, Styled Components",
-    previous: "Coffee",
+    previous: "Hyperfast",
     next: "Planets",
   },
   {
-    id: 3,
+    id: 4,
     name: "Planet Facts",
     slug: "planets",
     description:
@@ -93,7 +121,7 @@ export const portfoliodata = [
     next: "Netflix",
   },
   {
-    id: 4,
+    id: 5,
     name: "Netflix Clone",
     slug: "netflix",
     description:

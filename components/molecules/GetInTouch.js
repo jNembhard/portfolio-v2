@@ -3,13 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import github from "../../public/assets/icons/github.svg";
 import linkedin from "../../public/assets/icons/linkedin.svg";
-import twitter from "../../public/assets/icons/twitter.svg";
 
 const socials = [
   { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
-  { id: 2, name: "twitter", media: twitter, url: "/" },
   {
-    id: 3,
+    id: 2,
     name: "linkedin",
     media: linkedin,
     url: "https://www.linkedin.com/jasonnembhard1/",
@@ -110,9 +108,10 @@ const SocialContainer = styled.div`
   display: inline-flex;
   align-items: left;
   justify-content: space-between;
-  width: 120px;
+  width: 65px;
   height: 24px;
   margin-bottom: 24px;
+  /* border: 1px solid red; */
 `;
 
 const Socials = styled(Image)``;
