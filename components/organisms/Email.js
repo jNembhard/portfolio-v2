@@ -10,10 +10,13 @@ import {
   UPDATE_FORM,
   RESET_FORM,
 } from "../../utils/validation";
+import { AnimatePresence } from "framer-motion";
+import Modal from "../molecules/Modal";
 
 export default function Email() {
   const [formState, dispatch] = useReducer(formReducer, initialState);
   const [showError, setShowError] = useState(false);
+  const [show, setShow] = useState(false);
   const form = useRef();
 
   // const handleSubmit = (event) => {
@@ -85,6 +88,8 @@ export default function Email() {
     !isFormValid
       ? setShowError(true)
       : dispatch({ type: RESET_FORM, data: initialState });
+
+    !isFormValid ? setShow(false) : setShow(true);
   };
 
   return (
@@ -175,6 +180,13 @@ export default function Email() {
           >
             send message
           </Button>
+          <AnimatePresence
+            initial={false}
+            exitBeforeEnter={true}
+            onExitComplete={() => null}
+          >
+            {show && <Modal onClose={() => setShow(false)} show={show} />}
+          </AnimatePresence>
         </Form>
       </Container>
     </EmailWrap>
