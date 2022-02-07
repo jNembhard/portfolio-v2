@@ -69,7 +69,7 @@ const SideBarContainer = styled.div`
   z-index: 1;
 
   ul {
-    font-family: "Public Sans";
+    font-family: "Public Sans", sans-serif;
     letter-spacing: 2px;
     font-size: 12px;
     list-style-type: none;

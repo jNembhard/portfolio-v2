@@ -242,7 +242,7 @@ const Title = styled.h1`
 `;
 
 const Label = styled.label`
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   font-weight: bold;
   font-size: 13px;
   line-height: 30px;
@@ -281,7 +281,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   font-size: 13px;
   height: 96px;
   line-height: 30px;
@@ -298,7 +298,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   font-size: 12px;
   letter-spacing: 2px;
   color: ${({ theme }) => theme.colors.lightGrey};
@@ -315,7 +315,7 @@ const Button = styled.button`
 `;
 
 const Error = styled.small`
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   margin: -20px 0 24px;
   color: ${({ theme }) => theme.colors.brightRed};
   font-size: 10px;

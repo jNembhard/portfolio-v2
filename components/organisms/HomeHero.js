@@ -122,7 +122,7 @@ const Title = styled.h1`
 const Button = styled.button`
   width: 200px;
   height: 48px;
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;

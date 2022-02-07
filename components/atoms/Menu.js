@@ -29,7 +29,7 @@ const MenuWrapper = styled.div`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    font-family: "Public Sans";
+    font-family: "Public Sans", sans-serif;
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;

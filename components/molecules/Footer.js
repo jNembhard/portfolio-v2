@@ -66,7 +66,7 @@ const FooterWrap = styled.footer`
   width: 100%;
   height: 354px;
   background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;

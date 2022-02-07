@@ -39,7 +39,7 @@ export default function Modal({ onClose, show }) {
         exit="exit"
       >
         <ModalHeader>
-          <Title>Submitted</Title>
+          <Title>Thank You</Title>
         </ModalHeader>
         <Description>
           Your email has been received, I will get in touch with you shortly!
@@ -71,6 +71,7 @@ const ModalHeader = styled.div`
   text-align: center;
   padding: 20px;
   margin-bottom: 30px;
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 30px;
   }

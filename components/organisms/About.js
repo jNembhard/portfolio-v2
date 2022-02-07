@@ -123,7 +123,7 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
-  font-family: "Public Sans";
+  font-family: "Public Sans", sans-serif;
   width: 202px;
   height: 48px;
   font-size: 12px;

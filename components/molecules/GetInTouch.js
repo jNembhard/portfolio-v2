@@ -111,7 +111,6 @@ const SocialContainer = styled.div`
   width: 65px;
   height: 24px;
   margin-bottom: 24px;
-  /* border: 1px solid red; */
 `;
 
 const Socials = styled(Image)``;
