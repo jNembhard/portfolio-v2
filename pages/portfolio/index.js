@@ -5,7 +5,7 @@ export default function Portfolio() {
   return (
     <div>
       <Head>
-        <title>Portfolio - Jason Nembhard</title>
+        <title>Jason Nembhard | Portfolio</title>
         <meta
           name="description"
           content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."

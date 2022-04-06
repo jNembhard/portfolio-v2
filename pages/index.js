@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home - Jason Nembhard</title>
+        <title>Jason Nembhard | Home</title>
         <meta
           name="description"
           content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."

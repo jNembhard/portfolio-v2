@@ -10,12 +10,14 @@
   "dependencies": {
     "@emailjs/browser": "^3.3.1",
     "framer-motion": "^5.5.5",
+    "hamburger-react": "^2.4.1",
     "next": "12.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-img": "^0.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-intersection-observer": "^8.33.1",
     "react-onclickoutside": "^6.12.1",
     "styled-components": "^5.3.3"
   },

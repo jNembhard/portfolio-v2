@@ -22,7 +22,8 @@ export default function PortfolioIndex({ portfolio }) {
   return (
     <div>
       <Head>
-        <title>Portfolio - Jason Nembhard</title>
+        <title>Jason Nembhard | {portfolio.name}</title>
+
         <meta name="description" content="Jason Nembhard's projects" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

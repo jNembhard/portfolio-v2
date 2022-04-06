@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import GetInTouch from "../components/molecules/GetInTouch";
 import Email from "../components/organisms/Email";
 import styled from "styled-components";
@@ -8,7 +7,7 @@ export default function Contact() {
   return (
     <div>
       <Head>
-        <title>Contact - Jason Nembhard</title>
+        <title>Jason Nembhard | Contact</title>
         <meta
           name="description"
           content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 import styled from "styled-components";
 import Image from "next/image";
 import openIcon from "../../public/assets/icons/hamburger.svg";
@@ -31,7 +32,12 @@ export default function BurgerNav() {
   return (
     <BurgerWrap>
       <BurgerContainer>
-        <Image onClick={() => toggle()} src={getImageName()} alt="" />
+        <Hamburger
+          color="#33323D"
+          toggled={modalOpen}
+          toggle={() => toggle()}
+        />
+        {/* <Image onClick={() => toggle()} src={getImageName()} alt="" /> */}
       </BurgerContainer>
       <SideBarContainer ref={ref} modalOpen={modalOpen}>
         <ul>
@@ -53,9 +59,11 @@ const BurgerWrap = styled.div`
     display: none;
   }
 `;
+
 const BurgerContainer = styled.div`
   cursor: pointer;
 `;
+
 const SideBarContainer = styled.div`
   width: 223px;
   height: 186px;

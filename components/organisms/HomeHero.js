@@ -1,20 +1,63 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { useEffect } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero@2x.jpg";
 import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero@2x.jpg";
 import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
 import downarrow from "../../public/assets/icons/down-arrows.svg";
 
+const titleVariant = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      duration: 1,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  },
+  hidden: { opacity: 0, y: 200 },
+};
+
+const buttonVariant = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      delay: 0.2,
+      duration: 1,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  },
+  hidden: { opacity: 0, y: 200 },
+};
+
 export default function HomeHero() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
 
   return (
     <HeroWrap>
       <ImageContainer>
         <Image
-          priority
+          // priority
           src={
             breakPoint1200
               ? desktophero
@@ -30,19 +73,21 @@ export default function HomeHero() {
           alt="Hero"
         />
       </ImageContainer>
-      <TitleContainer>
-        <Title>
-          Hey, I&#39;m Jason Nembhard and I love building beautiful websites
-        </Title>
-        <Anchor href="#about">
-          <Button>
+      <ContentContainer>
+        <TitleWrapper ref={ref}>
+          <Title animate={controls} initial="hidden" variants={titleVariant}>
+            Hey, I&#39;m Jason Nembhard and I love building beautiful websites
+          </Title>
+        </TitleWrapper>
+        <Anchor href="#about" ref={ref}>
+          <Button animate={controls} initial="hidden" variants={buttonVariant}>
             <Arrow>
               <Image src={downarrow} alt="" />
             </Arrow>
             About Me
           </Button>
         </Anchor>
-      </TitleContainer>
+      </ContentContainer>
     </HeroWrap>
   );
 }
@@ -72,7 +117,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const TitleContainer = styled.div`
+const ContentContainer = styled.div`
   margin: 0 32px 96px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -106,10 +151,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  line-height: 42px;
-  letter-spacing: -0.36px;
-
+const TitleWrapper = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin: 56px 56px 20px 0;
 
@@ -119,7 +161,12 @@ const Title = styled.h1`
   }
 `;
 
-const Button = styled.button`
+const Title = styled(motion.h1)`
+  line-height: 42px;
+  letter-spacing: -0.36px;
+`;
+
+const Button = styled(motion.button)`
   width: 200px;
   height: 48px;
   font-family: "Public Sans", sans-serif;
