@@ -79,7 +79,7 @@ export default function HomeHero() {
             Hey, I&#39;m Jason Nembhard and I love building beautiful websites
           </Title>
         </TitleWrapper>
-        <Anchor href="#about" ref={ref}>
+        <Anchor href="#about">
           <Button animate={controls} initial="hidden" variants={buttonVariant}>
             <Arrow>
               <Image src={downarrow} alt="" />
