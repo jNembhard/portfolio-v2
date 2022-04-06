@@ -2,43 +2,13 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { titleVariant, buttonVariant } from "../../animations/content";
 import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero@2x.jpg";
 import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero@2x.jpg";
 import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
 import downarrow from "../../public/assets/icons/down-arrows.svg";
-
-const titleVariant = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      mass: 0.8,
-      stiffness: 75,
-      duration: 1,
-      ease: [0.61, 1, 0.88, 1],
-    },
-  },
-  hidden: { opacity: 0, y: 200 },
-};
-
-const buttonVariant = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      mass: 0.8,
-      stiffness: 75,
-      delay: 0.2,
-      duration: 1,
-      ease: [0.61, 1, 0.88, 1],
-    },
-  },
-  hidden: { opacity: 0, y: 200 },
-};
 
 export default function HomeHero() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);

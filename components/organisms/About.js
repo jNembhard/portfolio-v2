@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { useEffect } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  lineVariant,
+  descriptionVariant,
+  buttonVariant,
+} from "../../animations/content";
 import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.webp";
 import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.webp";
 import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.webp";
@@ -10,8 +19,17 @@ export default function About() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
+
   return (
-    <AboutWrap>
+    <AboutWrap ref={ref}>
       <ImageContainer>
         <Image
           id="about"
@@ -30,9 +48,15 @@ export default function About() {
           alt="headshot"
         />
       </ImageContainer>
-      <ContainerTwo>
-        <Title>About Me</Title>
-        <Description>
+      <ContainerTwo animate={controls} initial="hidden" variants={lineVariant}>
+        <Title animate={controls} initial="hidden" variants={titleVariant}>
+          About Me
+        </Title>
+        <Description
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariant}
+        >
           I&#39;m a front-end developer that focuses on writing accessible HTML,
           using modern CSS practices and writing clean JavaScript. When writing
           JavaScript code, I mostly use React frameworks, but I can adapt to
@@ -43,7 +67,13 @@ export default function About() {
         </Description>
         <Link href="/portfolio" passHref>
           <ButtonWrap>
-            <Button>go to portfolio</Button>
+            <Button
+              animate={controls}
+              initial="hidden"
+              variants={buttonVariant}
+            >
+              go to portfolio
+            </Button>
           </ButtonWrap>
         </Link>
       </ContainerTwo>
@@ -105,7 +135,7 @@ const ContainerTwo = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   letter-spacing: -0.36px;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
@@ -113,7 +143,7 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   font-size: 16px;
   margin-bottom: 51px;
 
@@ -122,7 +152,7 @@ const Description = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   font-family: "Public Sans", sans-serif;
   width: 202px;
   height: 48px;

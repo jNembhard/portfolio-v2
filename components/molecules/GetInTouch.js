@@ -1,3 +1,11 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  descriptionVariant,
+  buttonVariant,
+} from "../../animations/content";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,12 +23,27 @@ const socials = [
 ];
 
 export default function GetInTouch() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
+
   return (
     <ContactWrap>
-      <Container>
-        <Title>Get In Touch</Title>
+      <Container ref={ref}>
+        <Title animate={controls} initial="hidden" variants={titleVariant}>
+          Get In Touch
+        </Title>
         <SummaryContainer>
-          <Description>
+          <Description
+            animate={controls}
+            initial="hidden"
+            variants={descriptionVariant}
+          >
             I&#39;d love to hear about what you&#39;re working on and how I
             could help. I&#39;m open to a wide range of opportunities including
             freelance projects and new full-time roles. My preference would be
@@ -98,9 +121,9 @@ const SummaryContainer = styled.div`
   }
 `;
 
-const Title = styled.h1``;
+const Title = styled(motion.h1)``;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   margin-bottom: 24px;
 `;
 

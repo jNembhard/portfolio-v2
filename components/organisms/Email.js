@@ -1,4 +1,12 @@
-import React, { useReducer, useState, useRef } from "react";
+import React, { useEffect, useReducer, useState, useRef } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  titleSlideVariant,
+  descriptionVariant,
+  buttonVariant,
+} from "../../animations/content";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import {
@@ -18,6 +26,15 @@ export default function Email() {
   const [showError, setShowError] = useState(false);
   const [show, setShow] = useState(false);
   const form = useRef();
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
 
   // const handleSubmit = (event) => {
   //   event.preventDefault();
@@ -94,8 +111,10 @@ export default function Email() {
 
   return (
     <EmailWrap>
-      <Container>
-        <Title>Contact Me</Title>
+      <Container ref={ref}>
+        <Title animate={controls} initial="hidden" variants={titleVariant}>
+          Contact Me
+        </Title>
         <Form ref={form} onSubmit={sendEmail} autocomplete="off">
           <Label htmlFor="fullname">Name</Label>
           <Input
@@ -160,26 +179,31 @@ export default function Email() {
           {formState.message.touched && formState.message.hasError && (
             <Error>{formState.message.error}</Error>
           )}
-
-          <Button
-            className={
-              formState.fullname.hasError ||
-              formState.email.hasError ||
-              formState.message.hasError
-                ? "disabled-button"
-                : ""
-            }
-            disabled={
-              formState.fullname.hasError ||
-              formState.email.hasError ||
-              formState.message.hasError
-            }
-            formNoValidate="formnovalidate"
-            type="submit"
-            value="Send"
+          <ButtonWrapper
+            animate={controls}
+            initial="hidden"
+            variants={buttonVariant}
           >
-            send message
-          </Button>
+            <Button
+              className={
+                formState.fullname.hasError ||
+                formState.email.hasError ||
+                formState.message.hasError
+                  ? "disabled-button"
+                  : ""
+              }
+              disabled={
+                formState.fullname.hasError ||
+                formState.email.hasError ||
+                formState.message.hasError
+              }
+              formNoValidate="formnovalidate"
+              type="submit"
+              value="Send"
+            >
+              send message
+            </Button>
+          </ButtonWrapper>
           <AnimatePresence
             initial={false}
             exitBeforeEnter={true}
@@ -235,7 +259,7 @@ const Container = styled.div`
     width: 1110px;
   }
 `;
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   @media ${({ theme }) => theme.breakpoints.laptop} {
     width: 360px;
   }
@@ -297,7 +321,9 @@ const TextArea = styled.textarea`
   }
 `;
 
-const Button = styled.button`
+const ButtonWrapper = styled(motion.div)``;
+
+const Button = styled(motion.button)`
   font-family: "Public Sans", sans-serif;
   font-size: 12px;
   letter-spacing: 2px;

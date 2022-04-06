@@ -1,19 +1,21 @@
 import Layout from "../components/organisms/Layout";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Layout>
-        <Main
-          key={router.route}
-          initial="initial"
-          animate="enter"
-          variants={variants}
-          exit="exit"
-        >
-          <Component {...pageProps} />
-        </Main>
+        <AnimatePresence>
+          <Main
+            key={router.route}
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={variants}
+            exit="pageExit"
+          >
+            <Component {...pageProps} />
+          </Main>
+        </AnimatePresence>
       </Layout>
     </>
   );
@@ -31,11 +33,11 @@ const Main = styled(motion.div)`
 `;
 
 const variants = {
-  initial: {
+  pageInitial: {
     opacity: 0,
     x: -300,
   },
-  enter: {
+  pageAnimate: {
     opacity: 1,
     x: 0,
     transition: {
@@ -46,7 +48,7 @@ const variants = {
       ease: [0.61, 1, 0.88, 1],
     },
   },
-  exit: {
+  pageExit: {
     opacity: 0,
     y: 300,
     transition: {

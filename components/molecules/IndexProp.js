@@ -1,12 +1,28 @@
+import { useEffect } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  descriptionVariant,
+  buttonVariant,
+} from "../../animations/content";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { motion } from "framer-motion";
 
 export default function IndexProp({ id, name, image, description, slug }) {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
 
   return (
     <IndexWrap
@@ -51,12 +67,26 @@ export default function IndexProp({ id, name, image, description, slug }) {
         </Link>
       </ImageContainer>
 
-      <Container>
-        <Title>{name}</Title>
-        <Description>{description}</Description>
+      <Container ref={ref}>
+        <Title animate={controls} initial="hidden" variants={titleVariant}>
+          {name}
+        </Title>
+        <Description
+          animate={controls}
+          initial="hidden"
+          variants={descriptionVariant}
+        >
+          {description}
+        </Description>
         <Link href={`/portfolio/${slug}`} passHref>
           <ButtonWrapper>
-            <ProjectButton>view project</ProjectButton>
+            <ProjectButton
+              animate={controls}
+              initial="hidden"
+              variants={buttonVariant}
+            >
+              view project
+            </ProjectButton>
           </ButtonWrapper>
         </Link>
       </Container>
@@ -113,7 +143,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   margin-bottom: 24px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -121,11 +151,11 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   margin-bottom: 24px;
 `;
 
-const ProjectButton = styled.button`
+const ProjectButton = styled(motion.button)`
   width: 175px;
   height: 48px;
   font-size: 12px;

@@ -1,14 +1,36 @@
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  descriptionVariant,
+  lineVariant,
+  buttonVariant,
+} from "../../animations/content";
 import styled from "styled-components";
 import Link from "next/link";
 
 export default function ContactButton() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
+
   return (
-    <Container>
-      <Title>Interested in doing a project together?</Title>
-      <Line />
+    <Container ref={ref}>
+      <Title animate={controls} initial="hidden" variants={titleVariant}>
+        Interested in doing a project together?
+      </Title>
+      <Line animate={controls} initial="hidden" variants={lineVariant} />
 
       <Link href="/contact" passHref>
-        <Button>contact me</Button>
+        <Button animate={controls} initial="hidden" variants={buttonVariant}>
+          contact me
+        </Button>
       </Link>
     </Container>
   );
@@ -37,12 +59,12 @@ const Container = styled.div`
     }
   }
 `;
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   letter-spacing: -0.36px;
   margin: 0 8px 40px;
 `;
 
-const Line = styled.hr`
+const Line = styled(motion.hr)`
   display: none;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -63,7 +85,7 @@ const Line = styled.hr`
   }
 `;
 
-const Button = styled.a`
+const Button = styled(motion.a)`
   font-family: "Public Sans", sans-serif;
   display: inline-flex;
   align-items: center;
