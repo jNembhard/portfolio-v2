@@ -9,6 +9,7 @@ import {
   titleVariant,
   lineVariant,
   descriptionVariant,
+  imageVariant,
   buttonVariant,
 } from "../../animations/content";
 import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.webp";
@@ -21,34 +22,49 @@ export default function About() {
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
+      controls.start("visibles");
+    }
+    if (inView2) {
       controls.start("visible");
     }
   });
 
   return (
     <AboutWrap ref={ref}>
-      <ImageContainer>
-        <Image
-          id="about"
-          src={
-            breakPoint1200
-              ? headshotdesktop2
-              : breakPoint767
-              ? headshottablet2
-              : headshotmobile2
-          }
-          width={breakPoint1200 ? 540 : breakPoint767 ? 281 : 311}
-          height={breakPoint767 ? 600 : 346}
-          quality={100}
-          placeholder="blur"
-          layout={breakPoint767 ? "" : "responsive"}
-          alt="headshot"
-        />
-      </ImageContainer>
-      <ContainerTwo animate={controls} initial="hidden" variants={lineVariant}>
+      <OverflowHidden>
+        <ImageContainer
+          animate={controls}
+          initial="hidden"
+          variants={imageVariant}
+        >
+          <Image
+            id="about"
+            src={
+              breakPoint1200
+                ? headshotdesktop2
+                : breakPoint767
+                ? headshottablet2
+                : headshotmobile2
+            }
+            width={breakPoint1200 ? 540 : breakPoint767 ? 281 : 311}
+            height={breakPoint767 ? 600 : 346}
+            quality={100}
+            placeholder="blur"
+            layout={breakPoint767 ? "" : "responsive"}
+            alt="headshot"
+          />
+        </ImageContainer>
+      </OverflowHidden>
+      <ContainerTwo
+        ref={ref2}
+        animate={controls}
+        initial="hidden"
+        variants={lineVariant}
+      >
         <Title animate={controls} initial="hidden" variants={titleVariant}>
           About Me
         </Title>
@@ -97,8 +113,9 @@ const AboutWrap = styled.div`
     }
   }
 `;
-const ImageContainer = styled.div`
-  display: block;
+
+const OverflowHidden = styled.div`
+  overflow: hidden;
   margin-bottom: 32px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -113,6 +130,9 @@ const ImageContainer = styled.div`
       }
     }
   }
+`;
+const ImageContainer = styled(motion.div)`
+  display: block;
 `;
 
 const ContainerTwo = styled.div`

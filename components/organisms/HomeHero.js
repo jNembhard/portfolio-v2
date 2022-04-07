@@ -4,7 +4,11 @@ import { useEffect } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { titleVariant, buttonVariant } from "../../animations/content";
+import {
+  titleVariant,
+  buttonVariant,
+  imageVariant,
+} from "../../animations/content";
 import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero@2x.jpg";
 import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero@2x.jpg";
 import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
@@ -16,35 +20,44 @@ export default function HomeHero() {
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [ref2, inView2] = useInView({ threshold: 0.8 });
 
   useEffect(() => {
     if (inView) {
+      controls.start("visibles");
+    }
+    if (inView2) {
       controls.start("visible");
     }
   });
 
   return (
     <HeroWrap>
-      <ImageContainer>
-        <Image
-          // priority
-          src={
-            breakPoint1200
-              ? desktophero
-              : breakPoint767
-              ? tablethero
-              : mobilehero
-          }
-          width={breakPoint1200 ? 1110 : breakPoint767 ? 688 : 311}
-          height={breakPoint767 ? 600 : 271}
-          quality={100}
-          layout="responsive"
-          placeholder="blur"
-          alt="Hero"
-        />
-      </ImageContainer>
-      <ContentContainer>
-        <TitleWrapper ref={ref}>
+      <OverflowHidden ref={ref}>
+        <ImageContainer
+          animate={controls}
+          initial="hidden"
+          variants={imageVariant}
+        >
+          <Image
+            src={
+              breakPoint1200
+                ? desktophero
+                : breakPoint767
+                ? tablethero
+                : mobilehero
+            }
+            width={breakPoint1200 ? 1110 : breakPoint767 ? 688 : 311}
+            height={breakPoint767 ? 600 : 271}
+            quality={100}
+            layout="responsive"
+            placeholder="blur"
+            alt="Hero"
+          />
+        </ImageContainer>
+      </OverflowHidden>
+      <ContentContainer ref={ref2}>
+        <TitleWrapper>
           <Title animate={controls} initial="hidden" variants={titleVariant}>
             Hey, I&#39;m Jason Nembhard and I love building beautiful websites
           </Title>
@@ -69,8 +82,8 @@ const HeroWrap = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  display: block;
+const OverflowHidden = styled.div`
+  overflow: hidden;
   margin: 0 32px 24px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -85,6 +98,10 @@ const ImageContainer = styled.div`
       }
     }
   }
+`;
+
+const ImageContainer = styled(motion.div)`
+  display: block;
 `;
 
 const ContentContainer = styled.div`

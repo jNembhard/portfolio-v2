@@ -29,7 +29,7 @@ export default function PortfolioIndex({ portfolio }) {
       </Head>
       <AnimatePresence
         exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
+        // onExitComplete={() => window.scrollTo(0, 0)}
       >
         <Wrapper>
           <Carousel

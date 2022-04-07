@@ -4,7 +4,18 @@ import Link from "next/link";
 import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../public/assets/icons/arrow-right.svg";
+import { useEffect } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  titleVariant,
+  lineVariant,
+  descriptionVariant,
+  buttonVariant,
+  buttonVariantTwo,
+  greenVariant,
+} from "../../animations/content";
 
 export default function Carousel({
   name,
@@ -24,6 +35,15 @@ export default function Carousel({
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
+
   return (
     <>
       <CarouselWrap>
@@ -42,37 +62,73 @@ export default function Carousel({
         </ImageContainer>
         <Summary>
           <ContainerOne>
-            <TitleSum>
-              <Title>{name}</Title>
-              <DesContainer>
+            <TitleSum ref={ref}>
+              <Title
+                animate={controls}
+                initial="hidden"
+                variants={titleVariant}
+              >
+                {name}
+              </Title>
+              <DesContainer
+                animate={controls}
+                initial="hidden"
+                variants={descriptionVariant}
+              >
                 <Description>{description}</Description>
               </DesContainer>
             </TitleSum>
-            <Skills>{subGreen}</Skills>
+            <Skills animate={controls} initial="hidden" variants={greenVariant}>
+              {subGreen}
+            </Skills>
             <WebWrapper>
               <Link href={sourceOne} passHref>
                 <ButtonWrap target="_blank" rel="noopener noreferrer">
-                  <WebButton>visit website</WebButton>
+                  <WebButton
+                    animate={controls}
+                    initial="hidden"
+                    variants={buttonVariant}
+                  >
+                    visit website
+                  </WebButton>
                 </ButtonWrap>
               </Link>
               {sourceTwo && (
                 <Link href={sourceTwo} passHref>
                   <ButtonWrap target="_blank" rel="noopener noreferrer">
-                    <WebButton2>view github</WebButton2>
+                    <WebButton2
+                      animate={controls}
+                      initial="hidden"
+                      variants={buttonVariantTwo}
+                    >
+                      view github
+                    </WebButton2>
                   </ButtonWrap>
                 </Link>
               )}
             </WebWrapper>
           </ContainerOne>
           <Background>
-            <Subtitle>Project Background</Subtitle>
-            <DesContainerTwo>
+            <Subtitle
+              animate={controls}
+              initial="hidden"
+              variants={titleVariant}
+            >
+              Project Background
+            </Subtitle>
+            <DesContainerTwo
+              animate={controls}
+              initial="hidden"
+              variants={descriptionVariant}
+            >
               <Description>{projBackground}</Description>
             </DesContainerTwo>
           </Background>
         </Summary>
         <ContainerThree>
-          <Subtitle>Static Previews</Subtitle>
+          <Subtitle animate={controls} initial="hidden" variants={titleVariant}>
+            Static Previews
+          </Subtitle>
           <ImageContainerTwo>
             <Image
               src={previewOne}
@@ -196,9 +252,9 @@ const TitleSum = styled.div`
   }
 `;
 
-const Title = styled.h1``;
+const Title = styled(motion.h1)``;
 
-const DesContainer = styled.div`
+const DesContainer = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 339px;
     @media ${({ theme }) => theme.breakpoints.laptop} {
@@ -207,7 +263,7 @@ const DesContainer = styled.div`
   }
 `;
 
-const DesContainerTwo = styled.div`
+const DesContainerTwo = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 688px;
 
@@ -219,7 +275,7 @@ const DesContainerTwo = styled.div`
 
 const Description = styled.p``;
 
-const Skills = styled.p`
+const Skills = styled(motion.p)`
   color: ${({ theme }) => theme.colors.desaturatedCyan};
   font-weight: bold;
   font-size: 13px;
@@ -250,7 +306,7 @@ const WebWrapper = styled.div`
   }
 `;
 
-const WebButton = styled.button`
+const WebButton = styled(motion.button)`
   width: 260px;
   height: 48px;
   text-transform: uppercase;
@@ -295,7 +351,7 @@ const ButtonWrap = styled.a`
   text-decoration: none;
 `;
 
-const Subtitle = styled.h3``;
+const Subtitle = styled(motion.h3)``;
 
 const ContainerThree = styled.div`
   margin-bottom: 64px;
