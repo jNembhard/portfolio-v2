@@ -20,7 +20,7 @@ export default function HomeHero() {
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
-  const [ref2, inView2] = useInView({ threshold: 0.8 });
+  const [ref2, inView2] = useInView();
 
   useEffect(() => {
     if (inView) {

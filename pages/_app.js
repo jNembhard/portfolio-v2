@@ -35,11 +35,11 @@ const Main = styled(motion.div)`
 const variants = {
   pageInitial: {
     opacity: 0,
-    x: -300,
+    y: 100,
   },
   pageAnimate: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       type: "spring",
       mass: 0.35,
