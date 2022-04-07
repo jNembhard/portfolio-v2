@@ -15,6 +15,7 @@ import {
   buttonVariant,
   buttonVariantTwo,
   greenVariant,
+  imageVariant,
 } from "../../animations/content";
 
 export default function Carousel({
@@ -38,10 +39,14 @@ export default function Carousel({
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.4 });
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+    }
+    if (inView2) {
+      controls.start("visibles");
     }
   });
 
@@ -126,34 +131,46 @@ export default function Carousel({
             </DesContainerTwo>
           </Background>
         </Summary>
-        <ContainerThree>
+        <ContainerThree ref={ref2}>
           <Subtitle animate={controls} initial="hidden" variants={titleVariant}>
             Static Previews
           </Subtitle>
-          <ImageContainerTwo>
-            <Image
-              src={previewOne}
-              width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
-              height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
-              layout="responsive"
-              quality={100}
-              placeholder="blur"
-              blurDataURL={previewOne}
-              alt="static preview one"
-            />
-          </ImageContainerTwo>
-          <ImageContainerTwo>
-            <Image
-              src={previewTwo}
-              width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
-              height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
-              layout="responsive"
-              quality={100}
-              placeholder="blur"
-              blurDataURL={previewTwo}
-              alt="static preview two"
-            />
-          </ImageContainerTwo>
+          <OverflowHidden>
+            <ImageContainerTwo
+              animate={controls}
+              initial="hidden"
+              variants={imageVariant}
+            >
+              <Image
+                src={previewOne}
+                width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
+                height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
+                layout="responsive"
+                quality={100}
+                placeholder="blur"
+                blurDataURL={previewOne}
+                alt="static preview one"
+              />
+            </ImageContainerTwo>
+          </OverflowHidden>
+          <OverflowHidden>
+            <ImageContainerTwo
+              animate={controls}
+              initial="hidden"
+              variants={imageVariant}
+            >
+              <Image
+                src={previewTwo}
+                width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
+                height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
+                layout="responsive"
+                quality={100}
+                placeholder="blur"
+                blurDataURL={previewTwo}
+                alt="static preview two"
+              />
+            </ImageContainerTwo>
+          </OverflowHidden>
         </ContainerThree>
         <ContainerFour>
           <Link href={previousSlug} passHref>
@@ -227,8 +244,12 @@ const ImageContainer = styled.div`
   max-width: 1100px;
 `;
 
-const ImageContainerTwo = styled(ImageContainer)`
+const OverflowHidden = styled(motion.div)`
+  overflow: hidden;
   margin-bottom: 32px;
+`;
+const ImageContainerTwo = styled(motion.div)`
+  max-width: 1100px;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     max-width: 689px;

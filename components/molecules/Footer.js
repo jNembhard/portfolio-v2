@@ -1,48 +1,72 @@
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  logoVariant,
+  navVariant,
+  socialVariant,
+} from "../../animations/content";
+import { navLinks, socials } from "../../data/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/logo.svg";
 import styled from "styled-components";
-import github from "../../public/assets/icons/github.svg";
-import linkedin from "../../public/assets/icons/linkedin.svg";
-
-const navLinks = [
-  { name: "home", url: "/" },
-  { name: "portfolio", url: "/portfolio" },
-  { name: "contact me", url: "/contact" },
-];
-
-const socials = [
-  { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
-  {
-    id: 2,
-    name: "linkedin",
-    media: linkedin,
-    url: "https://www.linkedin.com/in/jasonnembhard1/",
-  },
-];
 
 export default function Footer() {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.4 });
+  const [ref3, inView3] = useInView({ threshold: 0.4 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visibleLogo");
+    }
+    if (inView2) {
+      controls.start("visible");
+    }
+    if (inView3) {
+      controls.start("visibleSocial");
+    }
+  });
+
   return (
     <FooterWrap>
-      <Container>
-        <LogoContainer>
+      <Container ref={ref}>
+        <LogoContainer
+          animate={controls}
+          initial="hidden"
+          variants={logoVariant}
+        >
           <Link href="/">
             <a>
               <Logo src={logo} alt="Logo" />
             </a>
           </Link>
         </LogoContainer>
-        <NavContainer>
-          {navLinks.map(({ name, url }, index) => (
-            <Link href={url} key={index}>
-              <a>{name}</a>
-            </Link>
+        <NavContainer ref={ref2}>
+          {navLinks.map((navLink, i) => (
+            <NavList
+              key={navLinks.id}
+              initial="hidden"
+              custom={i}
+              animate={controls}
+              variants={navVariant}
+            >
+              <Link href={navLink.url} passHref>
+                <LinkList>{navLink.name}</LinkList>
+              </Link>
+            </NavList>
           ))}
         </NavContainer>
-        <SocialContainer>
-          {socials.map((social) => (
-            <a
+        <SocialContainer ref={ref3}>
+          {socials.map((social, i) => (
+            <motion.a
               key={social.id}
+              initial="hidden"
+              custom={i}
+              animate={controls}
+              variants={socialVariant}
               target="_blank"
               rel="noopener noreferrer"
               href={social.url}
@@ -54,7 +78,7 @@ export default function Footer() {
                 height="24px"
                 alt={social.name}
               />
-            </a>
+            </motion.a>
           ))}
         </SocialContainer>
       </Container>
@@ -101,7 +125,7 @@ const Logo = styled(Image)`
     brightness(101%) contrast(98%);
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled(motion.div)`
   margin: 10px 34px 30px;
   width: 61px;
 
@@ -129,22 +153,26 @@ const NavContainer = styled.ul`
     margin: 33px 0;
     width: 309px;
   }
+`;
 
-  a {
-    text-decoration: none;
-    color: inherit;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin: 0 7px 32px;
+const NavList = styled(motion.li)`
+  list-style-type: none;
+  margin: 0 7px 32px;
 
-    @media ${({ theme }) => theme.breakpoints.tablet} {
-      margin: 0 21px 0 0;
-    }
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 21px 0 0;
+  }
+`;
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.desaturatedCyan};
-    }
+const LinkList = styled.a`
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.desaturatedCyan};
   }
 `;
 

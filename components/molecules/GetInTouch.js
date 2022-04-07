@@ -4,31 +4,23 @@ import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
   descriptionVariant,
-  buttonVariant,
+  socialVariantTwo,
 } from "../../animations/content";
-import styled from "styled-components";
-import Link from "next/link";
+import { socials } from "../../data/navigation";
 import Image from "next/image";
-import github from "../../public/assets/icons/github.svg";
-import linkedin from "../../public/assets/icons/linkedin.svg";
-
-const socials = [
-  { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
-  {
-    id: 2,
-    name: "linkedin",
-    media: linkedin,
-    url: "https://www.linkedin.com/in/jasonnembhard1/",
-  },
-];
+import styled from "styled-components";
 
 export default function GetInTouch() {
-  const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.4 });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+    }
+    if (inView2) {
+      controls.start("visibleSocial");
     }
   });
 
@@ -54,10 +46,14 @@ export default function GetInTouch() {
             free to check out my online profiles below and get in touch using
             the form.
           </Description>
-          <SocialContainer>
-            {socials.map((social) => (
-              <a
+          <SocialContainer ref={ref2}>
+            {socials.map((social, i) => (
+              <motion.a
                 key={social.id}
+                initial="hidden"
+                custom={i}
+                animate={controls}
+                variants={socialVariantTwo}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={social.url}
@@ -69,7 +65,7 @@ export default function GetInTouch() {
                   height="24px"
                   alt={social.name}
                 />
-              </a>
+              </motion.a>
             ))}
           </SocialContainer>
         </SummaryContainer>

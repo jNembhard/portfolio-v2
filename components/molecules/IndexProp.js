@@ -6,6 +6,7 @@ import {
   titleVariant,
   descriptionVariant,
   buttonVariant,
+  imageVariant,
 } from "../../animations/content";
 import styled from "styled-components";
 import Image from "next/image";
@@ -17,9 +18,13 @@ export default function IndexProp({ id, name, image, description, slug }) {
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.4 });
 
   useEffect(() => {
     if (inView) {
+      controls.start("visibles");
+    }
+    if (inView2) {
       controls.start("visible");
     }
   });
@@ -46,28 +51,34 @@ export default function IndexProp({ id, name, image, description, slug }) {
         }
       >
         <Link href={`/portfolio/${slug}`} passHref>
-          <ButtonWrapper>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
+          <ButtonWrapper ref={ref}>
+            <ButtonContainer
+              animate={controls}
+              initial="hidden"
+              variants={imageVariant}
             >
-              <Image
-                priority
-                src={image}
-                width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
-                height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
-                quality={100}
-                layout={breakPoint767 ? "" : "responsive"}
-                placeholder="blur"
-                blurDataURL={image}
-                alt={name}
-              />
-            </motion.div>
+              <ScaleWrapper
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  priority
+                  src={image}
+                  width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
+                  height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
+                  quality={100}
+                  layout={breakPoint767 ? "" : "responsive"}
+                  placeholder="blur"
+                  blurDataURL={image}
+                  alt={name}
+                />
+              </ScaleWrapper>
+            </ButtonContainer>
           </ButtonWrapper>
         </Link>
       </ImageContainer>
 
-      <Container ref={ref}>
+      <Container ref={ref2}>
         <Title animate={controls} initial="hidden" variants={titleVariant}>
           {name}
         </Title>
@@ -113,6 +124,10 @@ const IndexWrap = styled.div`
     }
   }
 `;
+
+const ButtonContainer = styled(motion.div)``;
+
+const ScaleWrapper = styled(motion.div)``;
 
 const ImageContainer = styled.div`
   margin-bottom: 32px;

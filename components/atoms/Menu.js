@@ -1,23 +1,38 @@
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { navVariant } from "../../animations/content";
+import { navLinks } from "../../data/navigation";
 import Link from "next/link";
 import styled from "styled-components";
 
-const navLinks = [
-  { name: "home", url: "/" },
-  { name: "portfolio", url: "/portfolio" },
-  { name: "contact me", url: "/contact" },
-];
-
 export default function Menu() {
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  });
+
   return (
     <>
-      <MenuWrapper>
+      <MenuWrapper ref={ref}>
         <MenuLinks>
-          {navLinks.map(({ name, url }, index) => (
-            <li className="second-color" key={index}>
+          {navLinks.map(({ id, name, url }, i) => (
+            <motion.li
+              className="second-color"
+              key={id}
+              initial="hidden"
+              custom={i}
+              animate="visible"
+              variants={navVariant}
+            >
               <Link href={url}>
                 <a>{name}</a>
               </Link>
-            </li>
+            </motion.li>
           ))}
         </MenuLinks>
       </MenuWrapper>

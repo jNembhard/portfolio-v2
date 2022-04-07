@@ -3,8 +3,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
-  titleSlideVariant,
-  descriptionVariant,
+  formVariant,
   buttonVariant,
 } from "../../animations/content";
 import styled from "styled-components";
@@ -115,7 +114,14 @@ export default function Email() {
         <Title animate={controls} initial="hidden" variants={titleVariant}>
           Contact Me
         </Title>
-        <Form ref={form} onSubmit={sendEmail} autocomplete="off">
+        <Form
+          animate={controls}
+          initial="hidden"
+          variants={formVariant}
+          ref={form}
+          onSubmit={sendEmail}
+          autocomplete="off"
+        >
           <Label htmlFor="fullname">Name</Label>
           <Input
             id="fullname"
@@ -272,7 +278,7 @@ const Label = styled.label`
   line-height: 30px;
 `;
 
-const Form = styled.form`
+const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
 

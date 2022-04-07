@@ -13,21 +13,6 @@ const titleVariant = {
   hidden: { opacity: 0, y: 200 },
 };
 
-const titleSlideVariant = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      mass: 0.8,
-      stiffness: 75,
-      duration: 1,
-      ease: [0.61, 1, 0.88, 1],
-    },
-  },
-  hidden: { opacity: 0, x: -300 },
-};
-
 const descriptionVariant = {
   visible: {
     opacity: 1,
@@ -106,13 +91,83 @@ const imageVariant = {
   hidden: { opacity: 0, scale: 1.2 },
 };
 
+const logoVariant = {
+  visibleLogo: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  },
+  hidden: { opacity: 0 },
+};
+
+const navVariant = {
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      delay: i * 0.2,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  }),
+  hidden: { opacity: 0, y: -50 },
+};
+
+const socialVariant = {
+  visibleSocial: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      delay: i * 0.2,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  }),
+  hidden: { opacity: 0, y: -50 },
+};
+
+const socialVariantTwo = {
+  visibleSocial: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      mass: 0.8,
+      stiffness: 75,
+      delay: i * 0.4,
+      ease: [0.61, 1, 0.88, 1],
+    },
+  }),
+  hidden: { opacity: 0, y: 100 },
+};
+
+const formVariant = {
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5, ease: "circIn" },
+  },
+  hidden: { opacity: 0 },
+};
+
 export {
   titleVariant,
-  titleSlideVariant,
   lineVariant,
   descriptionVariant,
   buttonVariant,
   buttonVariantTwo,
   greenVariant,
   imageVariant,
+  logoVariant,
+  navVariant,
+  socialVariant,
+  socialVariantTwo,
+  formVariant,
 };
