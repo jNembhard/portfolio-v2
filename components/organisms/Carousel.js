@@ -33,7 +33,6 @@ export default function Carousel({
   sourceOne,
   sourceTwo,
 }) {
-  // finish ref and static image animations
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 

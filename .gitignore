@@ -38,3 +38,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# PNG Portfolio Images
+/portfolio_images

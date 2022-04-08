@@ -88,7 +88,7 @@ const theme = {
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Header />
@@ -101,6 +101,6 @@ export default function Layout({ children }) {
         </AnimatePresence>
         <Footer />
       </ThemeProvider>
-    </div>
+    </>
   );
 }

@@ -97,6 +97,10 @@ const FooterWrap = styled.footer`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 80px;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      height: 100%;
+    }
   }
 `;
 
