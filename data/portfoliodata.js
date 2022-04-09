@@ -13,14 +13,15 @@ export const portfoliodata = [
           "/assets/portfolio/desktop/image-portfolio-coffeeroasters-1000x1080.webp",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-coffeeroasters-hero@2x.webp",
+        desktop:
+          "/assets/detail/desktop/image-coffeeroasters-hero-2220x1000.webp",
       },
 
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-coffeeroasters-preview-1@2x.webp",
+          "/assets/detail/desktop/image-coffeeroasters-preview-one-1278x868.webp",
         desktopTwo:
-          "/assets/detail/desktop/image-coffeeroasters-preview-2@2x.webp",
+          "/assets/detail/desktop/image-coffeeroasters-preview-two-1278x868.webp",
       },
     },
     sources: {
@@ -75,11 +76,13 @@ export const portfoliodata = [
           "/assets/portfolio/desktop/image-portfolio-galleria-1000x1080.webp",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-galleria-hero@2x.webp",
+        desktop: "/assets/detail/desktop/image-galleria-hero-2220x1000.webp",
       },
       preview: {
-        desktopOne: "/assets/detail/desktop/image-galleria-preview-1@2x.webp",
-        desktopTwo: "/assets/detail/desktop/image-galleria-preview-2@2x.webp",
+        desktopOne:
+          "/assets/detail/desktop/image-galleria-preview-one-1278x868.webp",
+        desktopTwo:
+          "/assets/detail/desktop/image-galleria-preview-two-1278x868.webp",
       },
     },
     sources: {
@@ -105,13 +108,13 @@ export const portfoliodata = [
           "/assets/portfolio/desktop/image-portfolio-planetfacts-1000x1080.webp",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-planetfacts-hero@2x.webp",
+        desktop: "/assets/detail/desktop/image-planetfacts-hero-2220x1000.webp",
       },
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-planetfacts-preview-1@2x.webp",
+          "/assets/detail/desktop/image-planetfacts-preview-one-1278x868.webp",
         desktopTwo:
-          "/assets/detail/desktop/image-planetfacts-preview-2@2x.webp",
+          "/assets/detail/desktop/image-planetfacts-preview-two-1278x868.webp",
       },
     },
     sources: {
@@ -136,11 +139,13 @@ export const portfoliodata = [
           "/assets/portfolio/desktop/image-portfolio-netflix-1000x1080.webp",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-netflix-hero.webp",
+        desktop: "/assets/detail/desktop/image-netflix-hero-2220x1000.webp",
       },
       preview: {
-        desktopOne: "/assets/detail/desktop/image-netflix-preview-1@2x.webp",
-        desktopTwo: "/assets/detail/desktop/image-netflix-preview-2@2x.webp",
+        desktopOne:
+          "/assets/detail/desktop/image-netflix-preview-one-1278x868.webp",
+        desktopTwo:
+          "/assets/detail/desktop/image-netflix-preview-two-1278x868.webp",
       },
     },
     sources: {

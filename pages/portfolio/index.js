@@ -10,7 +10,7 @@ export default function Portfolio() {
           name="description"
           content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main>
         <PIndex />
