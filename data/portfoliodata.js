@@ -10,18 +10,18 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-coffeeroasters-1000x1080.webp",
+          "/assets/portfolio/desktop/image-portfolio-coffeeroasters-1000x1080.jpg",
       },
       detailhero: {
         desktop:
-          "/assets/detail/desktop/image-coffeeroasters-hero-2220x1000.webp",
+          "/assets/detail/desktop/image-coffeeroasters-hero-2220x1000.jpg",
       },
 
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-coffeeroasters-preview-one-1278x868.webp",
+          "/assets/detail/desktop/image-coffeeroasters-preview-one-1278x868.jpg",
         desktopTwo:
-          "/assets/detail/desktop/image-coffeeroasters-preview-two-1278x868.webp",
+          "/assets/detail/desktop/image-coffeeroasters-preview-two-1278x868.jpg",
       },
     },
     sources: {
@@ -44,14 +44,16 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-hyperfast-1000x1080.webp",
+          "/assets/portfolio/desktop/image-portfolio-hyperfast-1000x1080.jpg",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-hyperfast-hero.webp",
+        desktop: "/assets/detail/desktop/image-hyperfast-hero-2220x1000.jpg",
       },
       preview: {
-        desktopOne: "/assets/detail/desktop/image-hyperfast-preview-1.webp",
-        desktopTwo: "/assets/detail/desktop/image-hyperfast-preview-2.webp",
+        desktopOne:
+          "/assets/detail/desktop/image-hyperfast-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-hyperfast-preview-two-1278x868.jpg",
       },
     },
     sources: {
@@ -73,16 +75,16 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-galleria-1000x1080.webp",
+          "/assets/portfolio/desktop/image-portfolio-galleria-1000x1080.jpg",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-galleria-hero-2220x1000.webp",
+        desktop: "/assets/detail/desktop/image-galleria-hero-2220x1000.jpg",
       },
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-galleria-preview-one-1278x868.webp",
+          "/assets/detail/desktop/image-galleria-preview-one-1278x868.jpg",
         desktopTwo:
-          "/assets/detail/desktop/image-galleria-preview-two-1278x868.webp",
+          "/assets/detail/desktop/image-galleria-preview-two-1278x868.jpg",
       },
     },
     sources: {
@@ -105,16 +107,16 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-planetfacts-1000x1080.webp",
+          "/assets/portfolio/desktop/image-portfolio-planetfacts-1000x1080.jpg",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-planetfacts-hero-2220x1000.webp",
+        desktop: "/assets/detail/desktop/image-planetfacts-hero-2220x1000.jpg",
       },
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-planetfacts-preview-one-1278x868.webp",
+          "/assets/detail/desktop/image-planetfacts-preview-one-1278x868.jpg",
         desktopTwo:
-          "/assets/detail/desktop/image-planetfacts-preview-two-1278x868.webp",
+          "/assets/detail/desktop/image-planetfacts-preview-two-1278x868.jpg",
       },
     },
     sources: {
@@ -136,16 +138,16 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-netflix-1000x1080.webp",
+          "/assets/portfolio/desktop/image-portfolio-netflix-1000x1080.jpg",
       },
       detailhero: {
-        desktop: "/assets/detail/desktop/image-netflix-hero-2220x1000.webp",
+        desktop: "/assets/detail/desktop/image-netflix-hero-2220x1000.jpg",
       },
       preview: {
         desktopOne:
-          "/assets/detail/desktop/image-netflix-preview-one-1278x868.webp",
+          "/assets/detail/desktop/image-netflix-preview-one-1278x868.jpg",
         desktopTwo:
-          "/assets/detail/desktop/image-netflix-preview-two-1278x868.webp",
+          "/assets/detail/desktop/image-netflix-preview-two-1278x868.jpg",
       },
     },
     sources: {
