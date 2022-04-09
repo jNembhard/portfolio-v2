@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NextHead from "../components/atoms/NextHead";
 import ContactButton from "../components/atoms/ContactButton";
 import About from "../components/organisms/About";
 import HomeHero from "../components/organisms/HomeHero";
@@ -7,14 +7,10 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Jason Nembhard | Home</title>
-        <meta
-          name="description"
-          content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+      <NextHead
+        title="Home"
+        description="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+      />
       <main>
         <HomeHero />
         <About />

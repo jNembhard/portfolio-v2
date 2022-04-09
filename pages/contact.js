@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NextHead from "../components/atoms/NextHead";
 import GetInTouch from "../components/molecules/GetInTouch";
 import Email from "../components/organisms/Email";
 import styled from "styled-components";
@@ -6,14 +6,10 @@ import styled from "styled-components";
 export default function Contact() {
   return (
     <div>
-      <Head>
-        <title>Jason Nembhard | Contact</title>
-        <meta
-          name="description"
-          content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+      <NextHead
+        title="Contact"
+        content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+      />
       <Wrapper>
         <GetInTouch />
         <Email />

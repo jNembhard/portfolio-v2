@@ -1,4 +1,4 @@
-import Head from "next/head";
+import NextHead from "../../components/atoms/NextHead";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
 import styled from "styled-components";
@@ -21,12 +21,10 @@ export async function getStaticProps({ params }) {
 export default function PortfolioIndex({ portfolio }) {
   return (
     <div>
-      <Head>
-        <title>Jason Nembhard | {portfolio.name}</title>
-
-        <meta name="description" content="Jason Nembhard's projects" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextHead
+        title={portfolio.name}
+        description="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+      />
       <AnimatePresence
         exitBeforeEnter
         // onExitComplete={() => window.scrollTo(0, 0)}
