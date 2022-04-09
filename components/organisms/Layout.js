@@ -55,18 +55,21 @@ const GlobalStyle = createGlobalStyle`
     src: url(${IbarraBold}) format("truetype");
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
   }
   @font-face {
     font-family: "Ibarra Real Nova";
     src: url(${IbarraRegular}) format("truetype");
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
   }
   @font-face {
     font-family: "Public Sans";
     src: url(${PublicSansRegular}) format("truetype");
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
   }
 `;
 
