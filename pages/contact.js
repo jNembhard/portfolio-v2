@@ -8,7 +8,7 @@ export default function Contact() {
     <div>
       <NextHead
         title="Contact"
-        content="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
       />
       <Wrapper>
         <GetInTouch />

@@ -6,7 +6,7 @@ export default function Portfolio() {
     <div>
       <NextHead
         title="Portfolio"
-        description="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
       />
       <main>
         <PIndex />

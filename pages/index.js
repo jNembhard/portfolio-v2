@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <NextHead
         title="Home"
-        description="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
       />
       <main>
         <HomeHero />

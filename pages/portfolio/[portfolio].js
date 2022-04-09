@@ -23,7 +23,7 @@ export default function PortfolioIndex({ portfolio }) {
     <div>
       <NextHead
         title={portfolio.name}
-        description="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
       />
       <AnimatePresence
         exitBeforeEnter
