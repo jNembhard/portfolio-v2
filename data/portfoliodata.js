@@ -62,10 +62,41 @@ export const portfoliodata = [
     },
     subGreen: "Webflow, Dynamic CMS, Client Content Editor",
     previous: "Coffee",
-    next: "Galleria",
+    next: "Scoot",
   },
   {
     id: 3,
+    name: "Scoot",
+    slug: "scoot",
+    description:
+      "Wouldn’t it be nice if you could swiftly move around any urban environment at low-cost and reduce your carbon footprint? With fast page load times and speedy animations, building this project with React was the perfect choice to communicate the meaning behind Scoot. Let’s get scootin’.",
+    projBackground:
+      "The idea behind Scoot is something everyone wants in an urban environment; Quick and efficient, easy to access, and at low-cost. The challenge is getting that idea across effectively. I decided it was best to build this project with React. I could cut down on code and add Styled Components and Framer Motion into the mix to keep users engaged with animations and colors that represent speed. Check out the site or head over to my GitHub page for more technical background.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-scoot-1000x1080.jpg",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-scoot-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-scoot-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-scoot-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/scoot",
+      website: "https://getscootin.vercel.app/",
+    },
+    subGreen: "Atomic Design, React, Framer Motion, Styled Components",
+    previous: "Hyperfast",
+    next: "Galleria",
+  },
+  {
+    id: 4,
     name: "Galleria",
     slug: "galleria",
     description:
@@ -93,11 +124,11 @@ export const portfoliodata = [
     },
     subGreen:
       "Next JS, Redux, Mobile-First Workflow, Framer Motion, Styled Components",
-    previous: "Hyperfast",
+    previous: "Scoot",
     next: "Planets",
   },
   {
-    id: 4,
+    id: 5,
     name: "Planet Facts",
     slug: "planets",
     description:
@@ -128,7 +159,7 @@ export const portfoliodata = [
     next: "Netflix",
   },
   {
-    id: 5,
+    id: 6,
     name: "Netflix Clone",
     slug: "netflix",
     description:
