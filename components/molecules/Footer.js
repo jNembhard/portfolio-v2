@@ -96,7 +96,7 @@ const FooterWrap = styled.footer`
   justify-content: center;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    height: 80px;
+    height: 85px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       height: 100%;
