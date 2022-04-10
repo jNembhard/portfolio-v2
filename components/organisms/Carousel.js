@@ -38,7 +38,7 @@ export default function Carousel({
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
-  const [ref2, inView2] = useInView({ threshold: 0.4 });
+  const [ref2, inView2] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
@@ -67,14 +67,16 @@ export default function Carousel({
         </ImageContainer>
         <Summary>
           <ContainerOne>
-            <TitleSum ref={ref}>
-              <Title
-                animate={controls}
-                initial="hidden"
-                variants={titleVariant}
-              >
-                {name}
-              </Title>
+            <TitleSum>
+              <TitleWrapper ref={ref}>
+                <Title
+                  animate={controls}
+                  initial="hidden"
+                  variants={titleVariant}
+                >
+                  {name}
+                </Title>
+              </TitleWrapper>
               <DesContainer
                 animate={controls}
                 initial="hidden"
@@ -83,7 +85,12 @@ export default function Carousel({
                 <Description>{description}</Description>
               </DesContainer>
             </TitleSum>
-            <Skills animate={controls} initial="hidden" variants={greenVariant}>
+            <Skills
+              title={name}
+              animate={controls}
+              initial="hidden"
+              variants={greenVariant}
+            >
               {subGreen}
             </Skills>
             <WebWrapper>
@@ -273,11 +280,17 @@ const TitleSum = styled.div`
   }
 `;
 
+const TitleWrapper = styled.div`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    max-height: 50px;
+  }
+`;
 const Title = styled(motion.h1)``;
 
 const DesContainer = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     max-width: 339px;
+
     @media ${({ theme }) => theme.breakpoints.laptop} {
       max-width: 350px;
     }
@@ -302,11 +315,10 @@ const Skills = styled(motion.p)`
   font-size: 13px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-top: -100px;
+    margin-top: ${({ title }) => (title === "Hyperfast" ? "-125px" : "-150px")};
     padding-right: 391px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin-top: unset;
       margin-top: 23px;
       padding-right: 125px;
       width: 340px;
