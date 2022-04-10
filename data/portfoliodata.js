@@ -4,9 +4,9 @@ export const portfoliodata = [
     name: "Coffeeroasters",
     slug: "coffee",
     description:
-      "Most introductions start casually over a cup of coffee don’t they? For this project I created a three-page coffee roasters subscription site. I used Gatsby.js along with a  mobile-first workflow, framer motion, and GraphQL. State changes are handled with a use-between hook.",
+      "Most introductions start casually over a cup of coffee don’t they? Coffeeroasters was built with Gatsby.js and GraphQL. It features colors that are meant to evoke a feeling of nature, tranquility, and peace. Aren’t you starting to feel refreshed already? Brew yourself a fresh artisan coffee and let’s dive into this project.",
     projBackground:
-      "This project was a front-end challenge from Frontend Mentor. It's a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I've learned something new with each project, helping me to improve and adapt my style.",
+      "Coffeeroasters aims to improve the morning ritual by providing people with access to a growing range of artisan coffees delivered right to your door. You can customize your options by selecting the roast style, grind type, and even choose the frequency of delivery. It was essential that I was able to pass selection data throughout different components. I was able to create a useBetween and useSummary hook to handle state changes as an alternative to Redux or React Context. Visit the site or check out my GitHub to learn more about the implementation.",
     images: {
       index: {
         desktop:
@@ -100,9 +100,9 @@ export const portfoliodata = [
     name: "Galleria",
     slug: "galleria",
     description:
-      "We often don’t see a chance to blend art and technology in a significant way. This project was built with NextJS, framer-motion, and React Redux. Redux is used to handle state changes across and tracks the position of slide transitions in the gallery and updates the slide progress bar.",
+      "We often don’t see a chance to blend art and technology in a significant way. The Galleria website aims to provide a user experience of walking through an art gallery. The project was built with NextJS and uses React Redux to handle state changes between slides. Head into the gallery to view some timeless artwork.",
     projBackground:
-      "This project was a front-end challenge from Frontend Mentor. It's a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I've learned something new with each project, helping me to improve and adapt my style.",
+      "Galleria features many pieces artwork from the 1400s up until the early 1900s. The gallery is just a small snippet of art pieces from that time but has the potential to grow exponentially. I decided to use React Redux for this project not only because I looking to update the state, but it also makes it easy to add in more pieces to the art gallery. I could potentially add hundreds of pieces of art but only load one piece at a time with a simple two-page layout and a modal. I invite you to visit the Galleria website and check out my GitHub page for a more in-depth look at the technical aspects of the project.",
     images: {
       index: {
         desktop:
@@ -132,9 +132,9 @@ export const portfoliodata = [
     name: "Planet Facts",
     slug: "planets",
     description:
-      "Planet Facts is a project based in React. It uses framer-motion for animations and react-router to transition between pages, and also uses Styled-Components. This project features tab implementations to handle data changes. Head home to planet Earth or venture out just a bit further.",
+      "If you’ve ever wanted to explore the solar system from the comfort of your couch, you’ve come to the right place. A starry backdrop and quick access to information about our planets aims to give users an engaging learning experience. Head home to planet Earth or venture out just a bit further.",
     projBackground:
-      "This project was a front-end challenge from Frontend Mentor. It's a platform that enables you to practice building websites to a design and project brief. Each challenge includes mobile and desktop designs to show how the website should look at different screen sizes. Creating these projects has helped me refine my workflow and solve real-world coding problems. I've learned something new with each project, helping me to improve and adapt my style.",
+      "Planet Facts provides an easy and engaging way to help people learn about the planets. Website users get a quick overview of each planet in our solar system ranging from interesting facts, each planet’s structure, and what it would be like to visit the surface. I decided to use React to take advantage of the react-router to render each page dynamically. The data changes present in the project utilize custom tab implementations. I’ve added some light animations with Framer Motion that you’ll see when you visit the site. Want to see the code for this project? Feel free to head over to my GitHub page.",
     images: {
       index: {
         desktop:
@@ -165,7 +165,7 @@ export const portfoliodata = [
     description:
       "There isn’t a front-end developer alive who hasn’t at least attempted to build a Netflix clone. True story. This project was built in React and also connects to the TMDB API which grants access to a vast movie poster and backdrop library. Available trailers are pulled from YouTube.",
     projBackground:
-      "This was an early project focused on connecting APIs to Frontend technology. I wanted to create something that was relatable yet also presenting some technical challenge. The Movie Database (TMDB) API is similar to IDMB but instead presents a free version to access an array of public movie poster and forms of data pertaining to movies. Most of the challenge comes from proper implementation of pulling data into your React app as  the rows in place are generated by basic components implementation.",
+      "This was an early project focused on connecting APIs to Frontend technology. I wanted to create something that was relatable yet also presenting some technical challenge. The Movie Database (TMDB) API is similar to IMDB but instead presents a free version to access an array of public movie poster and forms of data pertaining to movies. Most of the challenge comes from proper implementation of pulling data into your React app as  the rows in place are generated by basic components implementation.",
     images: {
       index: {
         desktop:
