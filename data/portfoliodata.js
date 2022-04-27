@@ -196,7 +196,7 @@ export const portfoliodata = [
     description:
       "Here’s my take on your favorite online shopping experience, Amazon. This project is a Full Stack web application which features Stripe’s API, React for the Front End, and Firebase and Express, for the backend. Checkout the entire order workflow!",
     projBackground:
-      "This project was one of the main reasons I began learning everything I could about Web Development and applications. I was able to connect React to Firebase on the backend and also add in Stripe’s API for good measure. Overall, this application allows a user to login to a created account and order products or view their past purchase history. If you’re curious and want to see this web clone in action, head over to the website and check out my GitHub page for some simple instructions to use Stripe’s test mode card when it’s time to enter credit details.",
+      "This project was one of the main reasons I began learning everything I could about Web Development and applications. I was able to connect React to Firebase on the backend and also add in Stripe’s API for good measure. Overall, this application allows a user to login to a created account and order products or view their past purchase history. If you’re curious and want to see this web clone in action, head over to the website and check out my GitHub page for some simple instructions to use Stripe’s test mode credit card when it’s time to enter credit details.",
     images: {
       index: {
         desktop:
