@@ -315,7 +315,12 @@ const Skills = styled(motion.p)`
   font-size: 13px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-top: ${({ title }) => (title === "Hyperfast" ? "-125px" : "-150px")};
+    margin-top: ${({ title }) =>
+      title === "Hyperfast"
+        ? "-125px"
+        : title === "Amazon Clone"
+        ? "-125px"
+        : "-150px"};
     padding-right: 391px;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {

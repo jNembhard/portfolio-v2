@@ -10,7 +10,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-coffeeroasters-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-coffeeroasters-1080x1000.jpg",
       },
       detailhero: {
         desktop:
@@ -30,7 +30,7 @@ export const portfoliodata = [
     },
     subGreen:
       "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
-    previous: "Netflix",
+    previous: "Amazon",
     next: "Hyperfast",
   },
   {
@@ -44,7 +44,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-hyperfast-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-hyperfast-1080x1000.jpg",
       },
       detailhero: {
         desktop: "/assets/detail/desktop/image-hyperfast-hero-2220x1000.jpg",
@@ -75,7 +75,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-scoot-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-scoot-1080x1000.jpg",
       },
       detailhero: {
         desktop: "/assets/detail/desktop/image-scoot-hero-2220x1000.jpg",
@@ -106,7 +106,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-galleria-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-galleria-1080x1000.jpg",
       },
       detailhero: {
         desktop: "/assets/detail/desktop/image-galleria-hero-2220x1000.jpg",
@@ -138,7 +138,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-planetfacts-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-planetfacts-1080x1000.jpg",
       },
       detailhero: {
         desktop: "/assets/detail/desktop/image-planetfacts-hero-2220x1000.jpg",
@@ -169,7 +169,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-netflix-1000x1080.jpg",
+          "/assets/portfolio/desktop/image-portfolio-netflix-1080x1000.jpg",
       },
       detailhero: {
         desktop: "/assets/detail/desktop/image-netflix-hero-2220x1000.jpg",
@@ -187,6 +187,37 @@ export const portfoliodata = [
     },
     subGreen: "React, Firebase, Interaction Design, TMDB API",
     previous: "Planets",
+    next: "Amazon",
+  },
+  {
+    id: 7,
+    name: "Amazon Clone",
+    slug: "amazon",
+    description:
+      "Here’s my take on your favorite online shopping experience, Amazon. This project is a Full Stack web application which features Stripe’s API, React for the Front End, and Firebase and Express, for the backend. Checkout the entire order workflow!",
+    projBackground:
+      "This project was one of the main reasons I began learning everything I could about Web Development and applications. I was able to connect React to Firebase on the backend and also add in Stripe’s API for good measure. Overall, this application allows a user to login to a created account and order products or view their past purchase history. If you’re curious and want to see this web clone in action, head over to the website and check out my GitHub page for some simple instructions to use Stripe’s test mode card when it’s time to enter credit details.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-amazon-1080x1000.jpg",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-amazon-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-amazon-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-amazon-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/amzn-ecommerce",
+      website: "https://amznjason.web.app/",
+    },
+    subGreen: "React, ExpressJS, Firebase, Stripe",
+    previous: "Netflix",
     next: "Coffee",
   },
 ];
