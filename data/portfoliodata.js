@@ -102,7 +102,7 @@ export const portfoliodata = [
     description:
       "We often don’t see a chance to blend art and technology in a significant way. The Galleria website aims to provide a user experience of walking through an art gallery. The project was built with NextJS and uses React Redux to handle state changes between slides. Head into the gallery to view some timeless artwork.",
     projBackground:
-      "Galleria features many pieces artwork from the 1400s up until the early 1900s. The gallery is just a small snippet of art pieces from that time but has the potential to grow exponentially. I decided to use React Redux for this project not only because I looking to update the state, but it also makes it easy to add in more pieces to the art gallery. I could potentially add hundreds of pieces of art but only load one piece at a time with a simple two-page layout and a modal. I invite you to visit the Galleria website and check out my GitHub page for a more in-depth look at the technical aspects of the project.",
+      "Galleria features many pieces artwork from the 1400s up until the early 1900s. The gallery is just a small snippet of art pieces from that time but has the potential to grow exponentially. I decided to use React Redux for this project not only because I needed a reliable state management tool, but it also makes it easy to add in more pieces to the art gallery. I could potentially add hundreds of pieces of art but only load one piece at a time with a simple two-page layout and a modal. I invite you to visit the Galleria website and check out my GitHub page for a more in-depth look at the technical aspects of this project.",
     images: {
       index: {
         desktop:
