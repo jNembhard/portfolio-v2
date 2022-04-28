@@ -36,11 +36,11 @@
 
 ### Background
 
-My portfolio was long overdue for an update. The first time I created my online portfolio, I had made with the goal of having a place to put my projects up online a quickly as possible.
+My portfolio was long overdue for an update. The first time around, I had created my portfolio with the goal of having a place to put my projects up online as quickly as possible.
 
 I had attempted to open my screen and start coding immediately running into A LOT of problems. Fast to market, hard to maintain. I've since become a better developer and decided to opt for code that is maintainable.
 
-I made sure to assess which tool would be best for completing the job first. I chose NextJS as framework. I first started with Redux and realized this would be a great chance to try out the dynamic routing option as an alternative to Redux. I was able to save so much time implementing code with basically a few lines:
+I made sure to assess which tool would be best for completing the job first. My framework of choice was Next JS. I first started with Redux and realized this would be a great chance to try out the dynamic routing option as an alternative to Redux. I was able to save so much time implementing code with just a few lines:
 
 ```js
 export async function getStaticPaths() {
@@ -58,7 +58,7 @@ export async function getStaticProps({ params }) {
 }
 ```
 
-See how much easier that is? Before I would have figure out a way to manage state of dynamic pages accross the site at multiple locations. That same work is done here in basically 10-12 lines of code! Data is pulled from data.js file and and is updated with the slug change. Seriously, once you finish writing this up, that pretty much handles all the work for your dynamic pages.
+See how much easier that is? Before I would have figure out a way to manage state of dynamic pages accross the site at multiple locations. That same work is done here in basically 10-12 lines of code! Data is pulled from a data.js file which is then updated with the slug change. Seriously, once you finish writing this up, that pretty much handles all the work for your dynamic pages.
 
 I also focused a bit on performing some custom email validation. The input boxes would turn red when incorrect information was entered or you tried to submit the form without filling out all the input boxes. Successful validation would result in green borders around the boxes and reset forms upon submission.
 
