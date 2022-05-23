@@ -316,7 +316,7 @@ const Skills = styled(motion.p)`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-top: ${({ title }) =>
-      title === "Hyperfast"
+      title === "Summit"
         ? "-125px"
         : title === "Amazon Clone"
         ? "-125px"

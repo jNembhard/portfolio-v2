@@ -1,6 +1,38 @@
 export const portfoliodata = [
   {
     id: 1,
+    name: "Hyperfast",
+    slug: "hyperfast",
+    description:
+      "HyperFast Agent aims to be the top resource for committed real estate entrepreneurs to close more deals in less time. With live coaching, online courses, and new weekly podcasts, this site has a little something for everyone. Take a closer look at a massive rebrand several months in the making.",
+    projBackground:
+      "When I first decided to take on HyperFast Agent’s rebranding project, my aim was to completely take away the feel of their old site which was similar to click funnels and provide an amazing user experience.  Webflow was natural choice. Creativity, speed, and helpful integrations to generate organic site traffic were a must. This site also features automations I’ve created to handle lead capture and online product distribution. If you’re looking for someone who can give your business a new and engaging user experience, you’ve come to the right place. Take a look at the site then head back here to get in touch with me.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-hyperfast-agent-1080x1000.jpg",
+      },
+      detailhero: {
+        desktop:
+          "/assets/detail/desktop/image-hyperfast-agent-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-hyperfast-agent-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-hyperfast-agent-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      website: "https://www.hyperfastagent.com",
+    },
+    subGreen:
+      "Webflow, Data Migration, Dynamic CMS, Google Analytics, HubSpot, SEO, Stripe, Search Console, Zapier",
+    previous: "Amazon",
+    next: "Coffee",
+  },
+  {
+    id: 2,
     name: "Coffeeroasters",
     slug: "coffee",
     description:
@@ -30,13 +62,13 @@ export const portfoliodata = [
     },
     subGreen:
       "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
-    previous: "Amazon",
-    next: "Hyperfast",
+    previous: "Hyperfast",
+    next: "Summit",
   },
   {
-    id: 2,
-    name: "Hyperfast",
-    slug: "hyperfast",
+    id: 3,
+    name: "Summit",
+    slug: "summit",
     description:
       "Take a look at something I’ve created for Hyperfast’s annual 3-day Investor and Growth Summit. This project was built in Webflow and features dynamic content management systems, animations, and a place for clients to handle content editing after initial setup of the website.",
     projBackground:
@@ -57,7 +89,6 @@ export const portfoliodata = [
       },
     },
     sources: {
-      // github: "https://github.com/jNembhard/galleria",
       website: "https://www.hyperfastleads.com",
     },
     subGreen: "Webflow, Dynamic CMS, Client Content Editor",
@@ -65,7 +96,7 @@ export const portfoliodata = [
     next: "Scoot",
   },
   {
-    id: 3,
+    id: 4,
     name: "Scoot",
     slug: "scoot",
     description:
@@ -92,11 +123,11 @@ export const portfoliodata = [
       website: "https://getscootin.vercel.app/",
     },
     subGreen: "Atomic Design, React, Framer Motion, Styled Components",
-    previous: "Hyperfast",
+    previous: "Summit",
     next: "Galleria",
   },
   {
-    id: 4,
+    id: 5,
     name: "Galleria",
     slug: "galleria",
     description:
@@ -128,7 +159,7 @@ export const portfoliodata = [
     next: "Planets",
   },
   {
-    id: 5,
+    id: 6,
     name: "Planet Facts",
     slug: "planets",
     description:
@@ -159,7 +190,7 @@ export const portfoliodata = [
     next: "Netflix",
   },
   {
-    id: 6,
+    id: 7,
     name: "Netflix Clone",
     slug: "netflix",
     description:
@@ -190,7 +221,7 @@ export const portfoliodata = [
     next: "Amazon",
   },
   {
-    id: 7,
+    id: 8,
     name: "Amazon Clone",
     slug: "amazon",
     description:
@@ -218,6 +249,6 @@ export const portfoliodata = [
     },
     subGreen: "React, ExpressJS, Firebase, Stripe",
     previous: "Netflix",
-    next: "Coffee",
+    next: "Hyperfast",
   },
 ];
