@@ -10,7 +10,7 @@ export const portfoliodata = [
     images: {
       index: {
         desktop:
-          "/assets/portfolio/desktop/image-portfolio-hyperfast-agent-1080x1000.jpg",
+          "/assets/portfolio/desktop/image-portfolio-hyperfast-agent-1080x1000-two.jpg",
       },
       detailhero: {
         desktop:
