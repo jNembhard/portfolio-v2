@@ -1,7 +1,7 @@
 export const portfoliodata = [
   {
     id: 1,
-    name: "Hyperfast",
+    name: "HyperFast Agent",
     slug: "hyperfast",
     description:
       "HyperFast Agent aims to be the top resource for committed real estate entrepreneurs to close more deals in less time. With live coaching, online courses, and new weekly podcasts, this site has a little something for everyone. Take a closer look at a massive rebrand several months in the making.",
@@ -62,7 +62,7 @@ export const portfoliodata = [
     },
     subGreen:
       "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
-    previous: "Hyperfast",
+    previous: "HyperFast",
     next: "Summit",
   },
   {
@@ -249,6 +249,6 @@ export const portfoliodata = [
     },
     subGreen: "React, ExpressJS, Firebase, Stripe",
     previous: "Netflix",
-    next: "Hyperfast",
+    next: "HyperFast",
   },
 ];
