@@ -127,7 +127,7 @@ export default function Email() {
             id="fullname"
             name="fullname"
             type="text"
-            placeholder="Jane Appleseed"
+            placeholder="Jason Nembhard"
             className={formState.fullname.hasError ? "border-error" : ""}
             onChange={(e) => {
               onInputChange("fullname", e.target.value, dispatch, formState);
@@ -148,7 +148,7 @@ export default function Email() {
             id="email"
             type="email"
             name="email"
-            placeholder="email@example.com"
+            placeholder="nembhardjl@outlook.com"
             className={formState.email.hasError ? "border-error" : ""}
             onChange={(e) => {
               onInputChange("email", e.target.value, dispatch, formState);
