@@ -1,6 +1,38 @@
 export const portfoliodata = [
   {
     id: 1,
+    name: "Audiophile",
+    slug: "audiophile",
+    description:
+      "Audiophile is the premier store for high end headphones, earphones, speakers and audio accessories. This site features a sleek modern feel along with a framework that can support it. Next JS along  with TypeScript provides shoppers with a pleasing user experience throughout their entire visit. Check out the project to learn more.",
+    projBackground:
+      "Audiophile’s site is designed to give user a memorable and simplistic shopping experience. Users experience a natural flowing feel from second they visit the site to end of their checkout journey. I built this project with NextJS, TypeScript, and Chakra to provide an implementation pattern that is clean and maintainable. State management and dynamic page design was a key factor in deciding what tools would be best for this build. Head over to the site to try it out for yourself or check out my GitHub for an in depth look on the technical side of things.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-audiophile-1080x1000.jpg",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-audiophile-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-audiophile-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-audiophile-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/audiophile-ecom",
+      website: "https://audiophiles.vercel.app",
+    },
+    subGreen:
+      "NextJS, TypeScript, Chakra, Redux Toolkit, React Hook Form, Atomic Design",
+    previous: "Amazon",
+    next: "HyperFast",
+  },
+  {
+    id: 2,
     name: "HyperFast Agent",
     slug: "hyperfast",
     description:
@@ -28,11 +60,11 @@ export const portfoliodata = [
     },
     subGreen:
       "Webflow, Data Migration, Dynamic CMS, Google Analytics, HubSpot, SEO, Stripe, Search Console, Zapier",
-    previous: "Amazon",
+    previous: "Audiophile",
     next: "Coffee",
   },
   {
-    id: 2,
+    id: 3,
     name: "Coffeeroasters",
     slug: "coffee",
     description:
@@ -63,36 +95,6 @@ export const portfoliodata = [
     subGreen:
       "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
     previous: "HyperFast",
-    next: "Summit",
-  },
-  {
-    id: 3,
-    name: "Summit",
-    slug: "summit",
-    description:
-      "Take a look at something I’ve created for Hyperfast’s annual 3-day Investor and Growth Summit. This project was built in Webflow and features dynamic content management systems, animations, and a place for clients to handle content editing after initial setup of the website.",
-    projBackground:
-      "This website was created for the three-day summit event by Hyperfast hosted in Boca Raton, FL. Hyperfast is a business hosted under the Optime Realty umbrella, which also includes Keri Shull Team. The goal was to create a website for coaching clients to navigate to after scanning a QR code to read speaker bios and see the daily schedule. This product was especially useful after the initial build on Webflow allowing clients to make quick changes to pictures, copy, and links on the fly, without a need to use a service like GitHub.",
-    images: {
-      index: {
-        desktop:
-          "/assets/portfolio/desktop/image-portfolio-hyperfast-1080x1000.jpg",
-      },
-      detailhero: {
-        desktop: "/assets/detail/desktop/image-hyperfast-hero-2220x1000.jpg",
-      },
-      preview: {
-        desktopOne:
-          "/assets/detail/desktop/image-hyperfast-preview-one-1278x868.jpg",
-        desktopTwo:
-          "/assets/detail/desktop/image-hyperfast-preview-two-1278x868.jpg",
-      },
-    },
-    sources: {
-      website: "https://www.hyperfastleads.com",
-    },
-    subGreen: "Webflow, Dynamic CMS, Client Content Editor",
-    previous: "Coffee",
     next: "Scoot",
   },
   {
@@ -123,11 +125,42 @@ export const portfoliodata = [
       website: "https://getscootin.vercel.app/",
     },
     subGreen: "Atomic Design, React, Framer Motion, Styled Components",
-    previous: "Summit",
-    next: "Galleria",
+    previous: "Coffee",
+    next: "Summit",
   },
   {
     id: 5,
+    name: "Summit",
+    slug: "summit",
+    description:
+      "Take a look at something I’ve created for Hyperfast’s annual 3-day Investor and Growth Summit. This project was built in Webflow and features dynamic content management systems, animations, and a place for clients to handle content editing after initial setup of the website.",
+    projBackground:
+      "This website was created for the three-day summit event by Hyperfast hosted in Boca Raton, FL. Hyperfast is a business hosted under the Optime Realty umbrella, which also includes Keri Shull Team. The goal was to create a website for coaching clients to navigate to after scanning a QR code to read speaker bios and see the daily schedule. This product was especially useful after the initial build on Webflow allowing clients to make quick changes to pictures, copy, and links on the fly, without a need to use a service like GitHub.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-hyperfast-1080x1000.jpg",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-hyperfast-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-hyperfast-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-hyperfast-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      website: "https://www.hyperfastleads.com",
+    },
+    subGreen: "Webflow, Dynamic CMS, Client Content Editor",
+    previous: "Coffee",
+    next: "Galleria",
+  },
+
+  {
+    id: 6,
     name: "Galleria",
     slug: "galleria",
     description:
@@ -159,7 +192,7 @@ export const portfoliodata = [
     next: "Planets",
   },
   {
-    id: 6,
+    id: 7,
     name: "Planet Facts",
     slug: "planets",
     description:
@@ -190,7 +223,7 @@ export const portfoliodata = [
     next: "Netflix",
   },
   {
-    id: 7,
+    id: 8,
     name: "Netflix Clone",
     slug: "netflix",
     description:
@@ -221,7 +254,7 @@ export const portfoliodata = [
     next: "Amazon",
   },
   {
-    id: 8,
+    id: 9,
     name: "Amazon Clone",
     slug: "amazon",
     description:
@@ -249,6 +282,6 @@ export const portfoliodata = [
     },
     subGreen: "React, ExpressJS, Firebase, Stripe",
     previous: "Netflix",
-    next: "HyperFast",
+    next: "Audiophile",
   },
 ];
