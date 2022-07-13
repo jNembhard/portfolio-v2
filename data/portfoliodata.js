@@ -188,7 +188,7 @@ export const portfoliodata = [
     },
     subGreen:
       "Next JS, Redux, Mobile-First Workflow, Framer Motion, Styled Components",
-    previous: "Scoot",
+    previous: "Summit",
     next: "Planets",
   },
   {
