@@ -1,4 +1,4 @@
-import NextHead from "../components/atoms/NextHead";
+import SEO from "../components/atoms/SEO";
 import ContactButton from "../components/atoms/ContactButton";
 import About from "../components/organisms/About";
 import HomeHero from "../components/organisms/HomeHero";
@@ -7,7 +7,7 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <div>
-      <NextHead
+      <SEO
         title="Home"
         metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
       />

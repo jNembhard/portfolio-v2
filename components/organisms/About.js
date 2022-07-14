@@ -12,9 +12,9 @@ import {
   imageVariant,
   buttonVariant,
 } from "../../animations/content";
-import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.webp";
-import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.webp";
-import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.webp";
+import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
+import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
+import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
 
 export default function About() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);

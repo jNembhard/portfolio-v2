@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function NextHead({ title, metadescription }) {
+export default function SEO({ title, metadescription }) {
   return (
     <Head>
       <title>{title} | Jason Nembhard</title>

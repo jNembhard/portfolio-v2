@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import styled from "styled-components";
-import Image from "next/image";
 import openIcon from "../../public/assets/icons/hamburger.svg";
 import closeIcon from "../../public/assets/icons/close.svg";
 import Link from "next/link";
@@ -22,7 +21,7 @@ export default function BurgerNav() {
   });
 
   const toggle = () => setModalOpen(!modalOpen);
-  const getImageName = () => (modalOpen ? closeIcon : openIcon);
+  // const getImageName = () => (modalOpen ? closeIcon : openIcon);
 
   useEffect(() => {
     const body = document.querySelector("body");

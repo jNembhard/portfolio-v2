@@ -1,4 +1,4 @@
-import NextHead from "../components/atoms/NextHead";
+import SEO from "../components/atoms/SEO";
 import GetInTouch from "../components/molecules/GetInTouch";
 import Email from "../components/organisms/Email";
 import styled from "styled-components";
@@ -6,9 +6,9 @@ import styled from "styled-components";
 export default function Contact() {
   return (
     <div>
-      <NextHead
+      <SEO
         title="Contact"
-        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        metadescription="Get in touch with Jason Nembhard to get started on your latest Front End and Web Development projects."
       />
       <Wrapper>
         <GetInTouch />

@@ -1,4 +1,4 @@
-import NextHead from "../../components/atoms/NextHead";
+import SEO from "../../components/atoms/SEO";
 import Carousel from "../../components/organisms/Carousel";
 import { portfoliodata } from "../../data/portfoliodata";
 import styled from "styled-components";
@@ -21,10 +21,7 @@ export async function getStaticProps({ params }) {
 export default function PortfolioIndex({ portfolio }) {
   return (
     <div>
-      <NextHead
-        title={portfolio.name}
-        metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
-      />
+      <SEO title={portfolio.name} metadescription={portfolio.description} />
       <AnimatePresence
         exitBeforeEnter
         // onExitComplete={() => window.scrollTo(0, 0)}
