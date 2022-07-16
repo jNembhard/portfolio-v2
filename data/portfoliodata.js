@@ -4,9 +4,9 @@ export const portfoliodata = [
     name: "Audiophile",
     slug: "audiophile",
     description:
-      "Audiophile is the premier store for high end headphones, earphones, speakers and audio accessories. This site features a sleek modern feel along with a framework that can support it. Next JS along  with TypeScript provides shoppers with a pleasing user experience throughout their entire visit. Check out the project to learn more.",
+      "Audiophile is the premier store for high end headphones, earphones, speakers and audio accessories. This site features a sleek modern feel along with a framework that can support it. Next JS paired with TypeScript provides shoppers with a pleasing user experience throughout their entire visit. Check out the project to learn more.",
     projBackground:
-      "Audiophile’s site is designed to give user a memorable and simplistic shopping experience. Users experience a natural flowing feel from second they visit the site to end of their checkout journey. I built this project with NextJS, TypeScript, and Chakra to provide an implementation pattern that is clean and maintainable. State management and dynamic page design was a key factor in deciding what tools would be best for this build. Head over to the site to try it out for yourself or check out my GitHub for an in depth look on the technical side of things.",
+      "Audiophile’s site is designed to give users a memorable and simplistic shopping experience. Visitors can enjoy a natural flowing feel from the moment they reach the landing page to the end of their checkout journey. I built this project with NextJS, TypeScript, and Chakra to provide an implementation pattern that is clean and maintainable. State management and dynamic page design was a key factor in deciding what tools would be best for this build. Head over to the site to try it out for yourself or check out my GitHub for an in depth look at the technical side of things.",
     images: {
       index: {
         desktop:
