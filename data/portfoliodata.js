@@ -24,7 +24,7 @@ export const portfoliodata = [
     },
     sources: {
       github: "https://github.com/jNembhard/audiophile-ecom",
-      website: "https://audiophiles.vercel.app",
+      website: "https://audiophilemusic.vercel.app",
     },
     subGreen:
       "NextJS, TypeScript, Chakra, Redux Toolkit, React Hook Form, Atomic Design",
