@@ -27,7 +27,7 @@ export const portfoliodata = [
       website: "https://audiophilemusic.vercel.app",
     },
     subGreen:
-      "NextJS, TypeScript, Chakra, Redux Toolkit, React Hook Form, Atomic Design",
+      "NextJS, TypeScript, Chakra, Firebase 9, Redux Toolkit, React Hook Form, Atomic Design",
     previous: "Amazon",
     next: "HyperFast",
   },
