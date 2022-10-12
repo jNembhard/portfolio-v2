@@ -93,7 +93,7 @@ export const portfoliodata = [
       website: "https://coffeeroasters.gatsbyjs.io/",
     },
     subGreen:
-      "Gatsby JS, Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
+      "Gatsby JS (React), Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
     previous: "HyperFast",
     next: "Scoot",
   },
@@ -187,7 +187,7 @@ export const portfoliodata = [
       website: "https://galleria-art.vercel.app",
     },
     subGreen:
-      "Next JS, Redux, Mobile-First Workflow, Framer Motion, Styled Components",
+      "Next JS (React), Redux, Mobile-First Workflow, Framer Motion, Styled Components",
     previous: "Summit",
     next: "Planets",
   },
