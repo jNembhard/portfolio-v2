@@ -22,8 +22,8 @@ export default function Menu() {
         <MenuLinks>
           {navLinks.map(({ id, name, url }, i) => (
             <motion.li
-              className="second-color"
               key={id}
+              className="second-color"
               initial="hidden"
               custom={i}
               animate="visible"

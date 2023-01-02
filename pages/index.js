@@ -10,6 +10,7 @@ export default function Home() {
       <SEO
         title="Home"
         metadescription="Looking to launch a stylish yet functionable website? Jason Nembhard has got you covered."
+        type="webapp"
       />
       <main>
         <HomeHero />

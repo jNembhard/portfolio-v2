@@ -6,7 +6,8 @@ export default function Portfolio() {
     <div>
       <SEO
         title="Portfolio"
-        metadescription="Jason Nembhard has a wide array of web and software development skills for you to leverage. Check out his latest projects."
+        metadescription="Jason Nembhard has a wide array of web and software development skills for you to leverage. Check out my latest projects."
+        type="webapp"
       />
       <main>
         <PIndex />

@@ -21,7 +21,11 @@ export async function getStaticProps({ params }) {
 export default function PortfolioIndex({ portfolio }) {
   return (
     <div>
-      <SEO title={portfolio.name} metadescription={portfolio.description} />
+      <SEO
+        title={portfolio.name}
+        metadescription={portfolio.description}
+        type="webapp"
+      />
       <AnimatePresence
         exitBeforeEnter
         // onExitComplete={() => window.scrollTo(0, 0)}

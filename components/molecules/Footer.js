@@ -45,16 +45,16 @@ export default function Footer() {
           </Link>
         </LogoContainer>
         <NavContainer ref={ref2}>
-          {navLinks.map((navLink, i) => (
+          {navLinks.map(({ id, name, url }, i) => (
             <NavList
-              key={navLinks.id}
+              key={id}
               initial="hidden"
               custom={i}
               animate={controls}
               variants={navVariant}
             >
-              <Link href={navLink.url} passHref>
-                <LinkList>{navLink.name}</LinkList>
+              <Link href={url} passHref>
+                <LinkList>{name}</LinkList>
               </Link>
             </NavList>
           ))}

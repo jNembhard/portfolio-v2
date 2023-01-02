@@ -9,6 +9,7 @@ export default function Contact() {
       <SEO
         title="Contact"
         metadescription="Get in touch with Jason Nembhard to get started on your latest Front End and Web Development projects."
+        type="webapp"
       />
       <Wrapper>
         <GetInTouch />
