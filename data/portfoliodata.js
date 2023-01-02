@@ -4,9 +4,9 @@ export const portfoliodata = [
     name: "Audiophile",
     slug: "audiophile",
     description:
-      "Audiophile is the premier store for high end headphones, earphones, speakers and audio accessories. This site features a sleek modern feel along with a framework that can support it. Next JS paired with TypeScript provides shoppers with a pleasing user experience throughout their entire visit. Check out the project to learn more.",
+      "Audiophile is the premier store for high end headphones, earphones, speakers and audio accessories. This site features a sleek modern feel along with a framework that can support it. Next.js paired with TypeScript provides shoppers with a pleasing user experience throughout their entire visit. Check out the project to learn more.",
     projBackground:
-      "Audiophile’s site is designed to give users a memorable and simplistic shopping experience. Visitors can enjoy a natural flowing feel from the moment they reach the landing page to the end of their checkout journey. I built this project with NextJS, TypeScript, and Chakra to provide an implementation pattern that is clean and maintainable. State management and dynamic page design was a key factor in deciding what tools would be best for this build. Head over to the site to try it out for yourself or check out my GitHub for an in depth look at the technical side of things.",
+      "Audiophile’s site is designed to give users a memorable and simplistic shopping experience. Visitors can enjoy a natural flowing feel from the moment they reach the landing page to the end of their checkout journey. I built this project with Next.js, TypeScript, and Chakra to provide an implementation pattern that is clean and maintainable. State management and dynamic page design was a key factor in deciding what tools would be best for this build. Head over to the site to try it out for yourself or check out my GitHub for an in depth look at the technical side of things.",
     images: {
       index: {
         desktop:
@@ -27,7 +27,7 @@ export const portfoliodata = [
       website: "https://audiophilemusic.vercel.app",
     },
     subGreen:
-      "NextJS, TypeScript, Chakra, Firebase 9, Redux Toolkit, React Hook Form, Atomic Design",
+      "Next.js, TypeScript, Chakra, Firebase 9, Redux Toolkit, React Hook Form, Atomic Design",
     previous: "Amazon",
     next: "HyperFast",
   },
@@ -59,7 +59,7 @@ export const portfoliodata = [
       website: "https://www.hyperfastagent.com",
     },
     subGreen:
-      "Webflow, Data Migration, Dynamic CMS, Google Analytics, HubSpot, SEO, Stripe, Search Console, Zapier",
+      "Webflow, Dynamic CMS, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite, Zapier",
     previous: "Audiophile",
     next: "Coffee",
   },
@@ -93,7 +93,7 @@ export const portfoliodata = [
       website: "https://coffeeroasters.gatsbyjs.io/",
     },
     subGreen:
-      "Gatsby JS (React), Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
+      "Gatsby.js (React), Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
     previous: "HyperFast",
     next: "Scoot",
   },
@@ -164,7 +164,7 @@ export const portfoliodata = [
     name: "Galleria",
     slug: "galleria",
     description:
-      "We often don’t see a chance to blend art and technology in a significant way. The Galleria website aims to provide a user experience of walking through an art gallery. The project was built with NextJS and uses React Redux to handle state changes between slides. Head into the gallery to view some timeless artwork.",
+      "We often don’t see a chance to blend art and technology in a significant way. The Galleria website aims to provide a user experience of walking through an art gallery. The project was built with Next.js and uses React Redux to handle state changes between slides. Head into the gallery to view some timeless artwork.",
     projBackground:
       "Galleria features many pieces artwork from the 1400s up until the early 1900s. The gallery is just a small snippet of art pieces from that time but has the potential to grow exponentially. I decided to use React Redux for this project not only because I needed a reliable state management tool, but it also makes it easy to add in more pieces to the art gallery. I could potentially add hundreds of pieces of art but only load one piece at a time with a simple two-page layout and a modal. I invite you to visit the Galleria website and check out my GitHub page for a more in-depth look at the technical aspects of this project.",
     images: {
@@ -187,7 +187,7 @@ export const portfoliodata = [
       website: "https://galleria-art.vercel.app",
     },
     subGreen:
-      "Next JS (React), Redux, Mobile-First Workflow, Framer Motion, Styled Components",
+      "Next.js (React), Redux, Mobile-First Workflow, Framer Motion, Styled Components",
     previous: "Summit",
     next: "Planets",
   },
@@ -258,7 +258,7 @@ export const portfoliodata = [
     name: "Amazon Clone",
     slug: "amazon",
     description:
-      "Here’s my take on your favorite online shopping experience, Amazon. This project is a Full Stack web application which features Stripe’s API, React for the Front End, and Firebase and Express, for the backend. Checkout the entire order workflow!",
+      "Here’s my take on your favorite online shopping experience, Amazon. This project is a Full Stack web application which features Stripe’s API, React for the Front End, and Firebase and Express.js, for the backend. Checkout the entire order workflow!",
     projBackground:
       "This project was one of the main reasons I began learning everything I could about Web Development and applications. I was able to connect React to Firebase on the backend and also add in Stripe’s API for good measure. Overall, this application allows a user to login to a created account and order products or view their past purchase history. If you’re curious and want to see this web clone in action, head over to the website and check out my GitHub page for some simple instructions to use Stripe’s test mode credit card when it’s time to enter credit details.",
     images: {
@@ -280,7 +280,7 @@ export const portfoliodata = [
       github: "https://github.com/jNembhard/amzn-ecommerce",
       website: "https://amznjason.web.app/",
     },
-    subGreen: "React, ExpressJS, Firebase, Stripe",
+    subGreen: "React, Express.js, Firebase, Stripe",
     previous: "Netflix",
     next: "Audiophile",
   },
