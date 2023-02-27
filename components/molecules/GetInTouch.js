@@ -61,8 +61,8 @@ export default function GetInTouch() {
                 <Socials
                   key={social.id}
                   src={social.media}
-                  width="24px"
-                  height="24px"
+                  width="1.5rem"
+                  height="1.5rem"
                   alt={social.name}
                 />
               </motion.a>
@@ -75,44 +75,44 @@ export default function GetInTouch() {
 }
 
 const ContactWrap = styled.div`
-  margin: 40px 32px;
+  margin: 2.5rem 2rem;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin: 47px 100px;
-    width: 900px;
+    margin: 2.938rem 6.25rem;
+    width: 56.25rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 47px 165px;
-      width: 1110px;
-      max-width: 1110px;
+      margin: 2.938rem 10.313rem;
+      width: 69.375rem;
+      max-width: 69.375rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 47px 165px;
-        width: 1110px;
-        max-width: 1110px;
+        margin: 2.938rem 10.313rem;
+        width: 69.375rem;
+        max-width: 69.375rem;
       }
     }
   }
 `;
 
 const Container = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
-    padding: 48px 0;
+    padding: 3rem 0;
   }
 `;
 
 const SummaryContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 689px;
+    max-width: 43.063rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 635px;
-      margin-left: 145px;
-      margin-top: 10px;
+      max-width: 39.688rem;
+      margin-left: 9.063rem;
+      margin-top: 0.625rem;
     }
   }
 `;
@@ -120,16 +120,16 @@ const SummaryContainer = styled.div`
 const Title = styled(motion.h1)``;
 
 const Description = styled(motion.p)`
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 `;
 
 const SocialContainer = styled.div`
   display: inline-flex;
   align-items: left;
   justify-content: space-between;
-  width: 65px;
-  height: 24px;
-  margin-bottom: 24px;
+  width: 4.063rem;
+  height: 1.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Socials = styled(Image)``;

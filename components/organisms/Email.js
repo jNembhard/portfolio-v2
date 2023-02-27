@@ -35,33 +35,6 @@ export default function Email() {
     }
   });
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   let isFormValid = true;
-
-  //   for (const name in formState) {
-  //     const item = formState[name];
-  //     const { value } = item;
-  //     const { hasError, error } = validateInput(name, value);
-
-  //     if (hasError) {
-  //       isFormValid = false;
-  //     }
-
-  //     if (name) {
-  //       dispatch({
-  //         type: UPDATE_FORM,
-  //         data: { name, value, hasError, error, touched: true, isFormValid },
-  //       });
-  //     }
-  //   }
-
-  //   !isFormValid
-  //     ? setShowError(true)
-  //     : dispatch({ type: RESET_FORM, data: initialState });
-  // };
-
   const sendEmail = (event) => {
     event.preventDefault();
 
@@ -80,7 +53,6 @@ export default function Email() {
           console.log(error.text);
         }
       );
-    // event.target.reset();
 
     let isFormValid = true;
 
@@ -224,27 +196,27 @@ export default function Email() {
 }
 
 const EmailWrap = styled.div`
-  margin: 0 32px 80px;
+  margin: 0 2rem 5rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 689px;
-    width: 689px;
+    max-width: 43.063rem;
+    width: 43.063rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 0 0 109px;
-      width: 1110px;
-      max-width: 1110px;
+      margin: 0 0 6.813rem;
+      width: 69.375rem;
+      max-width: 69.375rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 0 165px 109px;
+        margin: 0 10.313rem 6.813rem;
       }
     }
   }
 
   .border-error {
-    border: 1px solid ${({ theme }) => theme.colors.brightRed};
+    border: 0.063rem solid ${({ theme }) => theme.colors.brightRed};
     &:focus {
-      border: 1px solid ${({ theme }) => theme.colors.brightRed};
+      border: 0.063rem solid ${({ theme }) => theme.colors.brightRed};
     }
   }
 
@@ -262,20 +234,20 @@ const Container = styled.div`
   @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
     flex-direction: row;
-    width: 1110px;
+    width: 69.375rem;
   }
 `;
 const Title = styled(motion.h1)`
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    width: 360px;
+    width: 22.5rem;
   }
 `;
 
 const Label = styled.label`
   font-family: "Public Sans", sans-serif;
   font-weight: bold;
-  font-size: 13px;
-  line-height: 30px;
+  font-size: 0.813rem;
+  line-height: 1.875rem;
 `;
 
 const Form = styled(motion.form)`
@@ -283,14 +255,14 @@ const Form = styled(motion.form)`
   flex-direction: column;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    width: 1110px;
-    max-width: 1110px;
-    padding-left: 145px;
-    margin-top: 20px;
+    width: 69.375rem;
+    max-width: 69.375rem;
+    padding-left: 9.063rem;
+    margin-top: 1.25rem;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      width: 1110px;
-      max-width: 1110px;
+      width: 69.375rem;
+      max-width: 69.375rem;
     }
   }
 `;
@@ -298,32 +270,32 @@ const Form = styled(motion.form)`
 const Input = styled.input`
   border: 0;
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  height: 48px;
-  text-indent: 16px;
-  margin-bottom: 24px;
-  font-size: 13px;
+  height: 3rem;
+  text-indent: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.813rem;
   border: none;
 
   &:focus {
-    outline: 1px solid transparent;
-    border: 1px solid ${({ theme }) => theme.colors.desaturatedCyan};
+    outline: 0.063rem solid transparent;
+    border: 0.063rem solid ${({ theme }) => theme.colors.desaturatedCyan};
   }
 `;
 
 const TextArea = styled.textarea`
   font-family: "Public Sans", sans-serif;
-  font-size: 13px;
-  height: 96px;
-  line-height: 30px;
-  text-indent: 16px;
-  margin-bottom: 24px;
+  font-size: 0.813rem;
+  height: 6rem;
+  line-height: 1.875rem;
+  text-indent: 1rem;
+  margin-bottom: 1.5rem;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border: 0;
   resize: none;
 
   &:focus {
-    outline: 1px solid transparent;
-    border: 1px solid ${({ theme }) => theme.colors.desaturatedCyan};
+    outline: 0.063rem solid transparent;
+    border: 0.063rem solid ${({ theme }) => theme.colors.desaturatedCyan};
   }
 `;
 
@@ -331,12 +303,12 @@ const ButtonWrapper = styled(motion.div)``;
 
 const Button = styled(motion.button)`
   font-family: "Public Sans", sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
   color: ${({ theme }) => theme.colors.lightGrey};
   background-color: ${({ theme }) => theme.colors.darkBlue};
-  width: 200px;
-  height: 48px;
+  width: 12.5rem;
+  height: 3rem;
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
@@ -348,9 +320,9 @@ const Button = styled(motion.button)`
 
 const Error = styled.small`
   font-family: "Public Sans", sans-serif;
-  margin: -20px 0 24px;
+  margin: -1.25rem 0 1.5rem;
   color: ${({ theme }) => theme.colors.brightRed};
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: bold;
   font-style: italic;
 `;

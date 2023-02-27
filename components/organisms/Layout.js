@@ -35,19 +35,19 @@ const GlobalStyle = createGlobalStyle`
   h1,
   h2 {
     font-weight: 700;
-    font-size: clamp(40px, 90%, 50px);
+    font-size: clamp(2.5rem, 90%, 3.125rem);
   }
 
   h3 {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   p {
     font-family: "Public Sans", sans-serif;
     font-weight: 400;
-    line-height: 30px;
-    font-size: 15px;
+    line-height: 1.875rem;
+    font-size: 0.938rem;
   }
 
   @font-face {

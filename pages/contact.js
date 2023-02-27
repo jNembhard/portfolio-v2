@@ -27,10 +27,10 @@ const Wrapper = styled.main`
     justify-content: center;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 1170px;
+      max-width: 73.125rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        max-width: 1440px;
+        max-width: 90rem;
       }
     }
   }

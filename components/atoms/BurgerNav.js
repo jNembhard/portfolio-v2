@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import styled from "styled-components";
-import openIcon from "../../public/assets/icons/hamburger.svg";
-import closeIcon from "../../public/assets/icons/close.svg";
 import Link from "next/link";
 import useOutsideClick from "../../hooks/useOutsideClick";
 
@@ -21,7 +19,6 @@ export default function BurgerNav() {
   });
 
   const toggle = () => setModalOpen(!modalOpen);
-  // const getImageName = () => (modalOpen ? closeIcon : openIcon);
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -36,7 +33,6 @@ export default function BurgerNav() {
           toggled={modalOpen}
           toggle={() => toggle()}
         />
-        {/* <Image onClick={() => toggle()} src={getImageName()} alt="" /> */}
       </BurgerContainer>
       <SideBarContainer ref={ref} modalOpen={modalOpen}>
         <ul>
@@ -64,12 +60,12 @@ const BurgerContainer = styled.div`
 `;
 
 const SideBarContainer = styled.div`
-  width: 223px;
-  height: 186px;
+  width: 13.938rem;
+  height: 11.625rem;
   background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
   position: absolute;
-  top: 88px;
-  right: 32px;
+  top: 5.5rem;
+  right: 2rem;
   transform: ${(props) =>
     props.modalOpen ? "translateY(0)" : "translateY(-150%)"};
   transition: transform 0.2s ease-in-out;
@@ -77,19 +73,19 @@ const SideBarContainer = styled.div`
 
   ul {
     font-family: "Public Sans", sans-serif;
-    letter-spacing: 2px;
-    font-size: 12px;
+    letter-spacing: 0.125rem;
+    font-size: 0.75rem;
     list-style-type: none;
     color: ${({ theme }) => theme.colors.lightGrey};
     text-transform: uppercase;
-    margin: 0 26px;
-    margin-top: 20px;
+    margin: 0 1.625rem;
+    margin-top: 1.25rem;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
 
     li {
-      margin: 16px 0;
+      margin: 1rem 0;
     }
 
     a {

@@ -88,7 +88,7 @@ export default function Footer() {
 
 const FooterWrap = styled.footer`
   width: 100%;
-  height: 354px;
+  height: 22.125rem;
   background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
   font-family: "Public Sans", sans-serif;
   display: flex;
@@ -96,7 +96,7 @@ const FooterWrap = styled.footer`
   justify-content: center;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    height: 85px;
+    height: 5.313rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
       height: 100%;
@@ -115,10 +115,10 @@ const Container = styled.div`
     width: 100%;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 1170px;
+      max-width: 73.125rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        max-width: 1440px;
+        max-width: 90rem;
       }
     }
   }
@@ -130,14 +130,14 @@ const Logo = styled(Image)`
 `;
 
 const LogoContainer = styled(motion.div)`
-  margin: 10px 34px 30px;
-  width: 61px;
+  margin: 0.625rem 2.125rem 1.875rem;
+  width: 3.813rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 48px 0 20px;
+    margin: 0 3rem 0 1.25rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 0 48px 0 0;
+      margin: 0 3rem 0 0;
     }
   }
 `;
@@ -149,22 +149,22 @@ const NavContainer = styled.ul`
   justify-content: center;
   text-align: center;
   color: ${({ theme }) => theme.colors.veryLightGreyBG};
-  padding: 0 7px;
+  padding: 0 0.438rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     flex-direction: row;
     padding: unset;
-    margin: 33px 0;
-    width: 309px;
+    margin: 2.063rem 0;
+    width: 19.313rem;
   }
 `;
 
 const NavList = styled(motion.li)`
   list-style-type: none;
-  margin: 0 7px 32px;
+  margin: 0 0.438rem 2rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 21px 0 0;
+    margin: 0 1.313rem 0 0;
   }
 `;
 
@@ -172,8 +172,8 @@ const LinkList = styled.a`
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
 
   &:hover {
     color: ${({ theme }) => theme.colors.desaturatedCyan};
@@ -184,16 +184,16 @@ const SocialContainer = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  width: 65px;
-  height: 24px;
-  margin: 0 105px;
+  width: 4.063rem;
+  height: 1.5rem;
+  margin: 0 6.563rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     flex-direction: row;
-    margin: 28px 40px 28px 222px;
+    margin: 1.75rem 2.5rem 1.75rem 13.875rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 28px 40px 28px 643px;
+      margin: 1.75rem 2.5rem 1.75rem 40.188rem;
     }
   }
 `;

@@ -48,7 +48,7 @@ const MenuWrapper = styled.div`
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
-    margin-left: 260px;
+    margin-left: 16.25rem;
   }
 `;
 
@@ -58,9 +58,9 @@ const MenuLinks = styled.ul`
     color: ${({ theme }) => theme.colors.grayishDarkBlue};
     display: inline-flex;
     justify-content: space-between;
-    font-size: 12px;
-    letter-spacing: 2px;
-    width: 300px;
+    font-size: 0.75rem;
+    letter-spacing: 0.125rem;
+    width: 18.75rem;
     list-style-type: none;
 
     a {

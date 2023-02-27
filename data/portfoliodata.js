@@ -27,7 +27,7 @@ export const portfoliodata = [
       website: "https://audiophilemusic.vercel.app",
     },
     subGreen:
-      "Next.js, TypeScript, Chakra, Firebase 9, Redux Toolkit, React Hook Form, Atomic Design",
+      "Next.js (React), TypeScript, Chakra, Firebase 9, Jest, Redux Toolkit, React Hook Form, Atomic Design",
     previous: "Amazon",
     next: "HyperFast",
   },
@@ -59,7 +59,7 @@ export const portfoliodata = [
       website: "https://www.hyperfastagent.com",
     },
     subGreen:
-      "Webflow, Dynamic CMS, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite, Zapier",
+      "Webflow, Dynamic CMS, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite",
     previous: "Audiophile",
     next: "Coffee",
   },

@@ -38,16 +38,16 @@ const NavHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 32px 32px 40px 32px;
+  margin: 2rem 2rem 2.5rem 2rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 64px 40px 47px;
+    margin: 4rem 2.5rem 2.938rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 64px 80px 54px;
+      margin: 4rem 5rem 3.375rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 64px 165px 54px;
+        margin: 4rem 10.313rem 3.375rem;
       }
     }
   }
@@ -59,10 +59,10 @@ const Container = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    max-width: 1280px;
+    max-width: 80rem;
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      max-width: 1440px;
+      max-width: 90rem;
     }
   }
 `;

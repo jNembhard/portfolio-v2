@@ -106,20 +106,20 @@ export default function IndexProp({ id, name, image, description, slug }) {
 }
 
 const IndexWrap = styled.div`
-  margin: 0 32px;
+  margin: 0 2rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 80px 40px;
+    margin: 5rem 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 800px;
+    max-width: 50rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 930px;
+      max-width: 58.125rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        max-width: 1015px;
+        max-width: 63.438rem;
       }
     }
   }
@@ -130,7 +130,7 @@ const ButtonContainer = styled(motion.div)``;
 const ScaleWrapper = styled(motion.div)``;
 
 const ImageContainer = styled.div`
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
 
@@ -140,9 +140,9 @@ const ImageContainer = styled.div`
 `;
 
 const Container = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  margin-bottom: 72px;
+  border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+  margin-bottom: 4.5rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
@@ -150,40 +150,40 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     margin-bottom: unset;
-    max-width: 281px;
+    max-width: 17.563rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 350px;
+      max-width: 21.875rem;
     }
   }
 `;
 
 const Title = styled(motion.h1)`
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 `;
 
 const Description = styled(motion.p)`
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 `;
 
 const ProjectButton = styled(motion.button)`
-  width: 175px;
-  height: 48px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
+  width: 10.938rem;
+  height: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  margin-bottom: 1.5rem;
+  border: 0.063rem solid ${({ theme }) => theme.colors.grayishDarkBlue};
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: white;
   text-transform: uppercase;
   cursor: pointer;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
   }
 
   &:hover {

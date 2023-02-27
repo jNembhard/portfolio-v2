@@ -203,24 +203,24 @@ export default function Carousel({
 }
 
 const CarouselWrap = styled.div`
-  margin: 0 32px 48px;
+  margin: 0 2rem 3rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 94px 40px 80px;
+    margin: 5.875rem 2.5rem 5rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 94px 80px 115px;
+      margin: 5.875rem 5rem 7.188rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 94px 165px 115px;
+        margin: 5.875rem 10.313rem 7.188rem;
       }
     }
   }
 `;
 
 const ContainerOne = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
     border-top: unset;
@@ -231,8 +231,8 @@ const ContainerOne = styled.div`
       display: block;
       position: -webkit-sticky;
       position: sticky;
-      border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
-      width: 350px;
+      border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+      width: 21.875rem;
     }
 
     &:after {
@@ -240,33 +240,33 @@ const ContainerOne = styled.div`
       display: block;
       position: -webkit-sticky;
       position: sticky;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
-      width: 350px;
+      border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
+      width: 21.875rem;
     }
   }
 `;
 
 const ImageContainer = styled.div`
-  max-width: 1100px;
+  max-width: 68.75rem;
 `;
 
 const OverflowHidden = styled(motion.div)`
   overflow: hidden;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 `;
 const ImageContainerTwo = styled(motion.div)`
-  max-width: 1100px;
+  max-width: 68.75rem;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    max-width: 689px;
+    max-width: 43.063rem;
   }
 `;
 
 const Summary = styled.div`
-  margin-top: 40px;
+  margin-top: 2.5rem;
   @media ${({ theme }) => theme.breakpoints.laptop} {
     display: flex;
-    margin-top: 115px;
+    margin-top: 7.188rem;
   }
 `;
 
@@ -282,27 +282,27 @@ const TitleSum = styled.div`
 
 const TitleWrapper = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-height: 50px;
+    max-height: 3.125rem;
   }
 `;
 const Title = styled(motion.h1)``;
 
 const DesContainer = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 339px;
+    max-width: 21.188rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 350px;
+      max-width: 21.875rem;
     }
   }
 `;
 
 const DesContainerTwo = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 688px;
+    max-width: 43rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 635px;
+      max-width: 39.688rem;
     }
   }
 `;
@@ -312,7 +312,7 @@ const Description = styled.p``;
 const Skills = styled(motion.p)`
   color: ${({ theme }) => theme.colors.desaturatedCyan};
   font-weight: bold;
-  font-size: 13px;
+  font-size: 0.813rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-top: ${({ title }) =>
@@ -321,12 +321,12 @@ const Skills = styled(motion.p)`
         : title === "Amazon Clone"
         ? "-125px"
         : "-150px"};
-    padding-right: 391px;
+    padding-right: 24.438rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin-top: 23px;
-      padding-right: 125px;
-      width: 340px;
+      margin-top: 1.438rem;
+      padding-right: 7.813rem;
+      width: 21.25rem;
     }
   }
 `;
@@ -336,30 +336,30 @@ const WebWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 310px;
+  max-width: 19.375rem;
 
-  @media (min-width: 375px) {
+  @media (min-width: 23.438rem) {
     flex-direction: row;
     justify-content: space-between;
   }
 `;
 
 const WebButton = styled(motion.button)`
-  width: 260px;
-  height: 48px;
+  width: 16.25rem;
+  height: 3rem;
   text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin: 12px 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  margin: 0.75rem 0;
   box-shadow: none;
-  border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
+  border: 0.063rem solid ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: transparent;
   color: ${({ theme }) => theme.colors.darkBlue};
   cursor: pointer;
 
-  @media (min-width: 375px) {
-    width: 150px;
-    margin: 24px 0;
+  @media (min-width: 23.438rem) {
+    width: 9.375rem;
+    margin: 1.5rem 0;
   }
 
   &:hover {
@@ -369,8 +369,8 @@ const WebButton = styled(motion.button)`
 `;
 const Background = styled.div`
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin-top: -30px;
-    margin-bottom: 180px;
+    margin-top: -1.875rem;
+    margin-bottom: 11.25rem;
   }
 `;
 
@@ -392,12 +392,12 @@ const ButtonWrap = styled.a`
 const Subtitle = styled(motion.h3)``;
 
 const ContainerThree = styled.div`
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin-left: 465px;
-    max-width: 689px;
-    margin-top: -200px;
+    margin-left: 29.063rem;
+    max-width: 43.063rem;
+    margin-top: -12.5rem;
   }
 `;
 
@@ -405,19 +405,19 @@ const ContainerFour = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
 
   @media ${({ theme }) => theme.breakpoints.laptop} {
-    max-width: 1110px;
+    max-width: 69.375rem;
   }
 `;
 
 const Previous = styled.a`
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
-  height: 146px;
+  height: 9.125rem;
   border-left: 0;
-  padding-top: 15px;
+  padding-top: 0.938rem;
   color: inherit;
   text-decoration: none;
 
@@ -429,11 +429,11 @@ const Previous = styled.a`
 `;
 
 const Next = styled.a`
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
-  height: 146px;
+  height: 9.125rem;
   border-right: 0;
-  padding-top: 15px;
+  padding-top: 0.938rem;
   color: inherit;
   text-decoration: none;
 
@@ -445,14 +445,14 @@ const Next = styled.a`
 `;
 
 const LeftTitle = styled.h3`
-  line-height: 36px;
-  margin-bottom: -15px;
+  line-height: 2.25rem;
+  margin-bottom: -0.938rem;
 `;
 
 const RightTitle = styled.h3`
   text-align: right;
-  line-height: 36px;
-  margin-bottom: -15px;
+  line-height: 2.25rem;
+  margin-bottom: -0.938rem;
 `;
 
 const Sub = styled.p`

@@ -3,7 +3,6 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
-  descriptionVariant,
   lineVariant,
   buttonVariant,
 } from "../../animations/content";
@@ -38,7 +37,7 @@ export default function ContactButton() {
 
 const Container = styled.div`
   text-align: center;
-  margin: 8px 32px 80px;
+  margin: 0.5rem 2rem 5rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: flex;
@@ -49,19 +48,19 @@ const Container = styled.div`
       display: flex;
       align-items: center;
       text-align: left;
-      margin: 0 80px 110px;
-      max-width: 1170px;
+      margin: 0 5rem 6.875rem;
+      max-width: 73.125rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 0 165px 150px;
-        max-width: 1440px;
+        margin: 0 10.313rem 9.375rem;
+        max-width: 90rem;
       }
     }
   }
 `;
 const Title = styled(motion.h1)`
-  letter-spacing: -0.36px;
-  margin: 0 8px 40px;
+  letter-spacing: -0.023rem;
+  margin: 0 0.5rem 2.5rem;
 `;
 
 const Line = styled(motion.hr)`
@@ -69,17 +68,17 @@ const Line = styled(motion.hr)`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: inherit;
-    margin: 0 32px;
-    width: 113px;
-    height: 1px;
+    margin: 0 2rem;
+    width: 7.063rem;
+    height: 0.063rem;
     background-color: ${({ theme }) => theme.colors.lightGrey};
     border: 0;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      width: 480px;
+      width: 30rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        width: 534px;
+        width: 33.375rem;
       }
     }
   }
@@ -90,19 +89,19 @@ const Button = styled(motion.a)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 162px;
-  height: 48px;
-  font-size: 12px;
-  letter-spacing: 2px;
+  width: 10.125rem;
+  height: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
   box-shadow: none;
-  border: 1px solid ${({ theme }) => theme.colors.grayishDarkBlue};
+  border: 0.063rem solid ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: transparent;
   color: ${({ theme }) => theme.colors.darkBlue};
   text-transform: uppercase;
   cursor: pointer;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    width: 200px;
+    width: 12.5rem;
   }
 
   text-decoration: none;

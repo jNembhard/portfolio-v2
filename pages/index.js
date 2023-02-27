@@ -24,5 +24,5 @@ export default function Home() {
 }
 
 const ContactWrapper = styled.div`
-  max-width: 1440px;
+  max-width: 90rem;
 `;

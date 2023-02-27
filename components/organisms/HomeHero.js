@@ -84,17 +84,17 @@ const HeroWrap = styled.div`
 
 const OverflowHidden = styled.div`
   overflow: hidden;
-  margin: 0 32px 24px;
+  margin: 0 2rem 1.5rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 41px 24px;
+    margin: 0 2.563rem 1.5rem;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 20px 80px 80px;
+      margin: 1.25rem 5rem 5rem;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 75px 165px 150px;
-        max-width: 1110px;
+        margin: 4.688rem 10.313rem 9.375rem;
+        max-width: 69.375rem;
       }
     }
   }
@@ -105,33 +105,33 @@ const ImageContainer = styled(motion.div)`
 `;
 
 const ContentContainer = styled.div`
-  margin: 0 32px 96px;
+  margin: 0 2rem 6rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     position: absolute;
     bottom: 0;
-    left: 39px;
+    left: 2.438rem;
     background-color: white;
     margin: unset;
-    max-width: 514px;
-    max-height: 278px;
+    max-width: 32.125rem;
+    max-height: 17.375rem;
     margin-bottom: auto;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      top: 243px;
-      left: 80px;
-      bottom: -1px;
-      max-width: 445px;
-      max-height: 357px;
+      top: 15.188rem;
+      left: 5rem;
+      bottom: -0.063rem;
+      max-width: 27.813rem;
+      max-height: 22.313rem;
       margin: unset;
       margin-left: auto;
 
       @media ${({ theme }) => theme.breakpoints.desktop} {
-        top: 243px;
-        left: 163px;
-        bottom: -1px;
-        max-width: 445px;
-        max-height: 357px;
+        top: 15.188rem;
+        left: 10.188rem;
+        bottom: -0.063rem;
+        max-width: 27.813rem;
+        max-height: 22.313rem;
         margin: unset;
       }
     }
@@ -140,25 +140,25 @@ const ContentContainer = styled.div`
 
 const TitleWrapper = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 56px 56px 20px 0;
+    margin: 3.5rem 3.5rem 1.25rem 0;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 56px 56px 53px 0;
+      margin: 3.5rem 3.5rem 3.313rem 0;
     }
   }
 `;
 
 const Title = styled(motion.h1)`
-  line-height: 42px;
-  letter-spacing: -0.36px;
+  line-height: 2.625rem;
+  letter-spacing: -0.023rem;
 `;
 
 const Button = styled(motion.button)`
-  width: 200px;
-  height: 48px;
+  width: 12.5rem;
+  height: 3rem;
   font-family: "Public Sans", sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.colors.darkBlue};
   color: ${({ theme }) => theme.colors.veryLightGreyBG};
@@ -174,8 +174,8 @@ const Button = styled(motion.button)`
 `;
 
 const Arrow = styled.div`
-  margin-left: -30px;
-  margin-right: 38px;
+  margin-left: -1.875rem;
+  margin-right: 2.375rem;
 `;
 
 const Anchor = styled.a`
