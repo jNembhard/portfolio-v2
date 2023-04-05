@@ -120,7 +120,7 @@ export default function Email() {
             id="email"
             type="email"
             name="email"
-            placeholder="nembhardjl@outlook.com"
+            placeholder="example@email.com"
             className={formState.email.hasError ? "border-error" : ""}
             onChange={(e) => {
               onInputChange("email", e.target.value, dispatch, formState);
