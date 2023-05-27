@@ -8,13 +8,17 @@ const initialState = {
 const UPDATE_FORM = "UPDATE_FORM";
 const RESET_FORM = "RESET_FORM";
 
+const fullnameRegEx = new RegExp(/^[a-zA-Z]+ [a-zA-Z]+$/);
+const emailRegEx = new RegExp(
+  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+);
+
 const validateInput = (name, value) => {
   let hasError = false;
   let error = "";
 
   switch (name) {
     case "fullname":
-      const fullnameRegEx = new RegExp(/^[a-zA-Z]+ [a-zA-Z]+$/);
       if (value.trim() === "") {
         hasError = true;
         error = "This field is required";
@@ -25,10 +29,6 @@ const validateInput = (name, value) => {
       break;
 
     case "email":
-      const emailRegEx = new RegExp(
-        /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-      );
-
       if (value.trim() === "") {
         hasError = true;
         error = "This field is required";
@@ -51,7 +51,7 @@ const validateInput = (name, value) => {
   return { hasError, error };
 };
 
-const onInputChange = (name, value, dispatch, formState) => {
+const formUpdate = (name, value, formState) => {
   const { hasError, error } = validateInput(name, value);
   let isFormValid = true;
 
@@ -66,33 +66,20 @@ const onInputChange = (name, value, dispatch, formState) => {
       break;
     }
   }
-
-  dispatch({
+  return {
     type: UPDATE_FORM,
-    data: { name, value, hasError, error, touched: false, isFormValid },
-  });
+    data: { name, value, hasError, error, touched: true, isFormValid },
+  };
+};
+
+const onInputChange = (name, value, dispatch, formState) => {
+  const updateInput = formUpdate(name, value, formState);
+  dispatch(updateInput);
 };
 
 const onFocusOut = (name, value, dispatch, formState) => {
-  const { hasError, error } = validateInput(name, value);
-  let isFormValid = true;
-
-  for (const key in formState) {
-    const item = formState[key];
-
-    if (key === name && hasError) {
-      isFormValid = false;
-      break;
-    } else if (key !== name && item.hasError) {
-      isFormValid = false;
-      break;
-    }
-  }
-
-  dispatch({
-    type: UPDATE_FORM,
-    data: { name, value, hasError, error, touched: true, isFormValid },
-  });
+  const update = formUpdate(name, value, formState);
+  dispatch(update);
 };
 
 const formReducer = (state, action) => {

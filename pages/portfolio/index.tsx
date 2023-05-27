@@ -1,7 +1,8 @@
 import SEO from "../../components/atoms/SEO";
 import PIndex from "../../components/organisms/PIndex";
+import type { NextPage } from "next";
 
-export default function Portfolio() {
+const Portfolio: NextPage = () => {
   return (
     <div>
       <SEO
@@ -14,4 +15,6 @@ export default function Portfolio() {
       </main>
     </div>
   );
-}
+};
+
+export default Portfolio;

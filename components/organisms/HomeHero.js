@@ -1,14 +1,14 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useEffect } from "react";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../src/hooks/useMediaQuery";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
   buttonVariant,
   imageVariant,
-} from "../../animations/content";
+} from "../../src/animations/content";
 import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero-mobile@2x.jpg";
 import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero-tablet@2x.jpg";
 import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";

@@ -5,10 +5,9 @@ import {
   titleVariant,
   descriptionVariant,
   socialVariantTwo,
-} from "../../animations/content";
-import { socials } from "../../data/navigation";
-import Image from "next/image";
-import styled from "styled-components";
+} from "../../src/animations/content";
+import { socials } from "../../src/data/navigation";
+import * as Styled from "./molecule-styled/GetInTouchStyles";
 
 export default function GetInTouch() {
   const [ref, inView] = useInView({ threshold: 0.4 });
@@ -25,13 +24,17 @@ export default function GetInTouch() {
   });
 
   return (
-    <ContactWrap>
-      <Container ref={ref}>
-        <Title animate={controls} initial="hidden" variants={titleVariant}>
+    <Styled.ContactWrap>
+      <Styled.Container ref={ref}>
+        <Styled.Title
+          animate={controls}
+          initial="hidden"
+          variants={titleVariant}
+        >
           Get In Touch
-        </Title>
-        <SummaryContainer>
-          <Description
+        </Styled.Title>
+        <Styled.SummaryContainer>
+          <Styled.Description
             animate={controls}
             initial="hidden"
             variants={descriptionVariant}
@@ -45,8 +48,8 @@ export default function GetInTouch() {
             task with a sense of purpose and attention to detail. Please do feel
             free to check out my online profiles below and get in touch using
             the form.
-          </Description>
-          <SocialContainer ref={ref2}>
+          </Styled.Description>
+          <Styled.SocialContainer ref={ref2}>
             {socials.map((social, i) => (
               <motion.a
                 key={social.id}
@@ -58,7 +61,7 @@ export default function GetInTouch() {
                 rel="noopener noreferrer"
                 href={social.url}
               >
-                <Socials
+                <Styled.Socials
                   key={social.id}
                   src={social.media}
                   width="1.5rem"
@@ -67,69 +70,9 @@ export default function GetInTouch() {
                 />
               </motion.a>
             ))}
-          </SocialContainer>
-        </SummaryContainer>
-      </Container>
-    </ContactWrap>
+          </Styled.SocialContainer>
+        </Styled.SummaryContainer>
+      </Styled.Container>
+    </Styled.ContactWrap>
   );
 }
-
-const ContactWrap = styled.div`
-  margin: 2.5rem 2rem;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin: 2.938rem 6.25rem;
-    width: 56.25rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 2.938rem 10.313rem;
-      width: 69.375rem;
-      max-width: 69.375rem;
-
-      @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 2.938rem 10.313rem;
-        width: 69.375rem;
-        max-width: 69.375rem;
-      }
-    }
-  }
-`;
-
-const Container = styled.div`
-  border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    display: flex;
-    padding: 3rem 0;
-  }
-`;
-
-const SummaryContainer = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 43.063rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 39.688rem;
-      margin-left: 9.063rem;
-      margin-top: 0.625rem;
-    }
-  }
-`;
-
-const Title = styled(motion.h1)``;
-
-const Description = styled(motion.p)`
-  margin-bottom: 1.5rem;
-`;
-
-const SocialContainer = styled.div`
-  display: inline-flex;
-  align-items: left;
-  justify-content: space-between;
-  width: 4.063rem;
-  height: 1.5rem;
-  margin-bottom: 1.5rem;
-`;
-
-const Socials = styled(Image)``;

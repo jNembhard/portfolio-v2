@@ -1,19 +1,5 @@
-import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-export default function Backdrop({ children, onClick }) {
-  return (
-    <ModalWrap
-      onClick={onClick}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {children}
-    </ModalWrap>
-  );
-}
 
 const ModalWrap = styled(motion.div)`
   position: fixed;
@@ -28,3 +14,5 @@ const ModalWrap = styled(motion.div)`
   justify-content: center;
   z-index: 2;
 `;
+
+export { ModalWrap };

@@ -1,7 +1,9 @@
 import Layout from "../components/organisms/Layout";
+import type { AppProps } from "next/app";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
-function MyApp({ Component, pageProps, router }) {
+
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <Layout>

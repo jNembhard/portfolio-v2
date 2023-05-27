@@ -4,6 +4,10 @@ import About from "../components/organisms/About";
 import HomeHero from "../components/organisms/HomeHero";
 import styled from "styled-components";
 
+const StyledContactWrapper = styled.div`
+  max-width: 90rem;
+`;
+
 export default function Home() {
   return (
     <div>
@@ -15,14 +19,10 @@ export default function Home() {
       <main>
         <HomeHero />
         <About />
-        <ContactWrapper style={{ maxWidth: "1440px" }}>
+        <StyledContactWrapper>
           <ContactButton />
-        </ContactWrapper>
+        </StyledContactWrapper>
       </main>
     </div>
   );
 }
-
-const ContactWrapper = styled.div`
-  max-width: 90rem;
-`;

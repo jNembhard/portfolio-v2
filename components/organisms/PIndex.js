@@ -1,5 +1,5 @@
 import IndexProp from "../molecules/IndexProp";
-import { portfoliodata } from "../../data/portfoliodata";
+import { portfoliodata } from "../../src/data/portfoliodata";
 import ContactButton from "../atoms/ContactButton";
 import styled from "styled-components";
 

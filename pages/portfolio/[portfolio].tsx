@@ -1,8 +1,17 @@
 import SEO from "../../components/atoms/SEO";
 import Carousel from "../../components/organisms/Carousel";
-import { portfoliodata } from "../../data/portfoliodata";
+import { portfoliodata } from "../../src/data/portfoliodata";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
+
+const StyledWrapper = styled.main`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 export async function getStaticPaths() {
   const paths = portfoliodata.map((portfolio) => ({
@@ -30,7 +39,7 @@ export default function PortfolioIndex({ portfolio }) {
         exitBeforeEnter
         // onExitComplete={() => window.scrollTo(0, 0)}
       >
-        <Wrapper>
+        <StyledWrapper>
           <Carousel
             name={portfolio.name}
             description={portfolio.description}
@@ -46,17 +55,8 @@ export default function PortfolioIndex({ portfolio }) {
             previousSlug={portfolio.previous.toLowerCase()}
             nextSlug={portfolio.next.toLowerCase()}
           />
-        </Wrapper>
+        </StyledWrapper>
       </AnimatePresence>
     </div>
   );
 }
-
-const Wrapper = styled.main`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-`;

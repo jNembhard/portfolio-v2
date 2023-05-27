@@ -1,6 +1,14 @@
 import Head from "next/head";
 
-export default function SEO({ title, metadescription, type }) {
+export default function SEO({
+  title,
+  metadescription,
+  type,
+}: {
+  title: string;
+  metadescription: string;
+  type: string;
+}) {
   return (
     <Head>
       <title>{title} | Jason Nembhard</title>

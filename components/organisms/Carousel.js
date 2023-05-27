@@ -5,7 +5,7 @@ import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../public/assets/icons/arrow-right.svg";
 import { useEffect } from "react";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../src/hooks/useMediaQuery";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -16,7 +16,7 @@ import {
   buttonVariantTwo,
   greenVariant,
   imageVariant,
-} from "../../animations/content";
+} from "../../src/animations/content";
 
 export default function Carousel({
   name,

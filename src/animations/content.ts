@@ -105,7 +105,7 @@ const logoVariant = {
 };
 
 const navVariant = {
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -120,7 +120,7 @@ const navVariant = {
 };
 
 const socialVariant = {
-  visibleSocial: (i) => ({
+  visibleSocial: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -135,7 +135,7 @@ const socialVariant = {
 };
 
 const socialVariantTwo = {
-  visibleSocial: (i) => ({
+  visibleSocial: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {

@@ -1,6 +1,7 @@
 {
   "name": "secondportfolio",
   "private": true,
+  "author": "Jason Nembhard",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,11 +20,16 @@
     "react-dom": "17.0.2",
     "react-intersection-observer": "^8.33.1",
     "react-onclickoutside": "^6.12.1",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.4.0",
-    "eslint-config-next": "12.0.6"
+    "eslint-config-next": "12.0.6",
+    "typescript": "^5.0.4"
   }
 }
