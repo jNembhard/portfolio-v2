@@ -1,7 +1,18 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const ButtonContainer = styled(motion.div)``;
+const ButtonContainer = styled(motion.div)`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    width: 21.25rem;
+    height: 19.688rem;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      width: 31.25rem;
+      height: 33.75rem;
+    }
+  }
+`;
 
 const ButtonWrapper = styled.a`
   text-decoration: none;
@@ -83,7 +94,10 @@ const ProjectButton = styled(motion.button)`
   }
 `;
 
-const ScaleWrapper = styled(motion.div)``;
+const ScaleWrapper = styled(motion.div)`
+  width: 100%;
+  height: auto;
+`;
 
 const Title = styled(motion.h1)`
   margin-bottom: 1.5rem;
@@ -91,6 +105,12 @@ const Title = styled(motion.h1)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     margin-bottom: 1.875rem;
   }
+`;
+
+const SpecialImage = styled(Image)`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
 
 export {
@@ -103,4 +123,5 @@ export {
   ProjectButton,
   Title,
   ScaleWrapper,
+  SpecialImage,
 };

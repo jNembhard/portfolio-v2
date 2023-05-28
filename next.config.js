@@ -8,6 +8,10 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
 };
 
 module.exports = withFonts();

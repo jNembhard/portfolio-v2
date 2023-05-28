@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
@@ -8,8 +8,6 @@ import {
   buttonVariant,
   imageVariant,
 } from "../../animations/content";
-import styled from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
 import * as Styled from "../molecules/molecule-styled/StyledIndexProp";
 
@@ -29,13 +27,53 @@ export default function IndexProp({
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
+  const initialMargin = {
+    marginLeft: "7.813rem",
+    marginRight: "7.813rem",
+  };
+
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [ref2, inView2] = useInView({ threshold: 0.4 });
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [size, setSize] = useState({ width: 540, height: 500 });
+  const [margin, setMargin] = useState(initialMargin);
+  const [direction, setDirection] = useState("");
 
   useEffect(() => {
+    let subscribe = true;
+
+    const handleSubscribe = () => {
+      if (breakPoint1200) {
+        setSize({ width: 540, height: 500 });
+      } else if (breakPoint767) {
+        setSize({ width: 339, height: 314 });
+      } else {
+        setSize({ width: 311, height: 288 });
+      }
+    };
+
+    const handleMargin = () => {
+      if (breakPoint1200 && id % 2 == 0) {
+        setMargin({ marginLeft: "7.813rem", marginRight: "0" });
+      } else if (breakPoint1200 && id % 2 != 0) {
+        setMargin({ marginLeft: "0", marginRight: "7.813rem" });
+      } else if (breakPoint767 && id % 2 == 0) {
+        setMargin({ marginLeft: "4.375rem", marginRight: "0" });
+      } else if (breakPoint767 && id % 2 != 0) {
+        setMargin({ marginLeft: "0", marginRight: "4.375rem" });
+      } else {
+        setMargin({ marginLeft: "0", marginRight: "0" });
+      }
+    };
+
+    const handleFlex = () => {
+      if (breakPoint767 && id % 2 == 0) {
+        setDirection("row-reverse");
+      } else {
+        setDirection("row");
+      }
+    };
+
     if (inView) {
       controls.start("visibles");
     }
@@ -43,46 +81,24 @@ export default function IndexProp({
       controls.start("visible");
     }
 
-    let handleWidth = () => {
-      return breakPoint1200
-        ? setWidth(540)
-        : breakPoint767
-        ? setWidth(339)
-        : setWidth(311);
-    };
+    if (subscribe) {
+      handleSubscribe();
+      handleMargin();
+      handleFlex();
+    }
 
-    let handleHeight = () => {
-      return breakPoint1200
-        ? setHeight(500)
-        : breakPoint767
-        ? setHeight(314)
-        : setHeight(288);
+    return () => {
+      subscribe = false;
     };
-
-    handleWidth();
-    handleHeight();
-  }, [inView, inView2, breakPoint1200, breakPoint767, controls]);
+  }, [id, inView, inView2, breakPoint1200, breakPoint767, controls]);
 
   return (
-    <Styled.IndexWrap
-      style={
-        breakPoint767 && id % 2 == 0
-          ? { flexDirection: "row-reverse" }
-          : { flexDirection: "unset" }
-      }
-    >
+    <Styled.IndexWrap style={{ flexDirection: direction as "row-reverse" }}>
       <Styled.ImageContainer
-        style={
-          breakPoint1200 && id % 2 == 0
-            ? { marginLeft: "125px" }
-            : breakPoint1200 && id % 2 != 0
-            ? { marginRight: "125px" }
-            : breakPoint767 && id % 2 == 0
-            ? { marginLeft: "70px" }
-            : breakPoint767 && id % 2 != 0
-            ? { marginRight: "70px" }
-            : { marginRight: "unset" }
-        }
+        style={{
+          marginLeft: margin.marginLeft,
+          marginRight: margin.marginRight,
+        }}
       >
         <Link href={`/portfolio/${slug}`} passHref>
           <Styled.ButtonWrapper ref={ref}>
@@ -95,12 +111,13 @@ export default function IndexProp({
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
-                <Image
-                  priority
+                <Styled.SpecialImage
+                  priority={id === 1 ? true : false}
                   src={image}
-                  width={width}
-                  height={height}
+                  width={size.width}
+                  height={size.height}
                   quality={100}
+                  layout="responsive"
                   placeholder="blur"
                   blurDataURL={image}
                   alt={name}
