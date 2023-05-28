@@ -2,21 +2,20 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import ContactButton from "../atoms/ContactButton";
-import arrowleft from "../../public/assets/icons/arrow-left.svg";
-import arrowright from "../../public/assets/icons/arrow-right.svg";
+import arrowleft from "../../../public/assets/icons/arrow-left.svg";
+import arrowright from "../../../public/assets/icons/arrow-right.svg";
 import { useEffect } from "react";
-import { useMediaQuery } from "../../src/hooks/useMediaQuery";
+import { useMediaQuery } from "usehooks-ts";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
-  lineVariant,
   descriptionVariant,
   buttonVariant,
   buttonVariantTwo,
   greenVariant,
   imageVariant,
-} from "../../src/animations/content";
+} from "../../animations/content";
 
 export default function Carousel({
   name,
@@ -32,6 +31,20 @@ export default function Carousel({
   subGreen,
   sourceOne,
   sourceTwo,
+}: {
+  name: string;
+  detail: string;
+  description: string;
+  previewOne: string;
+  previewTwo: string;
+  previousSlug: string;
+  previous: string;
+  next: string;
+  projBackground: string;
+  nextSlug: string;
+  subGreen: string;
+  sourceOne: string;
+  sourceTwo: string;
 }) {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);

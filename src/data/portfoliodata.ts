@@ -59,7 +59,7 @@ export const portfoliodata = [
       website: "https://www.hyperfastagent.com",
     },
     subGreen:
-      "Webflow, Dynamic CMS, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite",
+      "Webflow, Amazon Web Services, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite",
     previous: "Audiophile",
     next: "Coffee",
   },

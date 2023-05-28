@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { useEffect } from "react";
-import { useMediaQuery } from "../../src/hooks/useMediaQuery";
+import { useState, useEffect } from "react";
+import { useMediaQuery } from "usehooks-ts";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -11,18 +11,31 @@ import {
   descriptionVariant,
   imageVariant,
   buttonVariant,
-} from "../../src/animations/content";
-import headshotmobile2 from "../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
-import headshottablet2 from "../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
-import headshotdesktop2 from "../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
+} from "../../animations/content";
+import headshotmobile2 from "../../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
+import headshottablet2 from "../../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
+import headshotdesktop2 from "../../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
 
 export default function About() {
-  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
-  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
+  const breakPoint1200 = useMediaQuery("(min-width: 1200px)");
+  const breakPoint767 = useMediaQuery("(min-width: 767px)");
+
+  const initialStates = {
+    widthInitial: breakPoint1200 ? 540 : breakPoint767 ? 281 : 311,
+    heightInitial: breakPoint1200 ? 600 : breakPoint767 ? 600 : 346,
+    imageInitial: breakPoint1200
+      ? headshotdesktop2
+      : breakPoint767
+      ? headshottablet2
+      : headshotmobile2,
+  };
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [ref2, inView2] = useInView({ threshold: 0.2 });
+  const [image, setImage] = useState<StaticImageData>(
+    initialStates.imageInitial
+  );
 
   useEffect(() => {
     if (inView) {
@@ -31,7 +44,17 @@ export default function About() {
     if (inView2) {
       controls.start("visible");
     }
-  });
+
+    let handleImage = () => {
+      breakPoint1200
+        ? setImage(headshotdesktop2)
+        : breakPoint767
+        ? setImage(headshottablet2)
+        : setImage(headshotmobile2);
+    };
+
+    handleImage();
+  }, [inView, inView2, breakPoint1200, breakPoint767, controls]);
 
   return (
     <AboutWrap ref={ref}>
@@ -41,20 +64,11 @@ export default function About() {
           initial="hidden"
           variants={imageVariant}
         >
-          <Image
+          <StyledImage
             id="about"
-            src={
-              breakPoint1200
-                ? headshotdesktop2
-                : breakPoint767
-                ? headshottablet2
-                : headshotmobile2
-            }
-            width={breakPoint1200 ? 540 : breakPoint767 ? 281 : 311}
-            height={breakPoint767 ? 600 : 346}
+            src={image}
             quality={100}
             placeholder="blur"
-            layout={breakPoint767 ? "" : "responsive"}
             alt="headshot"
           />
         </ImageContainer>
@@ -135,7 +149,7 @@ const ImageContainer = styled(motion.div)`
   display: block;
 `;
 
-const ContainerTwo = styled.div`
+const ContainerTwo = styled(motion.div)`
   margin: 2rem 0 3.188rem;
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
   border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
@@ -198,4 +212,9 @@ const Button = styled(motion.button)`
 const ButtonWrap = styled.a`
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
   text-decoration: none;
+`;
+
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: auto;
 `;

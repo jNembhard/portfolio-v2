@@ -5,11 +5,10 @@ import {
   logoVariant,
   navVariant,
   socialVariant,
-} from "../../src/animations/content";
-import { navLinks, socials } from "../../src/data/navigation";
+} from "../../animations/content";
+import { navLinks, socials } from "../../data/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../../public/assets/logo.svg";
+import logo from "../../../public/assets/logo.svg";
 import * as Styled from "../molecules/molecule-styled/StyledFooter";
 
 const Footer = () => {

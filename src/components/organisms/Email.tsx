@@ -5,7 +5,7 @@ import {
   titleVariant,
   formVariant,
   buttonVariant,
-} from "../../src/animations/content";
+} from "../../animations/content";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import {
@@ -228,7 +228,7 @@ export default function Email() {
           variants={formVariant}
           ref={form}
           onSubmit={sendEmail}
-          autocomplete="off"
+          autoComplete="off"
         >
           <StyledLabel htmlFor="fullname">Name</StyledLabel>
           <StyledInput
@@ -276,8 +276,8 @@ export default function Email() {
           <StyledTextArea
             id="message"
             name="message"
-            rows="4"
-            cols="50"
+            rows={4}
+            cols={50}
             placeholder="How can I help?"
             className={formState.message.hasError ? "border-error" : ""}
             onChange={(e) => {
@@ -311,7 +311,7 @@ export default function Email() {
                 formState.email.hasError ||
                 formState.message.hasError
               }
-              formNoValidate="formnovalidate"
+              formNoValidate={true}
               type="submit"
               value="Send"
             >

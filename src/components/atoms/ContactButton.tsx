@@ -5,7 +5,7 @@ import {
   titleVariant,
   lineVariant,
   buttonVariant,
-} from "../../src/animations/content";
+} from "../../animations/content";
 import Link from "next/link";
 import * as Styled from "./styled-atoms/StyledContactButton";
 

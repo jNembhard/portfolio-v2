@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import SEO from "../components/atoms/SEO";
-import GetInTouch from "../components/molecules/GetInTouch";
-import Email from "../components/organisms/Email";
+import SEO from "../src/components/atoms/SEO";
+import GetInTouch from "../src/components/molecules/GetInTouch";
+import Email from "../src/components/organisms/Email";
 import styled from "styled-components";
 
 const StyledWrapper = styled.main`

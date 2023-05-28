@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import useOutsideClick from "../../src/hooks/useOutsideClick";
+import useOutsideClick from "../../../src/hooks/useOutsideClick";
 import * as Styled from "./styled-atoms/StyledBurgerNav";
 
 const navLinks = [

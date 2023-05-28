@@ -1,6 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import IbarraBold from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Bold.ttf";
 import IbarraRegular from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Regular.ttf";
+import IbarraBold from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Bold.ttf";
 import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.ttf";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";

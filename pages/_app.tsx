@@ -1,4 +1,4 @@
-import Layout from "../components/organisms/Layout";
+import Layout from "../src/components/organisms/Layout";
 import type { AppProps } from "next/app";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,7 +7,7 @@ import {
   descriptionVariant,
   buttonVariant,
   imageVariant,
-} from "../../src/animations/content";
+} from "../../animations/content";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,6 +32,8 @@ export default function IndexProp({
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [ref2, inView2] = useInView({ threshold: 0.4 });
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     if (inView) {
@@ -40,7 +42,26 @@ export default function IndexProp({
     if (inView2) {
       controls.start("visible");
     }
-  });
+
+    let handleWidth = () => {
+      return breakPoint1200
+        ? setWidth(540)
+        : breakPoint767
+        ? setWidth(339)
+        : setWidth(311);
+    };
+
+    let handleHeight = () => {
+      return breakPoint1200
+        ? setHeight(500)
+        : breakPoint767
+        ? setHeight(314)
+        : setHeight(288);
+    };
+
+    handleWidth();
+    handleHeight();
+  }, [inView, inView2, breakPoint1200, breakPoint767, controls]);
 
   return (
     <Styled.IndexWrap
@@ -77,10 +98,9 @@ export default function IndexProp({
                 <Image
                   priority
                   src={image}
-                  width={breakPoint1200 ? 540 : breakPoint767 ? 339 : 311}
-                  height={breakPoint1200 ? 500 : breakPoint767 ? 314 : 288}
+                  width={width}
+                  height={height}
                   quality={100}
-                  layout={breakPoint767 ? "intrinsic" : "responsive"}
                   placeholder="blur"
                   blurDataURL={image}
                   alt={name}

@@ -1,5 +1,5 @@
-import SEO from "../../components/atoms/SEO";
-import PIndex from "../../components/organisms/PIndex";
+import SEO from "../../src/components/atoms/SEO";
+import PIndex from "../../src/components/organisms/PIndex";
 import type { NextPage } from "next";
 
 const Portfolio: NextPage = () => {

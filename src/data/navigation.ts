@@ -1,5 +1,5 @@
-import github from "../public/assets/icons/github.svg";
-import linkedin from "../public/assets/icons/linkedin.svg";
+import github from "../../public/assets/icons/github.svg";
+import linkedin from "../../public/assets/icons/linkedin.svg";
 
 interface INavLinks {
   id: number;

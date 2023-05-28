@@ -5,8 +5,8 @@ import {
   titleVariant,
   descriptionVariant,
   socialVariantTwo,
-} from "../../src/animations/content";
-import { socials } from "../../src/data/navigation";
+} from "../../animations/content";
+import { socials } from "../../data/navigation";
 import * as Styled from "./molecule-styled/GetInTouchStyles";
 
 export default function GetInTouch() {

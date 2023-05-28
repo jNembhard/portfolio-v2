@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { navVariant } from "../../src/animations/content";
-import { navLinks } from "../../src/data/navigation";
+import { navVariant } from "../../animations/content";
+import { navLinks } from "../../data/navigation";
 import Link from "next/link";
 import * as Styled from "./styled-atoms/StyledMenu";
 

@@ -1,5 +1,6 @@
-import SEO from "../../components/atoms/SEO";
-import Carousel from "../../components/organisms/Carousel";
+import { GetStaticPaths, GetStaticProps } from "next";
+import SEO from "../../src/components/atoms/SEO";
+import Carousel from "../../src/components/organisms/Carousel";
 import { portfoliodata } from "../../src/data/portfoliodata";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
@@ -13,21 +14,21 @@ const StyledWrapper = styled.main`
   }
 `;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = portfoliodata.map((portfolio) => ({
     params: { portfolio: portfolio.slug },
   }));
   return { paths, fallback: false };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const portfolio = portfoliodata.find(
     (portfolio) => portfolio.slug === params.portfolio
   );
   return { props: { portfolio } };
-}
+};
 
-export default function PortfolioIndex({ portfolio }) {
+const PortfolioIndex = ({ portfolio }) => {
   return (
     <div>
       <SEO
@@ -37,7 +38,7 @@ export default function PortfolioIndex({ portfolio }) {
       />
       <AnimatePresence
         exitBeforeEnter
-        // onExitComplete={() => window.scrollTo(0, 0)}
+        onExitComplete={() => window.scrollTo(0, 0)}
       >
         <StyledWrapper>
           <Carousel
@@ -59,4 +60,6 @@ export default function PortfolioIndex({ portfolio }) {
       </AnimatePresence>
     </div>
   );
-}
+};
+
+export default PortfolioIndex;

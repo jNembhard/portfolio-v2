@@ -1,18 +1,18 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { useEffect } from "react";
-import { useMediaQuery } from "../../src/hooks/useMediaQuery";
-import { useAnimation, motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
+import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
   buttonVariant,
   imageVariant,
-} from "../../src/animations/content";
-import mobilehero from "../../public/assets/homepage/mobile/image-homepage-hero-mobile@2x.jpg";
-import tablethero from "../../public/assets/homepage/tablet/image-homepage-hero-tablet@2x.jpg";
-import desktophero from "../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
-import downarrow from "../../public/assets/icons/down-arrows.svg";
+} from "../../animations/content";
+import mobilehero from "../../../public/assets/homepage/mobile/image-homepage-hero-mobile@2x.jpg";
+import tablethero from "../../../public/assets/homepage/tablet/image-homepage-hero-tablet@2x.jpg";
+import desktophero from "../../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
+import downarrow from "../../../public/assets/icons/down-arrows.svg";
 
 export default function HomeHero() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
@@ -21,6 +21,8 @@ export default function HomeHero() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const [ref2, inView2] = useInView();
+  const [width, setWidth] = useState(1110);
+  const [height, setHeight] = useState(600);
 
   useEffect(() => {
     if (inView) {
@@ -29,7 +31,18 @@ export default function HomeHero() {
     if (inView2) {
       controls.start("visible");
     }
-  });
+
+    if (breakPoint1200) {
+      setWidth(1110);
+      setHeight(600);
+    } else if (breakPoint767) {
+      setWidth(688);
+      setHeight(600);
+    } else {
+      setWidth(311);
+      setHeight(271);
+    }
+  }, [inView, inView2, breakPoint1200, breakPoint767, controls, height, width]);
 
   return (
     <HeroWrap>
@@ -39,7 +52,7 @@ export default function HomeHero() {
           initial="hidden"
           variants={imageVariant}
         >
-          <Image
+          <StyledImage
             src={
               breakPoint1200
                 ? desktophero
@@ -47,8 +60,8 @@ export default function HomeHero() {
                 ? tablethero
                 : mobilehero
             }
-            width={breakPoint1200 ? 1110 : breakPoint767 ? 688 : 311}
-            height={breakPoint767 ? 600 : 271}
+            width={width}
+            height={height}
             quality={100}
             layout="responsive"
             placeholder="blur"
@@ -102,6 +115,7 @@ const OverflowHidden = styled.div`
 
 const ImageContainer = styled(motion.div)`
   display: block;
+  max-height: 37.5rem;
 `;
 
 const ContentContainer = styled.div`
@@ -180,4 +194,8 @@ const Arrow = styled.div`
 
 const Anchor = styled.a`
   text-decoration: none;
+`;
+
+const StyledImage = styled(Image)`
+  max-height: 37.5rem;
 `;

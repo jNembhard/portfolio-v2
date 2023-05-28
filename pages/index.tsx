@@ -1,7 +1,7 @@
-import SEO from "../components/atoms/SEO";
-import ContactButton from "../components/atoms/ContactButton";
-import About from "../components/organisms/About";
-import HomeHero from "../components/organisms/HomeHero";
+import SEO from "../src/components/atoms/SEO";
+import ContactButton from "../src/components/atoms/ContactButton";
+import About from "../src/components/organisms/About";
+import HomeHero from "../src/components/organisms/HomeHero";
 import styled from "styled-components";
 
 const StyledContactWrapper = styled.div`
