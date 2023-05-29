@@ -1,4 +1,4 @@
-import * as Styled from "../atoms/styled-atoms/StyledBackdrop";
+import * as Styled from "../../styles/styled-atoms/StyledBackdrop";
 
 export default function Backdrop({ children, onClick }) {
   return (

@@ -9,7 +9,7 @@ import {
 import { navLinks, socials } from "../../data/navigation";
 import Link from "next/link";
 import logo from "../../../public/assets/logo.svg";
-import * as Styled from "../molecules/molecule-styled/StyledFooter";
+import * as Styled from "../../styles/styled-molecules/StyledFooter";
 
 const Footer = () => {
   const [ref, inView] = useInView({ threshold: 0.4 });

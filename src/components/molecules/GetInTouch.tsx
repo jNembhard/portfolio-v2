@@ -7,7 +7,7 @@ import {
   socialVariantTwo,
 } from "../../animations/content";
 import { socials } from "../../data/navigation";
-import * as Styled from "./molecule-styled/GetInTouchStyles";
+import * as Styled from "../../styles/styled-molecules/StyledGetInTouch";
 
 export default function GetInTouch() {
   const [ref, inView] = useInView({ threshold: 0.4 });

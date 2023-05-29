@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Backdrop from "../atoms/Backdrop";
-import * as Styled from "./molecule-styled/StyledModal";
+import * as Styled from "../../styles/styled-molecules/StyledModal";
+
 const dropIn = {
   hidden: { y: "-100vh", opacity: 0 },
   visible: {

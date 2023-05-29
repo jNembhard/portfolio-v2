@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import ContactButton from "../atoms/ContactButton";
@@ -6,7 +5,7 @@ import arrowleft from "../../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../../public/assets/icons/arrow-right.svg";
 import { useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
@@ -16,6 +15,7 @@ import {
   greenVariant,
   imageVariant,
 } from "../../animations/content";
+import * as Styled from "../../styles/styled-organisms/StyledCarousel";
 
 export default function Carousel({
   name,
@@ -64,8 +64,8 @@ export default function Carousel({
 
   return (
     <>
-      <CarouselWrap>
-        <ImageContainer>
+      <Styled.CarouselWrap>
+        <Styled.ImageContainer>
           <Image
             priority
             src={detail}
@@ -77,85 +77,89 @@ export default function Carousel({
             blurDataURL={detail}
             alt="detail hero"
           />
-        </ImageContainer>
-        <Summary>
-          <ContainerOne>
-            <TitleSum>
-              <TitleWrapper ref={ref}>
-                <Title
+        </Styled.ImageContainer>
+        <Styled.Summary>
+          <Styled.ContainerOne>
+            <Styled.TitleSum>
+              <Styled.TitleWrapper ref={ref}>
+                <Styled.Title
                   animate={controls}
                   initial="hidden"
                   variants={titleVariant}
                 >
                   {name}
-                </Title>
-              </TitleWrapper>
-              <DesContainer
+                </Styled.Title>
+              </Styled.TitleWrapper>
+              <Styled.DesContainer
                 animate={controls}
                 initial="hidden"
                 variants={descriptionVariant}
               >
-                <Description>{description}</Description>
-              </DesContainer>
-            </TitleSum>
-            <Skills
+                <Styled.Description>{description}</Styled.Description>
+              </Styled.DesContainer>
+            </Styled.TitleSum>
+            <Styled.Skills
               title={name}
               animate={controls}
               initial="hidden"
               variants={greenVariant}
             >
               {subGreen}
-            </Skills>
-            <WebWrapper>
+            </Styled.Skills>
+            <Styled.WebWrapper>
               <Link href={sourceOne} passHref>
-                <ButtonWrap target="_blank" rel="noopener noreferrer">
-                  <WebButton
+                <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
+                  <Styled.WebButton
                     animate={controls}
                     initial="hidden"
                     variants={buttonVariant}
                   >
                     visit website
-                  </WebButton>
-                </ButtonWrap>
+                  </Styled.WebButton>
+                </Styled.ButtonWrap>
               </Link>
               {sourceTwo && (
                 <Link href={sourceTwo} passHref>
-                  <ButtonWrap target="_blank" rel="noopener noreferrer">
-                    <WebButton2
+                  <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
+                    <Styled.WebButton2
                       animate={controls}
                       initial="hidden"
                       variants={buttonVariantTwo}
                     >
                       view github
-                    </WebButton2>
-                  </ButtonWrap>
+                    </Styled.WebButton2>
+                  </Styled.ButtonWrap>
                 </Link>
               )}
-            </WebWrapper>
-          </ContainerOne>
-          <Background>
-            <Subtitle
+            </Styled.WebWrapper>
+          </Styled.ContainerOne>
+          <Styled.Background>
+            <Styled.Subtitle
               animate={controls}
               initial="hidden"
               variants={titleVariant}
             >
               Project Background
-            </Subtitle>
-            <DesContainerTwo
+            </Styled.Subtitle>
+            <Styled.DesContainerTwo
               animate={controls}
               initial="hidden"
               variants={descriptionVariant}
             >
-              <Description>{projBackground}</Description>
-            </DesContainerTwo>
-          </Background>
-        </Summary>
-        <ContainerThree ref={ref2}>
-          <Subtitle animate={controls} initial="hidden" variants={titleVariant}>
+              <Styled.Description>{projBackground}</Styled.Description>
+            </Styled.DesContainerTwo>
+          </Styled.Background>
+        </Styled.Summary>
+        <Styled.ContainerThree ref={ref2}>
+          <Styled.Subtitle
+            animate={controls}
+            initial="hidden"
+            variants={titleVariant}
+          >
             Static Previews
-          </Subtitle>
-          <OverflowHidden>
-            <ImageContainerTwo
+          </Styled.Subtitle>
+          <Styled.OverflowHidden>
+            <Styled.ImageContainerTwo
               animate={controls}
               initial="hidden"
               variants={imageVariant}
@@ -170,10 +174,10 @@ export default function Carousel({
                 blurDataURL={previewOne}
                 alt="static preview one"
               />
-            </ImageContainerTwo>
-          </OverflowHidden>
-          <OverflowHidden>
-            <ImageContainerTwo
+            </Styled.ImageContainerTwo>
+          </Styled.OverflowHidden>
+          <Styled.OverflowHidden>
+            <Styled.ImageContainerTwo
               animate={controls}
               initial="hidden"
               variants={imageVariant}
@@ -188,298 +192,29 @@ export default function Carousel({
                 blurDataURL={previewTwo}
                 alt="static preview two"
               />
-            </ImageContainerTwo>
-          </OverflowHidden>
-        </ContainerThree>
-        <ContainerFour>
+            </Styled.ImageContainerTwo>
+          </Styled.OverflowHidden>
+        </Styled.ContainerThree>
+        <Styled.ContainerFour>
           <Link href={previousSlug} passHref>
-            <Previous>
-              <LeftArrow src={arrowleft} alt="" />
-              <LeftTitle>{previous}</LeftTitle>
-              <Sub>Previous Project</Sub>
-            </Previous>
+            <Styled.Previous>
+              <Styled.LeftArrow src={arrowleft} alt="" />
+              <Styled.LeftTitle>{previous}</Styled.LeftTitle>
+              <Styled.Sub>Previous Project</Styled.Sub>
+            </Styled.Previous>
           </Link>
           <Link href={nextSlug} passHref>
-            <Next>
-              <Test>
-                <RightArrow src={arrowright} alt="" />
-              </Test>
-              <RightTitle>{next}</RightTitle>
-              <SubTwo>Next Project</SubTwo>
-            </Next>
+            <Styled.Next>
+              <Styled.RightArrowWrap>
+                <Styled.RightArrow src={arrowright} alt="" />
+              </Styled.RightArrowWrap>
+              <Styled.RightTitle>{next}</Styled.RightTitle>
+              <Styled.SubTwo>Next Project</Styled.SubTwo>
+            </Styled.Next>
           </Link>
-        </ContainerFour>
-      </CarouselWrap>
+        </Styled.ContainerFour>
+      </Styled.CarouselWrap>
       <ContactButton />
     </>
   );
 }
-
-const CarouselWrap = styled.div`
-  margin: 0 2rem 3rem;
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 5.875rem 2.5rem 5rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 5.875rem 5rem 7.188rem;
-
-      @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 5.875rem 10.313rem 7.188rem;
-      }
-    }
-  }
-`;
-
-const ContainerOne = styled.div`
-  border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    border-top: unset;
-    border-bottom: unset;
-
-    &:before {
-      content: "";
-      display: block;
-      position: -webkit-sticky;
-      position: sticky;
-      border-top: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-      width: 21.875rem;
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      position: -webkit-sticky;
-      position: sticky;
-      border-bottom: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-      width: 21.875rem;
-    }
-  }
-`;
-
-const ImageContainer = styled.div`
-  max-width: 68.75rem;
-`;
-
-const OverflowHidden = styled(motion.div)`
-  overflow: hidden;
-  margin-bottom: 2rem;
-`;
-const ImageContainerTwo = styled(motion.div)`
-  max-width: 68.75rem;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    max-width: 43.063rem;
-  }
-`;
-
-const Summary = styled.div`
-  margin-top: 2.5rem;
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    display: flex;
-    margin-top: 7.188rem;
-  }
-`;
-
-const TitleSum = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    display: flex;
-    justify-content: space-between;
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      display: unset;
-    }
-  }
-`;
-
-const TitleWrapper = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-height: 3.125rem;
-  }
-`;
-const Title = styled(motion.h1)``;
-
-const DesContainer = styled(motion.div)`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 21.188rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 21.875rem;
-    }
-  }
-`;
-
-const DesContainerTwo = styled(motion.div)`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    max-width: 43rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      max-width: 39.688rem;
-    }
-  }
-`;
-
-const Description = styled.p``;
-
-const Skills = styled(motion.p)`
-  color: ${({ theme }) => theme.colors.desaturatedCyan};
-  font-weight: bold;
-  font-size: 0.813rem;
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-top: ${({ title }) =>
-      title === "Summit"
-        ? "-125px"
-        : title === "Amazon Clone"
-        ? "-125px"
-        : "-150px"};
-    padding-right: 24.438rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin-top: 1.438rem;
-      padding-right: 7.813rem;
-      width: 21.25rem;
-    }
-  }
-`;
-
-const WebWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 19.375rem;
-
-  @media (min-width: 23.438rem) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
-
-const WebButton = styled(motion.button)`
-  width: 16.25rem;
-  height: 3rem;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.125rem;
-  margin: 0.75rem 0;
-  box-shadow: none;
-  border: 0.063rem solid ${({ theme }) => theme.colors.grayishDarkBlue};
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  cursor: pointer;
-
-  @media (min-width: 23.438rem) {
-    width: 9.375rem;
-    margin: 1.5rem 0;
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
-    color: ${({ theme }) => theme.colors.lightGrey};
-  }
-`;
-const Background = styled.div`
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin-top: -1.875rem;
-    margin-bottom: 11.25rem;
-  }
-`;
-
-const WebButton2 = styled(WebButton)`
-  background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
-  color: ${({ theme }) => theme.colors.lightGrey};
-
-  &:hover {
-    background-color: transparent;
-    color: ${({ theme }) => theme.colors.darkBlue};
-  }
-`;
-
-const ButtonWrap = styled.a`
-  color: inherit;
-  text-decoration: none;
-`;
-
-const Subtitle = styled(motion.h3)``;
-
-const ContainerThree = styled.div`
-  margin-bottom: 4rem;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    margin-left: 29.063rem;
-    max-width: 43.063rem;
-    margin-top: -12.5rem;
-  }
-`;
-
-const ContainerFour = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    max-width: 69.375rem;
-  }
-`;
-
-const Previous = styled.a`
-  border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-  width: 50%;
-  height: 9.125rem;
-  border-left: 0;
-  padding-top: 0.938rem;
-  color: inherit;
-  text-decoration: none;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    &:hover {
-      color: ${({ theme }) => theme.colors.desaturatedCyan};
-    }
-  }
-`;
-
-const Next = styled.a`
-  border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
-  width: 50%;
-  height: 9.125rem;
-  border-right: 0;
-  padding-top: 0.938rem;
-  color: inherit;
-  text-decoration: none;
-
-  @media ${({ theme }) => theme.breakpoints.laptop} {
-    &:hover {
-      color: ${({ theme }) => theme.colors.desaturatedCyan};
-    }
-  }
-`;
-
-const LeftTitle = styled.h3`
-  line-height: 2.25rem;
-  margin-bottom: -0.938rem;
-`;
-
-const RightTitle = styled.h3`
-  text-align: right;
-  line-height: 2.25rem;
-  margin-bottom: -0.938rem;
-`;
-
-const Sub = styled.p`
-  color: ${({ theme }) => theme.colors.grayishDarkBlue};
-`;
-
-const SubTwo = styled(Sub)`
-  text-align: right;
-`;
-
-const LeftArrow = styled(Image)``;
-const RightArrow = styled(Image)``;
-
-const Test = styled.div`
-  width: 100%;
-  text-align: right;
-`;

@@ -7,7 +7,7 @@ import {
   buttonVariant,
 } from "../../animations/content";
 import Link from "next/link";
-import * as Styled from "./styled-atoms/StyledContactButton";
+import * as Styled from "../../styles/styled-atoms/StyledContactButton";
 
 export default function ContactButton() {
   const controls = useAnimation();

@@ -7,7 +7,7 @@ import { logoVariant } from "../../animations/content";
 import logo from "../../../public/assets/logo.svg";
 import Menu from "../atoms/Menu";
 import BurgerNav from "../atoms/BurgerNav";
-import * as Styled from "./molecule-styled/StyledHeader";
+import * as Styled from "../../styles/styled-molecules/StyledHeader";
 
 export default function Header() {
   const [ref, inView] = useInView({ threshold: 0.4 });

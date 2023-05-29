@@ -1,29 +1,7 @@
-import Layout from "../src/components/organisms/Layout";
 import type { AppProps } from "next/app";
 import styled from "styled-components";
+import Layout from "../src/components/organisms/Layout";
 import { AnimatePresence, motion } from "framer-motion";
-
-function MyApp({ Component, pageProps, router }: AppProps) {
-  return (
-    <>
-      <Layout>
-        <AnimatePresence>
-          <Main
-            key={router.route}
-            initial="pageInitial"
-            animate="pageAnimate"
-            variants={variants}
-            exit="pageExit"
-          >
-            <Component {...pageProps} />
-          </Main>
-        </AnimatePresence>
-      </Layout>
-    </>
-  );
-}
-
-export default MyApp;
 
 const Main = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -62,3 +40,25 @@ const variants = {
     },
   },
 };
+
+function MyApp({ Component, pageProps, router }: AppProps) {
+  return (
+    <>
+      <Layout>
+        <AnimatePresence>
+          <Main
+            key={router.route}
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={variants}
+            exit="pageExit"
+          >
+            <Component {...pageProps} />
+          </Main>
+        </AnimatePresence>
+      </Layout>
+    </>
+  );
+}
+
+export default MyApp;

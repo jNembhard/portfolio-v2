@@ -9,7 +9,7 @@ import {
   imageVariant,
 } from "../../animations/content";
 import Link from "next/link";
-import * as Styled from "../molecules/molecule-styled/StyledIndexProp";
+import * as Styled from "../../styles/styled-molecules/StyledIndexProp";
 
 export default function IndexProp({
   id,

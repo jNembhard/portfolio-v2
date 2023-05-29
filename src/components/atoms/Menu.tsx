@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { navVariant } from "../../animations/content";
 import { navLinks } from "../../data/navigation";
 import Link from "next/link";
-import * as Styled from "./styled-atoms/StyledMenu";
+import * as Styled from "../../styles/styled-atoms/StyledMenu";
 
 export default function Menu() {
   const [ref, inView] = useInView();

@@ -1,8 +1,7 @@
 import Image from "next/image";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   titleVariant,
@@ -13,6 +12,7 @@ import mobilehero from "../../../public/assets/homepage/mobile/image-homepage-he
 import tablethero from "../../../public/assets/homepage/tablet/image-homepage-hero-tablet@2x.jpg";
 import desktophero from "../../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
 import downarrow from "../../../public/assets/icons/down-arrows.svg";
+import * as Styled from "../../styles/styled-organisms/StyledHomeHero";
 
 export default function HomeHero() {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
@@ -45,14 +45,14 @@ export default function HomeHero() {
   }, [inView, inView2, breakPoint1200, breakPoint767, controls, height, width]);
 
   return (
-    <HeroWrap>
-      <OverflowHidden ref={ref}>
-        <ImageContainer
+    <Styled.HeroWrap>
+      <Styled.OverflowHidden ref={ref}>
+        <Styled.ImageContainer
           animate={controls}
           initial="hidden"
           variants={imageVariant}
         >
-          <StyledImage
+          <Styled.NextImage
             src={
               breakPoint1200
                 ? desktophero
@@ -67,135 +67,31 @@ export default function HomeHero() {
             placeholder="blur"
             alt="Hero"
           />
-        </ImageContainer>
-      </OverflowHidden>
-      <ContentContainer ref={ref2}>
-        <TitleWrapper>
-          <Title animate={controls} initial="hidden" variants={titleVariant}>
+        </Styled.ImageContainer>
+      </Styled.OverflowHidden>
+      <Styled.ContentContainer ref={ref2}>
+        <Styled.TitleWrapper>
+          <Styled.Title
+            animate={controls}
+            initial="hidden"
+            variants={titleVariant}
+          >
             Hey, I&#39;m Jason Nembhard and I love building beautiful websites
-          </Title>
-        </TitleWrapper>
-        <Anchor href="#about">
-          <Button animate={controls} initial="hidden" variants={buttonVariant}>
-            <Arrow>
+          </Styled.Title>
+        </Styled.TitleWrapper>
+        <Styled.Anchor href="#about">
+          <Styled.Button
+            animate={controls}
+            initial="hidden"
+            variants={buttonVariant}
+          >
+            <Styled.Arrow>
               <Image src={downarrow} alt="" />
-            </Arrow>
+            </Styled.Arrow>
             About Me
-          </Button>
-        </Anchor>
-      </ContentContainer>
-    </HeroWrap>
+          </Styled.Button>
+        </Styled.Anchor>
+      </Styled.ContentContainer>
+    </Styled.HeroWrap>
   );
 }
-
-const HeroWrap = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    position: relative;
-    width: 100%;
-  }
-`;
-
-const OverflowHidden = styled.div`
-  overflow: hidden;
-  margin: 0 2rem 1.5rem;
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 2.563rem 1.5rem;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 1.25rem 5rem 5rem;
-
-      @media ${({ theme }) => theme.breakpoints.desktop} {
-        margin: 4.688rem 10.313rem 9.375rem;
-        max-width: 69.375rem;
-      }
-    }
-  }
-`;
-
-const ImageContainer = styled(motion.div)`
-  display: block;
-  max-height: 37.5rem;
-`;
-
-const ContentContainer = styled.div`
-  margin: 0 2rem 6rem;
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    position: absolute;
-    bottom: 0;
-    left: 2.438rem;
-    background-color: white;
-    margin: unset;
-    max-width: 32.125rem;
-    max-height: 17.375rem;
-    margin-bottom: auto;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      top: 15.188rem;
-      left: 5rem;
-      bottom: -0.063rem;
-      max-width: 27.813rem;
-      max-height: 22.313rem;
-      margin: unset;
-      margin-left: auto;
-
-      @media ${({ theme }) => theme.breakpoints.desktop} {
-        top: 15.188rem;
-        left: 10.188rem;
-        bottom: -0.063rem;
-        max-width: 27.813rem;
-        max-height: 22.313rem;
-        margin: unset;
-      }
-    }
-  }
-`;
-
-const TitleWrapper = styled(motion.div)`
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 3.5rem 3.5rem 1.25rem 0;
-
-    @media ${({ theme }) => theme.breakpoints.laptop} {
-      margin: 3.5rem 3.5rem 3.313rem 0;
-    }
-  }
-`;
-
-const Title = styled(motion.h1)`
-  line-height: 2.625rem;
-  letter-spacing: -0.023rem;
-`;
-
-const Button = styled(motion.button)`
-  width: 12.5rem;
-  height: 3rem;
-  font-family: "Public Sans", sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.125rem;
-  text-transform: uppercase;
-  background-color: ${({ theme }) => theme.colors.darkBlue};
-  color: ${({ theme }) => theme.colors.veryLightGreyBG};
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.desaturatedCyan};
-  }
-`;
-
-const Arrow = styled.div`
-  margin-left: -1.875rem;
-  margin-right: 2.375rem;
-`;
-
-const Anchor = styled.a`
-  text-decoration: none;
-`;
-
-const StyledImage = styled(Image)`
-  max-height: 37.5rem;
-`;
