@@ -10,20 +10,12 @@ import {
 } from "../../animations/content";
 import Link from "next/link";
 import * as Styled from "../../styles/styled-molecules/StyledIndexProp";
+import { IIndexProp } from "../../models/Portfolio";
 
-export default function IndexProp({
-  id,
-  name,
-  image,
-  description,
-  slug,
-}: {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  slug: string;
-}) {
+export default function IndexProp(data: IIndexProp) {
+  const { id, name, slug, images, description } = data;
+
+  const breakPoint1440 = useMediaQuery(`(min-width: 1440px)`);
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
@@ -53,16 +45,37 @@ export default function IndexProp({
     };
 
     const handleMargin = () => {
-      if (breakPoint1200 && id % 2 == 0) {
-        setMargin({ marginLeft: "7.813rem", marginRight: "0" });
-      } else if (breakPoint1200 && id % 2 != 0) {
-        setMargin({ marginLeft: "0", marginRight: "7.813rem" });
-      } else if (breakPoint767 && id % 2 == 0) {
-        setMargin({ marginLeft: "4.375rem", marginRight: "0" });
-      } else if (breakPoint767 && id % 2 != 0) {
-        setMargin({ marginLeft: "0", marginRight: "4.375rem" });
-      } else {
-        setMargin({ marginLeft: "0", marginRight: "0" });
+      const breakPoints = [
+        breakPoint1440 && id % 2 == 0,
+        breakPoint1440 && id % 2 != 0,
+        breakPoint1200 && id % 2 == 0,
+        breakPoint1200 && id % 2 != 0,
+        breakPoint767 && id % 2 == 0,
+        breakPoint767 && id % 2 != 0,
+      ];
+
+      switch (true) {
+        case breakPoints[0]:
+          setMargin({ marginLeft: "7.813rem", marginRight: "0" });
+          break;
+        case breakPoints[1]:
+          setMargin({ marginLeft: "0", marginRight: "7.813rem" });
+          break;
+        case breakPoints[2]:
+          setMargin({ marginLeft: "5.625rem", marginRight: "0" });
+          break;
+        case breakPoints[3]:
+          setMargin({ marginLeft: "0", marginRight: "5.625rem" });
+          break;
+        case breakPoints[4]:
+          setMargin({ marginLeft: "4.375rem", marginRight: "0" });
+          break;
+        case breakPoints[5]:
+          setMargin({ marginLeft: "0", marginRight: "4.375rem" });
+          break;
+        default:
+          setMargin({ marginLeft: "0", marginRight: "0" });
+          break;
       }
     };
 
@@ -90,7 +103,15 @@ export default function IndexProp({
     return () => {
       subscribe = false;
     };
-  }, [id, inView, inView2, breakPoint1200, breakPoint767, controls]);
+  }, [
+    id,
+    inView,
+    inView2,
+    breakPoint1440,
+    breakPoint1200,
+    breakPoint767,
+    controls,
+  ]);
 
   return (
     <Styled.IndexWrap style={{ flexDirection: direction as "row-reverse" }}>
@@ -113,13 +134,13 @@ export default function IndexProp({
               >
                 <Styled.SpecialImage
                   priority={id === 1 ? true : false}
-                  src={image}
+                  src={images.index.desktop}
                   width={size.width}
                   height={size.height}
                   quality={100}
                   layout="responsive"
                   placeholder="blur"
-                  blurDataURL={image}
+                  blurDataURL={images.index.desktop}
                   alt={name}
                 />
               </Styled.ScaleWrapper>

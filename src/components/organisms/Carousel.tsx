@@ -16,36 +16,23 @@ import {
   imageVariant,
 } from "../../animations/content";
 import * as Styled from "../../styles/styled-organisms/StyledCarousel";
+import { IPortfolio } from "../../models/Portfolio";
 
-export default function Carousel({
-  name,
-  detail,
-  description,
-  previewOne,
-  previewTwo,
-  previous,
-  next,
-  previousSlug,
-  projBackground,
-  nextSlug,
-  subGreen,
-  sourceOne,
-  sourceTwo,
-}: {
-  name: string;
-  detail: string;
-  description: string;
-  previewOne: string;
-  previewTwo: string;
-  previousSlug: string;
-  previous: string;
-  next: string;
-  projBackground: string;
-  nextSlug: string;
-  subGreen: string;
-  sourceOne: string;
-  sourceTwo: string;
-}) {
+export default function Carousel(portfolio: IPortfolio) {
+  const {
+    name,
+    description,
+    projBackground,
+    images,
+    previous,
+    next,
+    subGreen,
+    sources,
+  } = portfolio;
+
+  const previousSlug = previous.toLowerCase();
+  const nextSlug = next.toLocaleLowerCase();
+
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
@@ -68,13 +55,13 @@ export default function Carousel({
         <Styled.ImageContainer>
           <Image
             priority
-            src={detail}
+            src={images.detailhero.desktop}
             width={breakPoint1200 ? 1110 : breakPoint767 ? 689 : 311}
             height={breakPoint1200 ? 500 : breakPoint767 ? 310 : 140}
             layout="responsive"
             quality={100}
             placeholder="blur"
-            blurDataURL={detail}
+            blurDataURL={images.detailhero.desktop}
             alt="detail hero"
           />
         </Styled.ImageContainer>
@@ -107,7 +94,7 @@ export default function Carousel({
               {subGreen}
             </Styled.Skills>
             <Styled.WebWrapper>
-              <Link href={sourceOne} passHref>
+              <Link href={sources.website} passHref>
                 <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
                   <Styled.WebButton
                     animate={controls}
@@ -118,8 +105,8 @@ export default function Carousel({
                   </Styled.WebButton>
                 </Styled.ButtonWrap>
               </Link>
-              {sourceTwo && (
-                <Link href={sourceTwo} passHref>
+              {sources.github && (
+                <Link href={sources.github} passHref>
                   <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
                     <Styled.WebButton2
                       animate={controls}
@@ -165,13 +152,13 @@ export default function Carousel({
               variants={imageVariant}
             >
               <Image
-                src={previewOne}
+                src={images.preview.desktopOne}
                 width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
                 height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
                 layout="responsive"
                 quality={100}
                 placeholder="blur"
-                blurDataURL={previewOne}
+                blurDataURL={images.preview.desktopOne}
                 alt="static preview one"
               />
             </Styled.ImageContainerTwo>
@@ -183,13 +170,13 @@ export default function Carousel({
               variants={imageVariant}
             >
               <Image
-                src={previewTwo}
+                src={images.preview.desktopTwo}
                 width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
                 height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
                 layout="responsive"
                 quality={100}
                 placeholder="blur"
-                blurDataURL={previewTwo}
+                blurDataURL={images.preview.desktopTwo}
                 alt="static preview two"
               />
             </Styled.ImageContainerTwo>

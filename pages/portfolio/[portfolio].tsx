@@ -41,21 +41,7 @@ const PortfolioIndex = ({ portfolio }) => {
         onExitComplete={() => window.scrollTo(0, 0)}
       >
         <StyledWrapper>
-          <Carousel
-            name={portfolio.name}
-            description={portfolio.description}
-            detail={portfolio.images.detailhero.desktop}
-            previewOne={portfolio.images.preview.desktopOne}
-            previewTwo={portfolio.images.preview.desktopTwo}
-            previous={portfolio.previous}
-            next={portfolio.next}
-            sourceOne={portfolio.sources.website}
-            sourceTwo={portfolio.sources.github}
-            projBackground={portfolio.projBackground}
-            subGreen={portfolio.subGreen}
-            previousSlug={portfolio.previous.toLowerCase()}
-            nextSlug={portfolio.next.toLowerCase()}
-          />
+          <Carousel {...portfolio} />
         </StyledWrapper>
       </AnimatePresence>
     </div>

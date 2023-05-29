@@ -21,14 +21,7 @@ export default function PIndex() {
     <>
       <PIndexWrap>
         {portfoliodata.map((data, index) => (
-          <IndexProp
-            key={index}
-            id={data.id}
-            name={data.name}
-            slug={data.slug}
-            image={data.images.index.desktop}
-            description={data.description}
-          />
+          <IndexProp key={index} {...data} />
         ))}
       </PIndexWrap>
       <ContactButton />
