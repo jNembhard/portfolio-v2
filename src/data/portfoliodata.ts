@@ -1,6 +1,38 @@
 export const portfoliodata = [
   {
     id: 1,
+    name: "Designo",
+    slug: "designo",
+    description:
+      "Designo is where creativity meets strategy! Elevate your brand with award-winning custom designs and digital branding solutions. Armed with a decade of experience, they craft responsive websites, stunning app designs, and immersive brand journeys. Check out this project built with React and Amazon Web Services.",
+    projBackground:
+      "Embark on a journey with Designo where equistite design converges with strategic brilliance. This website presents an aura of user centric simplicity ensuring each vist transforms into a remarkable experience. Seamlessley transversing from the landing page to featured projects, this site is brought to life with a React frontend and an AWS backend. Crafted meticulously, this project exemplifies clean, maintainable patterns, with dynamic design and assistance alongside Apollo's GraphQL state management library. Immerse yourself and witness innovation. Venture to the user site or check out the the technical intracacies on GitHub if that's more your feel. Your experience awaits.",
+    images: {
+      index: {
+        desktop:
+          "/assets/portfolio/desktop/image-portfolio-designo-1080x1000.jpg",
+      },
+      detailhero: {
+        desktop: "/assets/detail/desktop/image-designo-hero-2220x1000.jpg",
+      },
+      preview: {
+        desktopOne:
+          "/assets/detail/desktop/image-designo-preview-one-1278x868.jpg",
+        desktopTwo:
+          "/assets/detail/desktop/image-designo-preview-two-1278x868.jpg",
+      },
+    },
+    sources: {
+      github: "https://github.com/jNembhard/designo-agency-frontend",
+      website: "https://designowebagency.vercel.app/",
+    },
+    subGreen:
+      "React.js, TypeScript, Material UI, Apollo Client, Amazon Web Services, GraphQL",
+    previous: "Amazon",
+    next: "Audiophile",
+  },
+  {
+    id: 2,
     name: "Audiophile",
     slug: "audiophile",
     description:
@@ -28,11 +60,11 @@ export const portfoliodata = [
     },
     subGreen:
       "Next.js (React), TypeScript, Chakra, Firebase 9, Jest, Redux Toolkit, React Hook Form, Atomic Design",
-    previous: "Amazon",
+    previous: "Designo",
     next: "HyperFast",
   },
   {
-    id: 2,
+    id: 3,
     name: "HyperFast Agent",
     slug: "hyperfast",
     description:
@@ -59,12 +91,12 @@ export const portfoliodata = [
       website: "https://www.hyperfastagent.com",
     },
     subGreen:
-      "Webflow, Amazon Web Services, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite",
+      "Webflow, React.js, Amazon Web Services, Google Analytics, HubSpot, Netlify, SEO, Search Console, Stripe, TypeScript, Vite",
     previous: "Audiophile",
     next: "Coffee",
   },
   {
-    id: 3,
+    id: 4,
     name: "Coffeeroasters",
     slug: "coffee",
     description:
@@ -98,7 +130,7 @@ export const portfoliodata = [
     next: "Scoot",
   },
   {
-    id: 4,
+    id: 5,
     name: "Scoot",
     slug: "scoot",
     description:
@@ -129,7 +161,7 @@ export const portfoliodata = [
     next: "Summit",
   },
   {
-    id: 5,
+    id: 6,
     name: "Summit",
     slug: "summit",
     description:
@@ -160,7 +192,7 @@ export const portfoliodata = [
   },
 
   {
-    id: 6,
+    id: 7,
     name: "Galleria",
     slug: "galleria",
     description:
@@ -192,7 +224,7 @@ export const portfoliodata = [
     next: "Planets",
   },
   {
-    id: 7,
+    id: 8,
     name: "Planet Facts",
     slug: "planets",
     description:
@@ -223,7 +255,7 @@ export const portfoliodata = [
     next: "Netflix",
   },
   {
-    id: 8,
+    id: 9,
     name: "Netflix Clone",
     slug: "netflix",
     description:
@@ -254,7 +286,7 @@ export const portfoliodata = [
     next: "Amazon",
   },
   {
-    id: 9,
+    id: 10,
     name: "Amazon Clone",
     slug: "amazon",
     description:
@@ -282,6 +314,6 @@ export const portfoliodata = [
     },
     subGreen: "React, Express.js, Firebase, Stripe",
     previous: "Netflix",
-    next: "Audiophile",
+    next: "Designo",
   },
 ];
