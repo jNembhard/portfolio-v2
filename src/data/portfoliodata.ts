@@ -27,7 +27,7 @@ export const portfoliodata = [
       website: "https://designowebagency.vercel.app/",
     },
     subGreen:
-      "React.js, TypeScript, Material UI, Apollo Client, Amazon Web Services, GraphQL",
+      "React.js, TypeScript, Material UI, Apollo Client, Amazon Web Services, GraphQL, Jest, Docker",
     previous: "Amazon",
     next: "Audiophile",
   },
