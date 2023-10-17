@@ -43,21 +43,19 @@ const variants = {
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <>
-      <Layout>
-        <AnimatePresence>
-          <Main
-            key={router.route}
-            initial="pageInitial"
-            animate="pageAnimate"
-            variants={variants}
-            exit="pageExit"
-          >
-            <Component {...pageProps} />
-          </Main>
-        </AnimatePresence>
-      </Layout>
-    </>
+    <Layout>
+      <AnimatePresence>
+        <Main
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={variants}
+          exit="pageExit"
+        >
+          <Component {...pageProps} />
+        </Main>
+      </AnimatePresence>
+    </Layout>
   );
 }
 

@@ -122,7 +122,7 @@ export const portfoliodata = [
     },
     sources: {
       github: "https://github.com/jNembhard/coffee-roasters",
-      website: "https://coffeeroasters.gatsbyjs.io/",
+      website: "https://coffeewithgatsby.vercel.app/",
     },
     subGreen:
       "Gatsby.js (React), Atomic Design, GraphQL, Framer Motion, Mobile First, Styled Components",
