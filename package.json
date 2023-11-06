@@ -5,19 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^3.3.1",
-    "framer-motion": "^6.3.16",
+    "@plaiceholder/next": "^3.0.0",
+    "framer-motion": "^10.16.4",
     "hamburger-react": "^2.4.1",
-    "next": "^12.1.4",
+    "next": "^14.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-img": "^0.3.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next-sitemap": "^4.2.3",
+    "plaiceholder": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-intersection-observer": "^8.33.1",
     "react-onclickoutside": "^6.12.1",
     "styled-components": "^5.3.3",
@@ -27,12 +31,12 @@
     "@babel/core": "^7.22.6",
     "@babel/preset-env": "^7.22.6",
     "@babel/preset-typescript": "^7.22.5",
-    "@types/node": "^20.2.5",
+    "@types/node": "20.7.0",
     "@types/react": "^18.2.7",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.4.0",
-    "eslint-config-next": "12.0.6",
+    "eslint-config-next": "^14.0.1",
     "typescript": "^5.0.4"
   }
 }

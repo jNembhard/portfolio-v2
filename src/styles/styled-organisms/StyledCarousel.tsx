@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Background = styled.div`
   @media ${({ theme }) => theme.breakpoints.laptop} {
@@ -9,7 +10,7 @@ const Background = styled.div`
   }
 `;
 
-const ButtonWrap = styled.a`
+const ButtonWrap = styled(Link)`
   color: inherit;
   text-decoration: none;
 `;
@@ -120,7 +121,7 @@ const LeftTitle = styled.h3`
   margin-bottom: -0.938rem;
 `;
 
-const Next = styled.a`
+const Next = styled(Link)`
   border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
   height: 9.125rem;
@@ -129,9 +130,10 @@ const Next = styled.a`
   color: inherit;
   text-decoration: none;
 
-  @media ${({ theme }) => theme.breakpoints.laptop} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     &:hover {
       color: ${({ theme }) => theme.colors.desaturatedCyan};
+      transition: color 0.2s ease-in-out;
     }
   }
 `;
@@ -141,7 +143,7 @@ const OverflowHidden = styled(motion.div)`
   margin-bottom: 2rem;
 `;
 
-const Previous = styled.a`
+const Previous = styled(Link)`
   border: 0.063rem solid ${({ theme }) => theme.colors.lightGrey};
   width: 50%;
   height: 9.125rem;
@@ -150,9 +152,10 @@ const Previous = styled.a`
   color: inherit;
   text-decoration: none;
 
-  @media ${({ theme }) => theme.breakpoints.laptop} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     &:hover {
       color: ${({ theme }) => theme.colors.desaturatedCyan};
+      transition: color 0.2s ease-in-out;
     }
   }
 `;
@@ -249,6 +252,7 @@ const WebButton = styled(motion.button)`
   &:hover {
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
     color: ${({ theme }) => theme.colors.lightGrey};
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 `;
 
@@ -259,6 +263,7 @@ const WebButton2 = styled(WebButton)`
   &:hover {
     background-color: transparent;
     color: ${({ theme }) => theme.colors.darkBlue};
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 `;
 

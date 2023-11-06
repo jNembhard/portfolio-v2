@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
@@ -22,15 +21,14 @@ export default function Header() {
   return (
     <Styled.NavHeader>
       <Styled.Container ref={ref}>
-        <Link href="/" passHref>
-          <Styled.ATag
-            animate={controls}
-            initial="hidden"
-            variants={logoVariant}
-          >
-            <Image src={logo} alt="Logo" />
-          </Styled.ATag>
-        </Link>
+        <Styled.LogoLink
+          href="/"
+          animate={controls}
+          initial="hidden"
+          variants={logoVariant}
+        >
+          <Image src={logo} alt="Logo" />
+        </Styled.LogoLink>
         <BurgerNav />
         <Menu />
       </Styled.Container>

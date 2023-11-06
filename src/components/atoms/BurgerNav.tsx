@@ -3,6 +3,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import useOutsideClick from "../../../src/hooks/useOutsideClick";
 import * as Styled from "../../styles/styled-atoms/StyledBurgerNav";
+import { useOnClickOutside } from "usehooks-ts";
 
 const navLinks = [
   { name: "home", url: "/" },
@@ -14,7 +15,7 @@ export default function BurgerNav() {
   const [modalOpen, setModalOpen] = useState(false);
   const ref = useRef();
 
-  useOutsideClick(ref, () => {
+  useOnClickOutside(ref, () => {
     if (modalOpen) setModalOpen(false);
   });
 
@@ -26,7 +27,7 @@ export default function BurgerNav() {
   });
 
   return (
-    <Styled.BurgerWrap>
+    <Styled.BurgerWrap ref={ref}>
       <Styled.BurgerContainer>
         <Hamburger
           color="#33323D"
@@ -39,7 +40,7 @@ export default function BurgerNav() {
           {navLinks.map(({ name, url }, index) => (
             <li key={index}>
               <Link href={url}>
-                <a onClick={() => toggle()}>{name}</a>
+                <div onClick={() => toggle()}>{name}</div>
               </Link>
             </li>
           ))}

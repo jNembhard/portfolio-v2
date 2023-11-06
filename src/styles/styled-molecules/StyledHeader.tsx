@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const ATag = styled(motion.a)`
+const LogoLink = styled(motion(Link))`
   min-width: 10%;
 `;
 
@@ -39,4 +40,4 @@ const NavHeader = styled.header`
   }
 `;
 
-export { ATag, Container, NavHeader };
+export { LogoLink, Container, NavHeader };

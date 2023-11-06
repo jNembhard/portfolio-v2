@@ -17,6 +17,7 @@ const Button = styled(motion.button)`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.desaturatedCyan};
+    transition: background-color 0.2s ease-in-out;
   }
 `;
 

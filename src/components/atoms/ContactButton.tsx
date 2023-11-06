@@ -6,7 +6,6 @@ import {
   lineVariant,
   buttonVariant,
 } from "../../animations/content";
-import Link from "next/link";
 import * as Styled from "../../styles/styled-atoms/StyledContactButton";
 
 export default function ContactButton() {
@@ -26,7 +25,7 @@ export default function ContactButton() {
       </Styled.Title>
       <Styled.Line animate={controls} initial="hidden" variants={lineVariant} />
 
-      <Link href="/contact" passHref>
+      <Styled.LinkButtonWrap href="/contact">
         <Styled.Button
           animate={controls}
           initial="hidden"
@@ -34,7 +33,7 @@ export default function ContactButton() {
         >
           contact me
         </Styled.Button>
-      </Link>
+      </Styled.LinkButtonWrap>
     </Styled.Container>
   );
 }

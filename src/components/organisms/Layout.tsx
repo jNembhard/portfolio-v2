@@ -1,12 +1,27 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import IbarraRegular from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Regular.ttf";
-import IbarraBold from "../../styles/fonts/IbarraRealNova/IbarraRealNova-Bold.ttf";
-import PublicSansRegular from "../../styles/fonts/PublicSans/PublicSans-Regular.ttf";
+import styled, {
+  createGlobalStyle,
+  ThemeProvider,
+  css,
+} from "styled-components";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { Ibarra_Real_Nova, Public_Sans } from "next/font/google";
+import StyledComponentsRegistry from "../../lib/registry";
+import { useRouter } from "next/router";
+import { variants } from "../../animations/variants";
 
-const GlobalStyle = createGlobalStyle`
+const ibarra = Ibarra_Real_Nova({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const styles = css`
   html {
     scroll-behavior: smooth;
   }
@@ -51,26 +66,29 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "IbarraReal Nova";
-    src: url(${IbarraBold}) format("truetype");
+    font-family: "Ibarra Real Nova";
+    src: url(${ibarra}) format("truetype");
     font-style: normal;
     font-weight: 700;
     font-display: swap;
   }
   @font-face {
     font-family: "Ibarra Real Nova";
-    src: url(${IbarraRegular}) format("truetype");
+    src: url(${ibarra}) format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
   }
   @font-face {
     font-family: "Public Sans";
-    src: url(${PublicSansRegular}) format("truetype");
+    src: url(${publicSans}) format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
   }
+`;
+const GlobalStyle = createGlobalStyle`
+  ${styles}
 `;
 
 const theme = {
@@ -89,18 +107,37 @@ const theme = {
   },
 };
 
+const Main = styled(motion.div)`
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+`;
+
 export default function Layout({ children }) {
+  const router = useRouter();
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Header />
         <AnimatePresence
+          mode="wait"
           initial={false}
-          exitBeforeEnter
           onExitComplete={() => window.scrollTo(0, 0)}
         >
-          {children}
+          <Main
+            key={router.route}
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={variants}
+            exit="pageExit"
+          >
+            {children}
+          </Main>
         </AnimatePresence>
         <Footer />
       </ThemeProvider>

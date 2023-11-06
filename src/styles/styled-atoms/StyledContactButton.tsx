@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Button = styled(motion.a)`
+const LinkButtonWrap = styled(Link)`
+  color: ${({ theme }) => theme.colors.grayishDarkBlue};
+  text-decoration: none;
+`;
+
+const Button = styled(motion.button)`
   font-family: "Public Sans", sans-serif;
   display: inline-flex;
   align-items: center;
@@ -13,10 +19,10 @@ const Button = styled(motion.a)`
   box-shadow: none;
   border: 0.063rem solid ${({ theme }) => theme.colors.grayishDarkBlue};
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.darkBlue};
+  color: ${({ theme }) => theme.colors.grayishDarkBlue};
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   text-transform: uppercase;
   cursor: pointer;
-
   @media ${({ theme }) => theme.breakpoints.tablet} {
     width: 12.5rem;
   }
@@ -80,4 +86,4 @@ const Title = styled(motion.h1)`
   margin: 0 0.5rem 2.5rem;
 `;
 
-export { Button, Container, Line, Title };
+export { LinkButtonWrap, Button, Container, Line, Title };

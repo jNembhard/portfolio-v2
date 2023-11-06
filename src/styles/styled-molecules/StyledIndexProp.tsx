@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const ButtonContainer = styled(motion.div)`
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -14,7 +15,7 @@ const ButtonContainer = styled(motion.div)`
   }
 `;
 
-const ButtonWrapper = styled.a`
+const ButtonWrapper = styled(Link)`
   text-decoration: none;
   color: inherit;
 `;
@@ -91,6 +92,7 @@ const ProjectButton = styled(motion.button)`
   &:hover {
     color: ${({ theme }) => theme.colors.lightGrey};
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 `;
 

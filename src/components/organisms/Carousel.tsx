@@ -58,11 +58,14 @@ export default function Carousel(portfolio: IPortfolio) {
             src={images.detailhero.desktop}
             width={breakPoint1200 ? 1110 : breakPoint767 ? 689 : 311}
             height={breakPoint1200 ? 500 : breakPoint767 ? 310 : 140}
-            layout="responsive"
             quality={100}
             placeholder="blur"
             blurDataURL={images.detailhero.desktop}
             alt="detail hero"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Styled.ImageContainer>
         <Styled.Summary>
@@ -94,29 +97,33 @@ export default function Carousel(portfolio: IPortfolio) {
               {subGreen}
             </Styled.Skills>
             <Styled.WebWrapper>
-              <Link href={sources.website} passHref>
-                <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
-                  <Styled.WebButton
+              <Styled.ButtonWrap
+                href={sources.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Styled.WebButton
+                  animate={controls}
+                  initial="hidden"
+                  variants={buttonVariant}
+                >
+                  visit website
+                </Styled.WebButton>
+              </Styled.ButtonWrap>
+              {sources.github && (
+                <Styled.ButtonWrap
+                  href={sources.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Styled.WebButton2
                     animate={controls}
                     initial="hidden"
-                    variants={buttonVariant}
+                    variants={buttonVariantTwo}
                   >
-                    visit website
-                  </Styled.WebButton>
+                    view github
+                  </Styled.WebButton2>
                 </Styled.ButtonWrap>
-              </Link>
-              {sources.github && (
-                <Link href={sources.github} passHref>
-                  <Styled.ButtonWrap target="_blank" rel="noopener noreferrer">
-                    <Styled.WebButton2
-                      animate={controls}
-                      initial="hidden"
-                      variants={buttonVariantTwo}
-                    >
-                      view github
-                    </Styled.WebButton2>
-                  </Styled.ButtonWrap>
-                </Link>
               )}
             </Styled.WebWrapper>
           </Styled.ContainerOne>
@@ -183,22 +190,18 @@ export default function Carousel(portfolio: IPortfolio) {
           </Styled.OverflowHidden>
         </Styled.ContainerThree>
         <Styled.ContainerFour>
-          <Link href={previousSlug} passHref>
-            <Styled.Previous>
-              <Styled.LeftArrow src={arrowleft} alt="" />
-              <Styled.LeftTitle>{previous}</Styled.LeftTitle>
-              <Styled.Sub>Previous Project</Styled.Sub>
-            </Styled.Previous>
-          </Link>
-          <Link href={nextSlug} passHref>
-            <Styled.Next>
-              <Styled.RightArrowWrap>
-                <Styled.RightArrow src={arrowright} alt="" />
-              </Styled.RightArrowWrap>
-              <Styled.RightTitle>{next}</Styled.RightTitle>
-              <Styled.SubTwo>Next Project</Styled.SubTwo>
-            </Styled.Next>
-          </Link>
+          <Styled.Previous href={previousSlug}>
+            <Styled.LeftArrow src={arrowleft} alt="" />
+            <Styled.LeftTitle>{previous}</Styled.LeftTitle>
+            <Styled.Sub>Previous Project</Styled.Sub>
+          </Styled.Previous>
+          <Styled.Next href={nextSlug}>
+            <Styled.RightArrowWrap>
+              <Styled.RightArrow src={arrowright} alt="" />
+            </Styled.RightArrowWrap>
+            <Styled.RightTitle>{next}</Styled.RightTitle>
+            <Styled.SubTwo>Next Project</Styled.SubTwo>
+          </Styled.Next>
         </Styled.ContainerFour>
       </Styled.CarouselWrap>
       <ContactButton />

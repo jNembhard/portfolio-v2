@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const FooterWrap = styled.footer`
   width: 100%;
-  height: 22.125rem;
+  height: 30.125rem;
   background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
   font-family: "Public Sans", sans-serif;
   display: flex;
@@ -84,7 +85,12 @@ const NavList = styled(motion.li)`
   }
 `;
 
-const LinkList = styled.a`
+const LinkButtonWrap = styled(Link)`
+  color: ${({ theme }) => theme.colors.veryLightGreyBG};
+  text-decoration: none;
+`;
+
+const LinkList = styled.p`
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
@@ -93,6 +99,7 @@ const LinkList = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.colors.desaturatedCyan};
+    transition: color 0.3s ease-in-out;
   }
 `;
 
@@ -122,6 +129,7 @@ const Socials = styled(Image)`
 export {
   Container,
   FooterWrap,
+  LinkButtonWrap,
   LinkList,
   Logo,
   LogoContainer,

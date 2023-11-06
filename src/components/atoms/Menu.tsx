@@ -29,9 +29,7 @@ export default function Menu() {
               animate="visible"
               variants={navVariant}
             >
-              <Link href={url}>
-                <a>{name}</a>
-              </Link>
+              <Link href={url}>{name}</Link>
             </motion.li>
           ))}
         </Styled.MenuLinks>

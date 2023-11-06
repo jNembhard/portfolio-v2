@@ -38,9 +38,7 @@ const Footer = () => {
           variants={logoVariant}
         >
           <Link href="/">
-            <a>
-              <Styled.Logo src={logo} alt="Logo" />
-            </a>
+            <Styled.Logo src={logo} alt="Logo" />
           </Link>
         </Styled.LogoContainer>
         <Styled.NavContainer ref={ref2}>
@@ -52,9 +50,9 @@ const Footer = () => {
               animate={controls}
               variants={navVariant}
             >
-              <Link href={url} passHref>
+              <Styled.LinkButtonWrap href={url}>
                 <Styled.LinkList>{name}</Styled.LinkList>
-              </Link>
+              </Styled.LinkButtonWrap>
             </Styled.NavList>
           ))}
         </Styled.NavContainer>
@@ -73,8 +71,8 @@ const Footer = () => {
               <Styled.Socials
                 key={social.id}
                 src={social.media}
-                width="24px"
-                height="24px"
+                width={24}
+                height={24}
                 alt={social.name}
               />
             </motion.a>

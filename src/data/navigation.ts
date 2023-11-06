@@ -15,13 +15,30 @@ interface ISocial {
 }
 
 const navLinks: INavLinks[] = [
-  { id: 1, name: "home", url: "/" },
-  { id: 2, name: "portfolio", url: "/portfolio" },
-  { id: 3, name: "contact me", url: "/contact" },
+  {
+    id: 1,
+    name: "home",
+    url: "/",
+  },
+  {
+    id: 2,
+    name: "portfolio",
+    url: "/portfolio",
+  },
+  {
+    id: 3,
+    name: "contact me",
+    url: "/contact",
+  },
 ];
 
 const socials: ISocial[] = [
-  { id: 1, name: "github", media: github, url: "https://github.com/jNembhard" },
+  {
+    id: 1,
+    name: "github",
+    media: github,
+    url: "https://github.com/jNembhard",
+  },
   {
     id: 2,
     name: "linkedin",

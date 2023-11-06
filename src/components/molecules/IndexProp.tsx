@@ -8,7 +8,6 @@ import {
   buttonVariant,
   imageVariant,
 } from "../../animations/content";
-import Link from "next/link";
 import * as Styled from "../../styles/styled-molecules/StyledIndexProp";
 import { IIndexProp } from "../../models/Portfolio";
 
@@ -121,32 +120,30 @@ export default function IndexProp(data: IIndexProp) {
           marginRight: margin.marginRight,
         }}
       >
-        <Link href={`/portfolio/${slug}`} passHref>
-          <Styled.ButtonWrapper ref={ref}>
-            <Styled.ButtonContainer
-              animate={controls}
-              initial="hidden"
-              variants={imageVariant}
+        <Styled.ButtonWrapper ref={ref} href={`/portfolio/${slug}`}>
+          <Styled.ButtonContainer
+            animate={controls}
+            initial="hidden"
+            variants={imageVariant}
+          >
+            <Styled.ScaleWrapper
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
             >
-              <Styled.ScaleWrapper
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Styled.SpecialImage
-                  priority={id === 1 ? true : false}
-                  src={images.index.desktop}
-                  width={size.width}
-                  height={size.height}
-                  quality={100}
-                  layout="responsive"
-                  placeholder="blur"
-                  blurDataURL={images.index.desktop}
-                  alt={name}
-                />
-              </Styled.ScaleWrapper>
-            </Styled.ButtonContainer>
-          </Styled.ButtonWrapper>
-        </Link>
+              <Styled.SpecialImage
+                priority={id === 1 ? true : false}
+                src={images.index.desktop}
+                width={size.width}
+                height={size.height}
+                quality={100}
+                layout="responsive"
+                placeholder="blur"
+                blurDataURL={images.index.desktop}
+                alt={name}
+              />
+            </Styled.ScaleWrapper>
+          </Styled.ButtonContainer>
+        </Styled.ButtonWrapper>
       </Styled.ImageContainer>
 
       <Styled.Container ref={ref2}>
@@ -164,17 +161,15 @@ export default function IndexProp(data: IIndexProp) {
         >
           {description}
         </Styled.Description>
-        <Link href={`/portfolio/${slug}`} passHref>
-          <Styled.ButtonWrapper>
-            <Styled.ProjectButton
-              animate={controls}
-              initial="hidden"
-              variants={buttonVariant}
-            >
-              view project
-            </Styled.ProjectButton>
-          </Styled.ButtonWrapper>
-        </Link>
+        <Styled.ButtonWrapper href={`/portfolio/${slug}`}>
+          <Styled.ProjectButton
+            animate={controls}
+            initial="hidden"
+            variants={buttonVariant}
+          >
+            view project
+          </Styled.ProjectButton>
+        </Styled.ButtonWrapper>
       </Styled.Container>
     </Styled.IndexWrap>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const AboutWrap = styled.div`
   margin: 0 2rem;
@@ -39,10 +40,11 @@ const Button = styled(motion.button)`
   &:hover {
     color: ${({ theme }) => theme.colors.veryLightGreyBG};
     background-color: ${({ theme }) => theme.colors.grayishDarkBlue};
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 `;
 
-const ButtonWrap = styled.a`
+const ButtonLink = styled(Link)`
   color: ${({ theme }) => theme.colors.grayishDarkBlue};
   text-decoration: none;
 `;
@@ -114,7 +116,7 @@ const Title = styled(motion.h1)`
 export {
   AboutWrap,
   Button,
-  ButtonWrap,
+  ButtonLink,
   ContainerTwo,
   Description,
   ImageContainer,

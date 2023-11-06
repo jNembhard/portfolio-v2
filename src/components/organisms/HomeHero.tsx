@@ -63,9 +63,12 @@ export default function HomeHero() {
             width={width}
             height={height}
             quality={100}
-            layout="responsive"
             placeholder="blur"
             alt="Hero"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Styled.ImageContainer>
       </Styled.OverflowHidden>

@@ -188,7 +188,7 @@ export default function Email() {
           </Styled.ButtonWrapper>
           <AnimatePresence
             initial={false}
-            exitBeforeEnter={true}
+            mode="wait"
             onExitComplete={() => null}
           >
             {show && <Modal onClose={() => setShow(false)} show={show} />}

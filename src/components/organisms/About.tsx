@@ -99,17 +99,15 @@ export default function About() {
           When I&#39;m not coding, you&#39;ll find me at the gym or catching up
           on some anime. I&#39;d love for you to check out my work.
         </Styled.Description>
-        <Link href="/portfolio" passHref>
-          <Styled.ButtonWrap>
-            <Styled.Button
-              animate={controls}
-              initial="hidden"
-              variants={buttonVariant}
-            >
-              go to portfolio
-            </Styled.Button>
-          </Styled.ButtonWrap>
-        </Link>
+        <Styled.ButtonLink href="/portfolio">
+          <Styled.Button
+            animate={controls}
+            initial="hidden"
+            variants={buttonVariant}
+          >
+            go to portfolio
+          </Styled.Button>
+        </Styled.ButtonLink>
       </Styled.ContainerTwo>
     </Styled.AboutWrap>
   );
