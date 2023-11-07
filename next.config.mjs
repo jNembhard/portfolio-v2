@@ -19,6 +19,15 @@ const nextConfig = {
     ],
     formats: ["image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio/amazon",
+        destination: "/portfolio/alnembco",
+        permanent: true,
+      },
+    ];
+  },
   compiler: {
     styledComponents: true,
   },

@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const { data: portfolioData } = await client.query({
     query: GET_PORTFOLIOS,
-    variables: { count: 10 },
+    variables: { count: 11 },
   });
 
   const paths = portfolioData.portfolios.portfolio.map(
@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { data: portfolioData } = await client.query({
     query: GET_PORTFOLIOS,
-    variables: { count: 10 },
+    variables: { count: 11 },
   });
 
   const portfolios = portfolioData.portfolios.portfolio.find(

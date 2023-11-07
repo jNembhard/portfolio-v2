@@ -27,10 +27,12 @@ const PIndex = ({ portfolios }: { portfolios: IPortfolioHome[] }) => {
     return aLast - bLast;
   });
 
+  const items = projects.slice(0, 10);
+
   return (
     <>
       <PIndexWrap>
-        {projects.map((project: IPortfolioHome) => (
+        {items.map((project: IPortfolioHome) => (
           <IndexProp key={project.portfolioID} {...project} />
         ))}
       </PIndexWrap>

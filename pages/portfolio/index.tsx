@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const { data: portfolioData } = await client.query({
     query: GET_PORTFOLIOS_MAIN,
-    variables: { count: 10 },
+    variables: { count: 11 },
   });
 
   const updatedWithPortfolioBlurDataUrls = await addPortfolioIndexBlurDataUrls(
