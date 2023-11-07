@@ -76,6 +76,13 @@ export default function Carousel(portfolio: IPortfolio) {
                 >
                   {title}
                 </Styled.Title>
+                <Styled.TabletSkills
+                  animate={controls}
+                  initial="hidden"
+                  variants={greenVariant}
+                >
+                  {subGreen}
+                </Styled.TabletSkills>
               </Styled.TitleWrapper>
               <Styled.DesContainer
                 animate={controls}

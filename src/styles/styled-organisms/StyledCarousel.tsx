@@ -166,18 +166,32 @@ const Skills = styled(motion.p)`
   font-size: 0.813rem;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin-top: ${({ title }) =>
-      title === "Summit"
-        ? "-125px"
-        : title === "Amazon Clone"
-        ? "-125px"
-        : "-150px"};
-    padding-right: 24.438rem;
+    display: none;
 
     @media ${({ theme }) => theme.breakpoints.laptop} {
+      display: inherit;
       margin-top: 1.438rem;
       padding-right: 7.813rem;
       width: 21.25rem;
+    }
+  }
+`;
+
+const TabletSkills = styled(motion.p)`
+  display: none;
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: inherit;
+    color: ${({ theme }) => theme.colors.desaturatedCyan};
+    font-weight: bold;
+    font-size: 0.813rem;
+    max-width: 20rem;
+
+    @media (min-width: 56.25rem) {
+      max-width: 26.25rem;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      display: none;
     }
   }
 `;
@@ -290,6 +304,7 @@ export {
   DesContainer,
   DesContainerTwo,
   Description,
+  TabletSkills,
   ImageContainer,
   ImageContainerTwo,
   LeftArrow,
