@@ -11,7 +11,7 @@ export interface IPortfolio {
   next: string;
 }
 
-export interface IIndexProp {
+interface IIndexProp {
   id: number;
   name: string;
   slug: string;

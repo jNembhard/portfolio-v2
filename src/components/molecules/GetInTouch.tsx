@@ -64,8 +64,8 @@ export default function GetInTouch() {
                 <Styled.Socials
                   key={social.id}
                   src={social.media}
-                  width="1.5rem"
-                  height="1.5rem"
+                  width={24}
+                  height={24}
                   alt={social.name}
                 />
               </motion.a>

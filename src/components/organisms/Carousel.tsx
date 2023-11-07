@@ -1,10 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import ContactButton from "../atoms/ContactButton";
 import arrowleft from "../../../public/assets/icons/arrow-left.svg";
 import arrowright from "../../../public/assets/icons/arrow-right.svg";
 import { useEffect } from "react";
-import { useMediaQuery } from "usehooks-ts";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -16,11 +14,11 @@ import {
   imageVariant,
 } from "../../animations/content";
 import * as Styled from "../../styles/styled-organisms/StyledCarousel";
-import { IPortfolio } from "../../models/Portfolio";
+import { IPortfolio } from "../../interfaces/Portfolio";
 
 export default function Carousel(portfolio: IPortfolio) {
   const {
-    name,
+    title,
     description,
     projBackground,
     images,
@@ -32,9 +30,6 @@ export default function Carousel(portfolio: IPortfolio) {
 
   const previousSlug = previous.toLowerCase();
   const nextSlug = next.toLocaleLowerCase();
-
-  const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
-  const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
@@ -55,12 +50,14 @@ export default function Carousel(portfolio: IPortfolio) {
         <Styled.ImageContainer>
           <Image
             priority
-            src={images.detailhero.desktop}
-            width={breakPoint1200 ? 1110 : breakPoint767 ? 689 : 311}
-            height={breakPoint1200 ? 500 : breakPoint767 ? 310 : 140}
-            quality={100}
+            src={
+              process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+              images.detailhero.picture
+            }
+            width={2220}
+            height={1000}
             placeholder="blur"
-            blurDataURL={images.detailhero.desktop}
+            blurDataURL={images.detailhero.blurDataUrl}
             alt="detail hero"
             style={{
               width: "100%",
@@ -77,7 +74,7 @@ export default function Carousel(portfolio: IPortfolio) {
                   initial="hidden"
                   variants={titleVariant}
                 >
-                  {name}
+                  {title}
                 </Styled.Title>
               </Styled.TitleWrapper>
               <Styled.DesContainer
@@ -89,7 +86,7 @@ export default function Carousel(portfolio: IPortfolio) {
               </Styled.DesContainer>
             </Styled.TitleSum>
             <Styled.Skills
-              title={name}
+              title={title}
               animate={controls}
               initial="hidden"
               variants={greenVariant}
@@ -159,14 +156,19 @@ export default function Carousel(portfolio: IPortfolio) {
               variants={imageVariant}
             >
               <Image
-                src={images.preview.desktopOne}
-                width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
-                height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
-                layout="responsive"
-                quality={100}
+                src={
+                  process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+                  images.preview.previewOne.picture
+                }
+                width={1278}
+                height={868}
                 placeholder="blur"
-                blurDataURL={images.preview.desktopOne}
+                blurDataURL={images.preview.previewOne.blurDataUrl}
                 alt="static preview one"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </Styled.ImageContainerTwo>
           </Styled.OverflowHidden>
@@ -177,14 +179,19 @@ export default function Carousel(portfolio: IPortfolio) {
               variants={imageVariant}
             >
               <Image
-                src={images.preview.desktopTwo}
-                width={breakPoint1200 ? 635 : breakPoint767 ? 689 : 311}
-                height={breakPoint1200 ? 400 : breakPoint767 ? 434 : 196}
-                layout="responsive"
-                quality={100}
+                src={
+                  process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+                  images.preview.previewTwo.picture
+                }
+                width={1278}
+                height={868}
                 placeholder="blur"
-                blurDataURL={images.preview.desktopTwo}
+                blurDataURL={images.preview.previewTwo.blurDataUrl}
                 alt="static preview two"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </Styled.ImageContainerTwo>
           </Styled.OverflowHidden>

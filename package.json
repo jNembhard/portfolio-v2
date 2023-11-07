@@ -10,9 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.7",
     "@emailjs/browser": "^3.3.1",
     "@plaiceholder/next": "^3.0.0",
     "framer-motion": "^10.16.4",
+    "graphql": "^16.8.1",
     "hamburger-react": "^2.4.1",
     "next": "^14.0.1",
     "next-compose-plugins": "^2.2.1",
@@ -22,8 +24,9 @@
     "plaiceholder": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^8.33.1",
+    "react-intersection-observer": "^9.5.2",
     "react-onclickoutside": "^6.12.1",
+    "sharp": "^0.32.6",
     "styled-components": "^5.3.3",
     "usehooks-ts": "^2.9.1"
   },

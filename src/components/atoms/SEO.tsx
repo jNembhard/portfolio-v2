@@ -11,7 +11,7 @@ export default function SEO({
 }) {
   return (
     <Head>
-      <title>{title} | Jason Nembhard</title>
+      <title>{`${title} | Jason Nembhard`}</title>
       <meta name="description" content={metadescription} />
       <meta property="og:type" content={type} />
       <meta property="og:title" content={`${title} | Jason Nembhard`} />

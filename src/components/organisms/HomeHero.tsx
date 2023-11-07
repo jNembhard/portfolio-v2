@@ -8,13 +8,10 @@ import {
   buttonVariant,
   imageVariant,
 } from "../../animations/content";
-import mobilehero from "../../../public/assets/homepage/mobile/image-homepage-hero-mobile@2x.jpg";
-import tablethero from "../../../public/assets/homepage/tablet/image-homepage-hero-tablet@2x.jpg";
-import desktophero from "../../../public/assets/homepage/desktop/image-homepage-hero@2x.jpg";
 import downarrow from "../../../public/assets/icons/down-arrows.svg";
 import * as Styled from "../../styles/styled-organisms/StyledHomeHero";
 
-export default function HomeHero() {
+export default function HomeHero({ blurdata }: { blurdata: string }) {
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
   const breakPoint767 = useMediaQuery(`(min-width: 767px)`);
 
@@ -54,16 +51,14 @@ export default function HomeHero() {
         >
           <Styled.NextImage
             src={
-              breakPoint1200
-                ? desktophero
-                : breakPoint767
-                ? tablethero
-                : mobilehero
+              process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+              "assets/homepage/desktop/image-homepage-hero@2x.jpg"
             }
-            width={width}
-            height={height}
+            width={1110}
+            height={600}
             quality={100}
             placeholder="blur"
+            blurDataURL={blurdata}
             alt="Hero"
             style={{
               width: "100%",

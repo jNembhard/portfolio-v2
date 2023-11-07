@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { StaticImageData } from "next/image";
-import Link from "next/link";
+import Image from "next/image";
 import {
   titleVariant,
   lineVariant,
@@ -11,14 +10,22 @@ import {
   imageVariant,
   buttonVariant,
 } from "../../animations/content";
-import headshotmobile2 from "../../../public/assets/homepage/mobile/image-homepage-jason-profile.jpg";
-import headshottablet2 from "../../../public/assets/homepage/tablet/image-homepage-jason-profile.jpg";
-import headshotdesktop2 from "../../../public/assets/homepage/desktop/image-homepage-jason-profile.jpg";
+
 import * as Styled from "../../styles/styled-organisms/StyledAbout";
 
-export default function About() {
+export default function About({ blururls }: { blururls: string[] }) {
   const breakPoint1200 = useMediaQuery("(min-width: 1200px)");
   const breakPoint767 = useMediaQuery("(min-width: 767px)");
+
+  const headshotmobile2 =
+    process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+    "assets/homepage/mobile/image-homepage-jason-profile.jpg";
+  const headshottablet2 =
+    process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+    "assets/homepage/tablet/image-homepage-jason-profile.jpg";
+  const headshotdesktop2 =
+    process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+    "assets/homepage/desktop/image-homepage-jason-profile.jpg";
 
   const initialStates = {
     widthInitial: breakPoint1200 ? 540 : breakPoint767 ? 281 : 311,
@@ -33,9 +40,7 @@ export default function About() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [ref2, inView2] = useInView({ threshold: 0.2 });
-  const [image, setImage] = useState<StaticImageData>(
-    initialStates.imageInitial
-  );
+  const [image, setImage] = useState(initialStates.imageInitial);
 
   useEffect(() => {
     if (inView) {
@@ -64,12 +69,21 @@ export default function About() {
           initial="hidden"
           variants={imageVariant}
         >
-          <Styled.NextImage
+          <Image
             id="about"
-            src={image}
-            quality={100}
+            src={
+              process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+              "assets/homepage/desktop/image-homepage-jason-profile.jpg"
+            }
+            width={540}
+            height={600}
             placeholder="blur"
+            blurDataURL={blururls[2]}
             alt="headshot"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Styled.ImageContainer>
       </Styled.OverflowHidden>

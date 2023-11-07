@@ -82,9 +82,35 @@ const ImageContainer = styled(motion.div)`
   display: block;
 `;
 
-const NextImage = styled(Image)`
-  width: 100%;
-  height: auto;
+const MobileImage = styled(Image)`
+  width: 19.4375rem;
+  height: 21.625rem;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    display: none;
+  }
+`;
+
+const TabletImage = styled(Image)`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    width: 17.5625rem;
+    height: 37.5rem;
+
+    @media ${({ theme }) => theme.breakpoints.laptop} {
+      display: none;
+    }
+  }
+`;
+
+const DesktopImage = styled(Image)`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.laptop} {
+    width: 33.75rem;
+    height: 37.5rem;
+  }
 `;
 
 const OverflowHidden = styled.div`
@@ -120,7 +146,9 @@ export {
   ContainerTwo,
   Description,
   ImageContainer,
-  NextImage,
+  MobileImage,
+  TabletImage,
+  DesktopImage,
   OverflowHidden,
   Title,
 };

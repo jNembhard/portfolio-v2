@@ -1,7 +1,8 @@
 import IndexProp from "../molecules/IndexProp";
-import { portfoliodata } from "../../data/portfoliodata";
 import ContactButton from "../atoms/ContactButton";
 import styled from "styled-components";
+import { IPortfolioHome } from "../../interfaces/Portfolio";
+import extractNumbers from "../../utils/extractNumbers";
 
 const PIndexWrap = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -16,15 +17,26 @@ const PIndexWrap = styled.div`
   }
 `;
 
-export default function PIndex() {
+const PIndex = ({ portfolios }: { portfolios: IPortfolioHome[] }) => {
+  const projects = [...portfolios];
+
+  projects.sort((a: IPortfolioHome, b: IPortfolioHome) => {
+    const aLast = extractNumbers(a.portfolioID);
+    const bLast = extractNumbers(b.portfolioID);
+
+    return aLast - bLast;
+  });
+
   return (
     <>
       <PIndexWrap>
-        {portfoliodata.map((data, index) => (
-          <IndexProp key={index} {...data} />
+        {projects.map((project: IPortfolioHome) => (
+          <IndexProp key={project.portfolioID} {...project} />
         ))}
       </PIndexWrap>
       <ContactButton />
     </>
   );
-}
+};
+
+export default PIndex;

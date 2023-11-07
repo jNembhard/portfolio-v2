@@ -1,18 +1,7 @@
 import github from "../../public/assets/icons/github.svg";
 import linkedin from "../../public/assets/icons/linkedin.svg";
-
-interface INavLinks {
-  id: number;
-  name: string;
-  url: string;
-}
-
-interface ISocial {
-  id: number;
-  name: string;
-  media: string;
-  url: string;
-}
+import { INavLinks } from "../interfaces/Navlinks";
+import { ISocial } from "../interfaces/Social";
 
 const navLinks: INavLinks[] = [
   {

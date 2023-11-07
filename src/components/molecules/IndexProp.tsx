@@ -9,10 +9,11 @@ import {
   imageVariant,
 } from "../../animations/content";
 import * as Styled from "../../styles/styled-molecules/StyledIndexProp";
-import { IIndexProp } from "../../models/Portfolio";
+import { IPortfolioHome } from "../../interfaces/Portfolio";
+import extractNumbers from "../../utils/extractNumbers";
 
-export default function IndexProp(data: IIndexProp) {
-  const { id, name, slug, images, description } = data;
+export default function IndexProp(data: IPortfolioHome) {
+  const { portfolioID, title, slug, images, description } = data;
 
   const breakPoint1440 = useMediaQuery(`(min-width: 1440px)`);
   const breakPoint1200 = useMediaQuery(`(min-width: 1200px)`);
@@ -45,12 +46,12 @@ export default function IndexProp(data: IIndexProp) {
 
     const handleMargin = () => {
       const breakPoints = [
-        breakPoint1440 && id % 2 == 0,
-        breakPoint1440 && id % 2 != 0,
-        breakPoint1200 && id % 2 == 0,
-        breakPoint1200 && id % 2 != 0,
-        breakPoint767 && id % 2 == 0,
-        breakPoint767 && id % 2 != 0,
+        breakPoint1440 && extractNumbers(portfolioID) % 2 == 0,
+        breakPoint1440 && extractNumbers(portfolioID) % 2 != 0,
+        breakPoint1200 && extractNumbers(portfolioID) % 2 == 0,
+        breakPoint1200 && extractNumbers(portfolioID) % 2 != 0,
+        breakPoint767 && extractNumbers(portfolioID) % 2 == 0,
+        breakPoint767 && extractNumbers(portfolioID) % 2 != 0,
       ];
 
       switch (true) {
@@ -79,7 +80,7 @@ export default function IndexProp(data: IIndexProp) {
     };
 
     const handleFlex = () => {
-      if (breakPoint767 && id % 2 == 0) {
+      if (breakPoint767 && extractNumbers(portfolioID) % 2 == 0) {
         setDirection("row-reverse");
       } else {
         setDirection("row");
@@ -103,7 +104,7 @@ export default function IndexProp(data: IIndexProp) {
       subscribe = false;
     };
   }, [
-    id,
+    portfolioID,
     inView,
     inView2,
     breakPoint1440,
@@ -131,28 +132,33 @@ export default function IndexProp(data: IIndexProp) {
               transition={{ duration: 0.5 }}
             >
               <Styled.SpecialImage
-                priority={id === 1 ? true : false}
-                src={images.index.desktop}
+                priority={portfolioID === "portfolio-1" ? true : false}
+                src={
+                  process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
+                  images.index.picture
+                }
                 width={size.width}
                 height={size.height}
                 quality={100}
-                layout="responsive"
                 placeholder="blur"
-                blurDataURL={images.index.desktop}
-                alt={name}
+                blurDataURL={images.index.blurDataUrl}
+                alt={title}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </Styled.ScaleWrapper>
           </Styled.ButtonContainer>
         </Styled.ButtonWrapper>
       </Styled.ImageContainer>
-
       <Styled.Container ref={ref2}>
         <Styled.Title
           animate={controls}
           initial="hidden"
           variants={titleVariant}
         >
-          {name}
+          {title}
         </Styled.Title>
         <Styled.Description
           animate={controls}
