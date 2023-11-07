@@ -7,7 +7,6 @@ import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
 import { AnimatePresence, motion } from "framer-motion";
 import { Ibarra_Real_Nova, Public_Sans } from "next/font/google";
-import StyledComponentsRegistry from "../../lib/registry";
 import { useRouter } from "next/router";
 import { variants } from "../../animations/variants";
 
