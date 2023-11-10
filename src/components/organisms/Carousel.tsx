@@ -56,6 +56,7 @@ export default function Carousel(portfolio: IPortfolio) {
             }
             width={2220}
             height={1000}
+            quality={100}
             placeholder="blur"
             blurDataURL={images.detailhero.blurDataUrl}
             alt="detail hero"
@@ -169,6 +170,7 @@ export default function Carousel(portfolio: IPortfolio) {
                 }
                 width={1278}
                 height={868}
+                quality={100}
                 placeholder="blur"
                 blurDataURL={images.preview.previewOne.blurDataUrl}
                 alt="static preview one"
@@ -192,6 +194,7 @@ export default function Carousel(portfolio: IPortfolio) {
                 }
                 width={1278}
                 height={868}
+                quality={100}
                 placeholder="blur"
                 blurDataURL={images.preview.previewTwo.blurDataUrl}
                 alt="static preview two"

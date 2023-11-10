@@ -77,6 +77,7 @@ export default function About({ blururls }: { blururls: string[] }) {
             }
             width={540}
             height={600}
+            quality={100}
             placeholder="blur"
             blurDataURL={blururls[2]}
             alt="headshot"
