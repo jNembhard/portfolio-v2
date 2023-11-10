@@ -50,6 +50,7 @@ export default function HomeHero({ blurdata }: { blurdata: string }) {
           variants={imageVariant}
         >
           <Styled.NextImage
+            priority
             src={
               process.env.NEXT_PUBLIC_CLOUDFRONT_ENDPOINT +
               "assets/homepage/desktop/image-homepage-hero@2x.jpg"

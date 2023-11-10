@@ -67,7 +67,10 @@ const PortfolioIndex = ({ portfolio }) => {
         metadescription={portfolio.description}
         type="webapp"
       />
-      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <StyledWrapper>
           <Carousel {...portfolio} />
         </StyledWrapper>
